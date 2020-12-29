@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,12 @@
     </Compile>
     <Compile Include="PersonnelFile.Designer.cs">
       <DependentUpon>PersonnelFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonnelFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonnelFiles.Designer.cs">
+      <DependentUpon>PersonnelFiles.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,11 +94,17 @@
       <DependentUpon>SchoolCourseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonnelFile.resx">
       <DependentUpon>PersonnelFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonnelFiles.resx">
+      <DependentUpon>PersonnelFiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

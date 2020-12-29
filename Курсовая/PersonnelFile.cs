@@ -65,13 +65,13 @@ namespace Курсовая
             if (edit)
             {
                 personnelFileTableAdapter.UpdateQuery(SNP_fatherTextBox.Text, SNP_motherTextBox.Text,
-                    snp_custodian, addressTextBox.Text, phoneTextBox.Text, id);
+                    snp_custodian, addressTextBox.Text, phoneTextBox.Text, Convert.ToInt32(pupil_IDTextBox.Text));
 
                 Table<User> users = db.GetTable<User>();
                 List<int> edit = new List<int>();
                 foreach (var user in users)
                 {
-                    if (user.Password == Convert.ToString(id))
+                    if (user.Password == pupil_IDTextBox.Text)
                     {
                         edit.Add(user.User_ID);
                     }
@@ -93,22 +93,34 @@ namespace Курсовая
             // Додавання даних
             else
             {
-                personnelFileTableAdapter.InsertQuery(id, SNP_fatherTextBox.Text, SNP_motherTextBox.Text,
-                    snp_custodian, addressTextBox.Text, phoneTextBox.Text);
-
-
-                // Створюємо нових користувачів
-                User user1 = new User { Login = $"{SNP_fatherTextBox.Text}", Password = $"{id}" };
-                User user2 = new User { Login = $"{SNP_motherTextBox.Text}", Password = $"{id}" };
-                if (SNP_custodianTextBox.Text != "")
+                try
                 {
-                    User user3 = new User { Login = $"{SNP_custodianTextBox.Text}", Password = $"{id}" };
-                    db.GetTable<User>().InsertOnSubmit(user3);
+                    personnelFileTableAdapter.InsertQuery(Convert.ToInt32(pupil_IDTextBox.Text),
+                    SNP_fatherTextBox.Text, SNP_motherTextBox.Text, snp_custodian,
+                    addressTextBox.Text, phoneTextBox.Text);
+
+
+                    // Створюємо нових користувачів
+                    User user1 = new User { Login = $"{SNP_fatherTextBox.Text}", Password = $"{pupil_IDTextBox.Text}" };
+                    User user2 = new User { Login = $"{SNP_motherTextBox.Text}", Password = $"{pupil_IDTextBox.Text}" };
+                    if (SNP_custodianTextBox.Text != "")
+                    {
+                        User user3 = new User
+                        {
+                            Login = $"{SNP_custodianTextBox.Text}",
+                            Password = $"{pupil_IDTextBox.Text}"
+                        };
+                        db.GetTable<User>().InsertOnSubmit(user3);
+                    }
+                    // Додаємо їх до таблиці User
+                    db.GetTable<User>().InsertOnSubmit(user1);
+                    db.GetTable<User>().InsertOnSubmit(user2);
+                    db.SubmitChanges();
                 }
-                // Додаємо їх до таблиці User
-                db.GetTable<User>().InsertOnSubmit(user1);
-                db.GetTable<User>().InsertOnSubmit(user2);
-                db.SubmitChanges();
+                catch
+                {
+                    MessageBox.Show("Учня з таким ID не існує.", "Помилка");
+                }
             }
 
 

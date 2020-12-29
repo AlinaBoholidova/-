@@ -102,19 +102,22 @@ namespace Курсовая
                 toSort = "BirthDate";
             }
 
-            try
+            if (sortComboBox_Pupils.SelectedIndex > -1)
             {
-                SqlConnection sqlconn = new SqlConnection(ConnectionString);
-                sqlconn.Open();
-                SqlDataAdapter da = new SqlDataAdapter(select + toSort, sqlconn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                pupilDataGridView.DataSource = dt;
-                sqlconn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(@"Error: " + ex.Message);
+                try
+                {
+                    SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                    sqlconn.Open();
+                    SqlDataAdapter da = new SqlDataAdapter(select + toSort, sqlconn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    pupilDataGridView.DataSource = dt;
+                    sqlconn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(@"Error: " + ex.Message);
+                }
             }
         }
 

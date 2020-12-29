@@ -218,8 +218,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox pupil_IDTextBox;
         private System.Windows.Forms.TextBox SNP_fatherTextBox;
         private System.Windows.Forms.TextBox SNP_motherTextBox;
         private System.Windows.Forms.TextBox SNP_custodianTextBox;
@@ -230,5 +228,6 @@
         private SchoolCourseDataSet schoolCourseDataSet;
         private System.Windows.Forms.BindingSource pfileBindingSource;
         private SchoolCourseDataSetTableAdapters.PersonnelFileTableAdapter personnelFileTableAdapter;
+        public System.Windows.Forms.TextBox pupil_IDTextBox;
     }
 }

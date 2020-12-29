@@ -17,11 +17,18 @@ namespace Курсовая
             InitializeComponent();
         }
 
-        private void pupilsButton_Click(object sender, EventArgs e)
+        private void pupilsButton_Main_Click(object sender, EventArgs e)
         {
             this.Hide();
             Pupils pupils = new Pupils();
             pupils.Show();
+        }
+
+        private void pfilesButton_Main_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PersonnelFiles pfiles = new PersonnelFiles();
+            pfiles.Show();
         }
     }
 }

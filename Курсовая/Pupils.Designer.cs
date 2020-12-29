@@ -352,7 +352,7 @@
             // idCheckBox_Pupils
             // 
             this.idCheckBox_Pupils.AutoSize = true;
-            this.idCheckBox_Pupils.Location = new System.Drawing.Point(31, 345);
+            this.idCheckBox_Pupils.Location = new System.Drawing.Point(31, 366);
             this.idCheckBox_Pupils.Name = "idCheckBox_Pupils";
             this.idCheckBox_Pupils.Size = new System.Drawing.Size(37, 17);
             this.idCheckBox_Pupils.TabIndex = 25;
@@ -362,7 +362,7 @@
             // allCheckBox_Pupils
             // 
             this.allCheckBox_Pupils.AutoSize = true;
-            this.allCheckBox_Pupils.Location = new System.Drawing.Point(31, 366);
+            this.allCheckBox_Pupils.Location = new System.Drawing.Point(31, 343);
             this.allCheckBox_Pupils.Name = "allCheckBox_Pupils";
             this.allCheckBox_Pupils.Size = new System.Drawing.Size(69, 17);
             this.allCheckBox_Pupils.TabIndex = 26;

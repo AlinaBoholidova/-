@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pupilsButton = new System.Windows.Forms.Button();
+            this.pupilsButton_Main = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,17 +37,18 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.pfilesButton_Main = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // pupilsButton
+            // pupilsButton_Main
             // 
-            this.pupilsButton.Location = new System.Drawing.Point(43, 74);
-            this.pupilsButton.Name = "pupilsButton";
-            this.pupilsButton.Size = new System.Drawing.Size(115, 35);
-            this.pupilsButton.TabIndex = 0;
-            this.pupilsButton.Text = "Учні";
-            this.pupilsButton.UseVisualStyleBackColor = true;
-            this.pupilsButton.Click += new System.EventHandler(this.pupilsButton_Click);
+            this.pupilsButton_Main.Location = new System.Drawing.Point(43, 74);
+            this.pupilsButton_Main.Name = "pupilsButton_Main";
+            this.pupilsButton_Main.Size = new System.Drawing.Size(115, 35);
+            this.pupilsButton_Main.TabIndex = 0;
+            this.pupilsButton_Main.Text = "Учні";
+            this.pupilsButton_Main.UseVisualStyleBackColor = true;
+            this.pupilsButton_Main.Click += new System.EventHandler(this.pupilsButton_Main_Click);
             // 
             // button2
             // 
@@ -99,7 +100,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(43, 127);
+            this.button4.Location = new System.Drawing.Point(43, 168);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(115, 35);
             this.button4.TabIndex = 6;
@@ -124,11 +125,22 @@
             this.button6.Text = "Тарифи оплати";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // pfilesButton_Main
+            // 
+            this.pfilesButton_Main.Location = new System.Drawing.Point(43, 122);
+            this.pfilesButton_Main.Name = "pfilesButton_Main";
+            this.pfilesButton_Main.Size = new System.Drawing.Size(115, 35);
+            this.pfilesButton_Main.TabIndex = 9;
+            this.pfilesButton_Main.Text = "Особові справи";
+            this.pfilesButton_Main.UseVisualStyleBackColor = true;
+            this.pfilesButton_Main.Click += new System.EventHandler(this.pfilesButton_Main_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 397);
+            this.Controls.Add(this.pfilesButton_Main);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -137,10 +149,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.pupilsButton);
+            this.Controls.Add(this.pupilsButton_Main);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Головне меню";
+            this.Text = "v";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,7 +160,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button pupilsButton;
+        private System.Windows.Forms.Button pupilsButton_Main;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
@@ -157,6 +169,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button pfilesButton_Main;
     }
 }
 
