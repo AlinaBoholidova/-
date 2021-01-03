@@ -20,7 +20,8 @@ namespace Курсовая
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            //Application.Run(new Main());
+            Application.Run(new Statistics());
 
             //DataContext db = new DataContext(СonnectionString);
 

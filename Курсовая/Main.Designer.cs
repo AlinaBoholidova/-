@@ -152,7 +152,7 @@
             this.Controls.Add(this.pupilsButton_Main);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "v";
+            this.Text = "Головна";
             this.ResumeLayout(false);
             this.PerformLayout();
 

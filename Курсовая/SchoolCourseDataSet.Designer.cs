@@ -6039,11 +6039,17 @@ SELECT Record_ID, Pupil_ID, Test_ID, Score FROM JournalRecord WHERE (Record_ID =
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Record_ID, Pupil_ID, Test_ID, Score FROM dbo.JournalRecord";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Pupil.Pupil_ID, Pupil.SNP, ((SELECT COUNT(Test_ID) FROM TEST) - COUNT(Jour" +
+                "nalRecord.Score)) AS Missed \r\nFROM Pupil LEFT OUTER JOIN JournalRecord ON Pupil." +
+                "Pupil_ID = JournalRecord.Pupil_ID\r\nGROUP BY Pupil.Pupil_ID, Pupil.SNP\r\n";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6068,6 +6074,19 @@ SELECT Record_ID, Pupil_ID, Test_ID, Score FROM JournalRecord WHERE (Record_ID =
             SchoolCourseDataSet.JournalRecordDataTable dataTable = new SchoolCourseDataSet.JournalRecordDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(SchoolCourseDataSet.JournalRecordDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6361,11 +6380,19 @@ SELECT Payment_ID, Pupil_ID, PaymentRate_ID, Month, Paid FROM Payment WHERE (Pay
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Payment_ID, Pupil_ID, PaymentRate_ID, Month, Paid FROM dbo.Payment";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        Payment.Payment_ID, Pupil.SNP, PaymentRate.PaymentRate_type, Payment.Month
+FROM            Pupil INNER JOIN
+                         Payment ON Pupil.Pupil_ID = Payment.Pupil_ID INNER JOIN
+                         PaymentRate ON Payment.PaymentRate_ID = PaymentRate.PaymentRate_ID
+WHERE        (Payment.Paid = 0)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6387,6 +6414,30 @@ SELECT Payment_ID, Pupil_ID, PaymentRate_ID, Month, Paid FROM Payment WHERE (Pay
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual SchoolCourseDataSet.PaymentDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            SchoolCourseDataSet.PaymentDataTable dataTable = new SchoolCourseDataSet.PaymentDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(SchoolCourseDataSet.PaymentDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SchoolCourseDataSet.PaymentDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             SchoolCourseDataSet.PaymentDataTable dataTable = new SchoolCourseDataSet.PaymentDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7125,7 +7176,7 @@ SELECT Pupil_ID, SNP_father, SNP_mother, SNP_custodian, Address, Phone FROM Pers
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual SchoolCourseDataSet.PersonnelFileDataTable GetDataBy(int Pupil_ID) {
+        public virtual SchoolCourseDataSet.PersonnelFileDataTable GetDataBy1(int Pupil_ID) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Pupil_ID));
             SchoolCourseDataSet.PersonnelFileDataTable dataTable = new SchoolCourseDataSet.PersonnelFileDataTable();
@@ -7991,7 +8042,7 @@ SELECT Pupil_ID, SNP, Gender, BirthDate FROM Pupil WHERE (Pupil_ID = @Pupil_ID)"
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Pupil_ID, SNP, Gender, BirthDate FROM dbo.Pupil";
@@ -8009,21 +8060,33 @@ SELECT Pupil_ID, SNP, Gender, BirthDate FROM Pupil WHERE (Pupil_ID = @Pupil_ID)"
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pupil_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Pupil_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "INSERT INTO [dbo].[Pupil] ([SNP], [Gender], [BirthDate]) VALUES (@SNP, @Gender, @" +
-                "BirthDate);";
+            this._commandCollection[3].CommandText = "SELECT Pupil_ID, SNP, MONTH(BirthDate) FROM Pupil";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SNP", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "SNP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BirthDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "BirthDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE [dbo].[Pupil] SET [SNP] = @SNP, [Gender] = @Gender, [BirthDate] = @BirthDa" +
-                "te WHERE [Pupil_ID] = @Pupil_ID";
+            this._commandCollection[4].CommandText = @"SELECT        Pupil_ID, SNP, CASE WHEN MONTH(BirthDate) = 1 THEN 'січень' WHEN MONTH(BirthDate) = 2 THEN 'лютий' WHEN MONTH(BirthDate) = 3 THEN 'березень' WHEN MONTH(BirthDate) 
+                         = 4 THEN 'квітень' WHEN MONTH(BirthDate) = 5 THEN 'травень' WHEN MONTH(BirthDate) = 6 THEN 'червень' WHEN MONTH(BirthDate) = 7 THEN 'липень' WHEN MONTH(BirthDate) 
+                         = 8 THEN 'серпень' WHEN MONTH(BirthDate) = 9 THEN 'вересень' WHEN MONTH(BirthDate) = 10 THEN 'жовтень' WHEN MONTH(BirthDate) = 11 THEN 'листопад' ELSE 'грудень' END AS Expr1
+FROM            Pupil
+ORDER BY MONTH(BirthDate)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SNP", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "SNP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BirthDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "BirthDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pupil_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Pupil_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "INSERT INTO [dbo].[Pupil] ([SNP], [Gender], [BirthDate]) VALUES (@SNP, @Gender, @" +
+                "BirthDate);";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SNP", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "SNP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BirthDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "BirthDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "UPDATE [dbo].[Pupil] SET [SNP] = @SNP, [Gender] = @Gender, [BirthDate] = @BirthDa" +
+                "te WHERE [Pupil_ID] = @Pupil_ID";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SNP", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "SNP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BirthDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "BirthDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pupil_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Pupil_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8071,6 +8134,54 @@ SELECT Pupil_ID, SNP, Gender, BirthDate FROM Pupil WHERE (Pupil_ID = @Pupil_ID)"
         public virtual SchoolCourseDataSet.PupilDataTable GetDataBy3(int Pupil_ID) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Pupil_ID));
+            SchoolCourseDataSet.PupilDataTable dataTable = new SchoolCourseDataSet.PupilDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(SchoolCourseDataSet.PupilDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SchoolCourseDataSet.PupilDataTable GetDataBy4() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            SchoolCourseDataSet.PupilDataTable dataTable = new SchoolCourseDataSet.PupilDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy2(SchoolCourseDataSet.PupilDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SchoolCourseDataSet.PupilDataTable GetDataBy5() {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             SchoolCourseDataSet.PupilDataTable dataTable = new SchoolCourseDataSet.PupilDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8260,7 +8371,7 @@ SELECT Pupil_ID, SNP, Gender, BirthDate FROM Pupil WHERE (Pupil_ID = @Pupil_ID)"
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string SNP, string Gender, string BirthDate) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((SNP == null)) {
                 throw new global::System.ArgumentNullException("SNP");
             }
@@ -8301,7 +8412,7 @@ SELECT Pupil_ID, SNP, Gender, BirthDate FROM Pupil WHERE (Pupil_ID = @Pupil_ID)"
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(string SNP, string Gender, string BirthDate, int Pupil_ID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((SNP == null)) {
                 throw new global::System.ArgumentNullException("SNP");
             }
