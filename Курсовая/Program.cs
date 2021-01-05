@@ -21,7 +21,8 @@ namespace Курсовая
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Main());
-            Application.Run(new Statistics());
+            //Application.Run(new Statistics());
+            //Application.Run(new ViewReceipt());
 
             //DataContext db = new DataContext(СonnectionString);
 

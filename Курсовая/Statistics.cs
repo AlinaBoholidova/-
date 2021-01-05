@@ -51,7 +51,12 @@ namespace Курсовая
                 "PaymentRate ON Payment.PaymentRate_ID = PaymentRate.PaymentRate_ID " +
                 "WHERE(Payment.Paid = 0)";
 
-            string select4;
+            string select4 = "SELECT AdditionalActivity.Activity_ID, AdditionalActivity.Activity_name, " +
+                "COUNT(AdditionalParticipation.Pupil_ID) AS Quantity " +
+                "FROM AdditionalActivity LEFT OUTER JOIN AdditionalParticipation " +
+                "ON AdditionalActivity.Activity_ID = AdditionalParticipation.Activity_ID " +
+                "GROUP BY AdditionalActivity.Activity_ID, AdditionalActivity.Activity_name " +
+                "ORDER BY Quantity DESC";
 
             SqlConnection sqlconn = new SqlConnection(ConnectionString);
             sqlconn.Open();
@@ -59,46 +64,50 @@ namespace Курсовая
             SqlDataAdapter da1 = new SqlDataAdapter(select1, sqlconn);
             DataTable dt1 = new DataTable();
             da1.Fill(dt1);
-            dataGridView1.DataSource = dt1;
+            skipsDataGridView.DataSource = dt1;
 
             SqlDataAdapter da2 = new SqlDataAdapter(select2, sqlconn);
             DataTable dt2 = new DataTable();
             da2.Fill(dt2);
-            dataGridView2.DataSource = dt2;
+            birthdaysDataGridView.DataSource = dt2;
 
             SqlDataAdapter da3 = new SqlDataAdapter(select3, sqlconn);
             DataTable dt3 = new DataTable();
             da3.Fill(dt3);
-            dataGridView3.DataSource = dt3;
+            debtorsDataGridView.DataSource = dt3;
 
-            //SqlDataAdapter da4 = new SqlDataAdapter(select4, sqlconn);
-            //DataTable dt4 = new DataTable();
-            //da4.Fill(dt4);
-            //dataGridView4.DataSource = dt4;
+            SqlDataAdapter da4 = new SqlDataAdapter(select4, sqlconn);
+            DataTable dt4 = new DataTable();
+            da4.Fill(dt4);
+            activitiesDataGridView.DataSource = dt4;
 
             sqlconn.Close();
             
-            dataGridView1.Columns[0].HeaderText = "ID учня";
-            dataGridView1.Columns[1].HeaderText = "ПІБ";
-            dataGridView1.Columns[2].HeaderText = "Кількість пропусків";
+            skipsDataGridView.Columns[0].HeaderText = "ID учня";
+            skipsDataGridView.Columns[1].HeaderText = "ПІБ";
+            skipsDataGridView.Columns[2].HeaderText = "Кількість пропусків";
 
-            dataGridView2.Columns[0].HeaderText = "ID учня";
-            dataGridView2.Columns[1].HeaderText = "ПІБ";
-            dataGridView2.Columns[2].HeaderText = "Місяць";
+            birthdaysDataGridView.Columns[0].HeaderText = "ID учня";
+            birthdaysDataGridView.Columns[1].HeaderText = "ПІБ";
+            birthdaysDataGridView.Columns[2].HeaderText = "Місяць";
 
-            dataGridView3.Columns[0].HeaderText = "ID оплати";
-            dataGridView3.Columns[1].HeaderText = "ПІБ";
-            dataGridView3.Columns[2].HeaderText = "Тип тарифу";
-            dataGridView3.Columns[3].HeaderText = "Місяць";
+            debtorsDataGridView.Columns[0].HeaderText = "ID оплати";
+            debtorsDataGridView.Columns[1].HeaderText = "ПІБ";
+            debtorsDataGridView.Columns[2].HeaderText = "Тип тарифу";
+            debtorsDataGridView.Columns[3].HeaderText = "Місяць";
+
+            activitiesDataGridView.Columns[0].HeaderText = "ID активності";
+            activitiesDataGridView.Columns[1].HeaderText = "Назва";
+            activitiesDataGridView.Columns[2].HeaderText = "Брали участь";
 
             // chartBirthMonth
-            int birthCount = dataGridView2.Rows.Count - 1;
+            int birthCount = birthdaysDataGridView.Rows.Count - 1;
             List<string> birthMonth = new List<string>();
             for (int i = 0; i < birthCount; i++)
             {
-                if (!birthMonth.Contains(Convert.ToString(dataGridView2.Rows[i].Cells[2].Value)))
+                if (!birthMonth.Contains(Convert.ToString(birthdaysDataGridView.Rows[i].Cells[2].Value)))
                 {
-                    birthMonth.Add(Convert.ToString(dataGridView2.Rows[i].Cells[2].Value));
+                    birthMonth.Add(Convert.ToString(birthdaysDataGridView.Rows[i].Cells[2].Value));
                 }
             }
             Dictionary<string, double> birthData = new Dictionary<string, double>();
@@ -114,13 +123,13 @@ namespace Курсовая
                 chartBirthMonth.Series[0].Points.AddXY(i, birthData[i]);
 
             // chartPaymentMonth
-            int paymentCount = dataGridView3.Rows.Count - 1;
+            int paymentCount = debtorsDataGridView.Rows.Count - 1;
             List<string> paymentMonth = new List<string>();
             for (int i = 0; i < paymentCount; i++)
             {
-                if (!paymentMonth.Contains(Convert.ToString(dataGridView3.Rows[i].Cells[3].Value)))
+                if (!paymentMonth.Contains(Convert.ToString(debtorsDataGridView.Rows[i].Cells[3].Value)))
                 {
-                    paymentMonth.Add(Convert.ToString(dataGridView3.Rows[i].Cells[3].Value));
+                    paymentMonth.Add(Convert.ToString(debtorsDataGridView.Rows[i].Cells[3].Value));
                 }
             }
             Dictionary<string, double> paymentData = new Dictionary<string, double>();
@@ -134,6 +143,14 @@ namespace Курсовая
             }
             foreach (string i in paymentData.Keys)
                 chartPaymentMonth.Series[0].Points.AddXY(i, paymentData[i]);
+
+            // chartActivity
+            int activityCount = activitiesDataGridView.Rows.Count - 1;
+            for (int i = 0; i < activityCount; i++)
+            {
+                chartActivity.Series[0].Points.AddXY(Convert.ToString(activitiesDataGridView.Rows[i].Cells[1].Value),
+                    Convert.ToString(activitiesDataGridView.Rows[i].Cells[2].Value));
+            }
         }
     }
 }

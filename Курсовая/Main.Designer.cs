@@ -38,6 +38,11 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.pfilesButton_Main = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.skipsButton = new System.Windows.Forms.Button();
+            this.birthdaysButton = new System.Windows.Forms.Button();
+            this.debtersButton = new System.Windows.Forms.Button();
+            this.activititesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pupilsButton_Main
@@ -135,11 +140,66 @@
             this.pfilesButton_Main.UseVisualStyleBackColor = true;
             this.pfilesButton_Main.Click += new System.EventHandler(this.pfilesButton_Main_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(40, 234);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Статистика";
+            // 
+            // skipsButton
+            // 
+            this.skipsButton.Location = new System.Drawing.Point(192, 273);
+            this.skipsButton.Name = "skipsButton";
+            this.skipsButton.Size = new System.Drawing.Size(106, 39);
+            this.skipsButton.TabIndex = 11;
+            this.skipsButton.Text = "Пропуски контрольних";
+            this.skipsButton.UseVisualStyleBackColor = true;
+            this.skipsButton.Click += new System.EventHandler(this.skipsButton_Click);
+            // 
+            // birthdaysButton
+            // 
+            this.birthdaysButton.Location = new System.Drawing.Point(30, 273);
+            this.birthdaysButton.Name = "birthdaysButton";
+            this.birthdaysButton.Size = new System.Drawing.Size(106, 39);
+            this.birthdaysButton.TabIndex = 12;
+            this.birthdaysButton.Text = "Дні народження";
+            this.birthdaysButton.UseVisualStyleBackColor = true;
+            this.birthdaysButton.Click += new System.EventHandler(this.birthdaysButton_Click);
+            // 
+            // debtersButton
+            // 
+            this.debtersButton.Location = new System.Drawing.Point(530, 272);
+            this.debtersButton.Name = "debtersButton";
+            this.debtersButton.Size = new System.Drawing.Size(119, 40);
+            this.debtersButton.TabIndex = 13;
+            this.debtersButton.Text = "Боржники по оплаті";
+            this.debtersButton.UseVisualStyleBackColor = true;
+            this.debtersButton.Click += new System.EventHandler(this.debtersButton_Click);
+            // 
+            // activititesButton
+            // 
+            this.activititesButton.Location = new System.Drawing.Point(362, 272);
+            this.activititesButton.Name = "activititesButton";
+            this.activititesButton.Size = new System.Drawing.Size(107, 40);
+            this.activititesButton.TabIndex = 14;
+            this.activititesButton.Text = "Участь в активності";
+            this.activititesButton.UseVisualStyleBackColor = true;
+            this.activititesButton.Click += new System.EventHandler(this.activititesButton_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 397);
+            this.Controls.Add(this.activititesButton);
+            this.Controls.Add(this.debtersButton);
+            this.Controls.Add(this.birthdaysButton);
+            this.Controls.Add(this.skipsButton);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pfilesButton_Main);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -170,6 +230,11 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button pfilesButton_Main;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button skipsButton;
+        private System.Windows.Forms.Button birthdaysButton;
+        private System.Windows.Forms.Button debtersButton;
+        private System.Windows.Forms.Button activititesButton;
     }
 }
 

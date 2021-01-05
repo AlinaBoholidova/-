@@ -30,5 +30,33 @@ namespace Курсовая
             PersonnelFiles pfiles = new PersonnelFiles();
             pfiles.Show();
         }
+
+        private void birthdaysButton_Click(object sender, EventArgs e)
+        {
+            Statistics statistics = new Statistics();
+            statistics.statsTabControl.SelectedTab = statistics.birthdaysTabPage;
+            statistics.Show();
+        }
+
+        private void skipsButton_Click(object sender, EventArgs e)
+        {
+            Statistics statistics = new Statistics();
+            statistics.statsTabControl.SelectedTab = statistics.skipsTabPage;
+            statistics.Show();
+        }
+
+        private void activititesButton_Click(object sender, EventArgs e)
+        {
+            Statistics statistics = new Statistics();
+            statistics.statsTabControl.SelectedTab = statistics.activitiesTabPage;
+            statistics.Show();
+        }
+
+        private void debtersButton_Click(object sender, EventArgs e)
+        {
+            Statistics statistics = new Statistics();
+            statistics.statsTabControl.SelectedTab = statistics.debtersTabPage;
+            statistics.Show();
+        }
     }
 }
