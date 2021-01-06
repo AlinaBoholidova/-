@@ -23,6 +23,7 @@ namespace Курсовая
             //Application.Run(new Main());
             //Application.Run(new Statistics());
             //Application.Run(new ViewReceipt());
+            Application.Run(new ViewScores());
 
             //DataContext db = new DataContext(СonnectionString);
 

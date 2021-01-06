@@ -132,6 +132,12 @@
     <Compile Include="ViewReceipt.Designer.cs">
       <DependentUpon>ViewReceipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewScores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewScores.Designer.cs">
+      <DependentUpon>ViewScores.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +166,7 @@
       <DependentUpon>Pupils.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Receipt.rdlc" />
+    <EmbeddedResource Include="Scores.rdlc" />
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewReceipt.resx">
       <DependentUpon>ViewReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewScores.resx">
+      <DependentUpon>ViewScores.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
