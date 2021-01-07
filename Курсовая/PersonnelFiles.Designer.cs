@@ -31,6 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.pfilesDataGridView = new System.Windows.Forms.DataGridView();
+            this.pupilIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sNPfatherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sNPmotherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sNPcustodianDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.schoolCourseDataSet = new Курсовая.SchoolCourseDataSet();
             this.back_PersonelFiles = new System.Windows.Forms.Button();
             this.showAll_PersonnelFiles = new System.Windows.Forms.Button();
             this.delete_PersonnelFiles = new System.Windows.Forms.Button();
@@ -47,14 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.addressCheckBox_PersonnelFiles = new System.Windows.Forms.CheckBox();
             this.phoneCheckBox_PersonnelFiles = new System.Windows.Forms.CheckBox();
-            this.pupilIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNPfatherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNPmotherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNPcustodianDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.schoolCourseDataSet = new Курсовая.SchoolCourseDataSet();
             this.personnelFileTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.PersonnelFileTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pfilesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pfileBindingSource)).BeginInit();
@@ -91,6 +91,64 @@
             this.pfilesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pfilesDataGridView.Size = new System.Drawing.Size(730, 150);
             this.pfilesDataGridView.TabIndex = 1;
+            // 
+            // pupilIDDataGridViewTextBoxColumn
+            // 
+            this.pupilIDDataGridViewTextBoxColumn.DataPropertyName = "Pupil_ID";
+            this.pupilIDDataGridViewTextBoxColumn.HeaderText = "ID учня";
+            this.pupilIDDataGridViewTextBoxColumn.Name = "pupilIDDataGridViewTextBoxColumn";
+            this.pupilIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pupilIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // sNPfatherDataGridViewTextBoxColumn
+            // 
+            this.sNPfatherDataGridViewTextBoxColumn.DataPropertyName = "SNP_father";
+            this.sNPfatherDataGridViewTextBoxColumn.HeaderText = "ПІБ батька";
+            this.sNPfatherDataGridViewTextBoxColumn.Name = "sNPfatherDataGridViewTextBoxColumn";
+            this.sNPfatherDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sNPfatherDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // sNPmotherDataGridViewTextBoxColumn
+            // 
+            this.sNPmotherDataGridViewTextBoxColumn.DataPropertyName = "SNP_mother";
+            this.sNPmotherDataGridViewTextBoxColumn.HeaderText = "ПІБ матері";
+            this.sNPmotherDataGridViewTextBoxColumn.Name = "sNPmotherDataGridViewTextBoxColumn";
+            this.sNPmotherDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sNPmotherDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // sNPcustodianDataGridViewTextBoxColumn
+            // 
+            this.sNPcustodianDataGridViewTextBoxColumn.DataPropertyName = "SNP_custodian";
+            this.sNPcustodianDataGridViewTextBoxColumn.HeaderText = "ПІБ опікуна";
+            this.sNPcustodianDataGridViewTextBoxColumn.Name = "sNPcustodianDataGridViewTextBoxColumn";
+            this.sNPcustodianDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sNPcustodianDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Адреса";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addressDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // pfileBindingSource
+            // 
+            this.pfileBindingSource.DataMember = "PersonnelFile";
+            this.pfileBindingSource.DataSource = this.schoolCourseDataSet;
+            // 
+            // schoolCourseDataSet
+            // 
+            this.schoolCourseDataSet.DataSetName = "SchoolCourseDataSet";
+            this.schoolCourseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // back_PersonelFiles
             // 
@@ -152,14 +210,14 @@
             "ПІБ опікуна",
             "Адреса",
             "Телефон"});
-            this.sortComboBox_PersonnelFiles.Location = new System.Drawing.Point(482, 331);
+            this.sortComboBox_PersonnelFiles.Location = new System.Drawing.Point(437, 328);
             this.sortComboBox_PersonnelFiles.Name = "sortComboBox_PersonnelFiles";
             this.sortComboBox_PersonnelFiles.Size = new System.Drawing.Size(140, 21);
             this.sortComboBox_PersonnelFiles.TabIndex = 22;
             // 
             // toSort_PersonnelFiles
             // 
-            this.toSort_PersonnelFiles.Location = new System.Drawing.Point(516, 378);
+            this.toSort_PersonnelFiles.Location = new System.Drawing.Point(471, 375);
             this.toSort_PersonnelFiles.Name = "toSort_PersonnelFiles";
             this.toSort_PersonnelFiles.Size = new System.Drawing.Size(75, 23);
             this.toSort_PersonnelFiles.TabIndex = 21;
@@ -170,7 +228,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(513, 290);
+            this.label3.Location = new System.Drawing.Point(468, 287);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 20;
@@ -251,64 +309,6 @@
             this.phoneCheckBox_PersonnelFiles.TabIndex = 34;
             this.phoneCheckBox_PersonnelFiles.Text = "Телефон";
             this.phoneCheckBox_PersonnelFiles.UseVisualStyleBackColor = true;
-            // 
-            // pupilIDDataGridViewTextBoxColumn
-            // 
-            this.pupilIDDataGridViewTextBoxColumn.DataPropertyName = "Pupil_ID";
-            this.pupilIDDataGridViewTextBoxColumn.HeaderText = "ID учня";
-            this.pupilIDDataGridViewTextBoxColumn.Name = "pupilIDDataGridViewTextBoxColumn";
-            this.pupilIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pupilIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // sNPfatherDataGridViewTextBoxColumn
-            // 
-            this.sNPfatherDataGridViewTextBoxColumn.DataPropertyName = "SNP_father";
-            this.sNPfatherDataGridViewTextBoxColumn.HeaderText = "ПІБ батька";
-            this.sNPfatherDataGridViewTextBoxColumn.Name = "sNPfatherDataGridViewTextBoxColumn";
-            this.sNPfatherDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sNPfatherDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // sNPmotherDataGridViewTextBoxColumn
-            // 
-            this.sNPmotherDataGridViewTextBoxColumn.DataPropertyName = "SNP_mother";
-            this.sNPmotherDataGridViewTextBoxColumn.HeaderText = "ПІБ матері";
-            this.sNPmotherDataGridViewTextBoxColumn.Name = "sNPmotherDataGridViewTextBoxColumn";
-            this.sNPmotherDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sNPmotherDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // sNPcustodianDataGridViewTextBoxColumn
-            // 
-            this.sNPcustodianDataGridViewTextBoxColumn.DataPropertyName = "SNP_custodian";
-            this.sNPcustodianDataGridViewTextBoxColumn.HeaderText = "ПІБ опікуна";
-            this.sNPcustodianDataGridViewTextBoxColumn.Name = "sNPcustodianDataGridViewTextBoxColumn";
-            this.sNPcustodianDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sNPcustodianDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Адреса";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.addressDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.phoneDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // pfileBindingSource
-            // 
-            this.pfileBindingSource.DataMember = "PersonnelFile";
-            this.pfileBindingSource.DataSource = this.schoolCourseDataSet;
-            // 
-            // schoolCourseDataSet
-            // 
-            this.schoolCourseDataSet.DataSetName = "SchoolCourseDataSet";
-            this.schoolCourseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // personnelFileTableAdapter
             // 

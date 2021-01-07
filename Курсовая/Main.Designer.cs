@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.testsSubjectsButton_Main = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.pfilesButton_Main = new System.Windows.Forms.Button();
@@ -103,14 +103,15 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Оплата";
             // 
-            // button4
+            // testsSubjectsButton_Main
             // 
-            this.button4.Location = new System.Drawing.Point(43, 168);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 35);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Предмети";
-            this.button4.UseVisualStyleBackColor = true;
+            this.testsSubjectsButton_Main.Location = new System.Drawing.Point(43, 168);
+            this.testsSubjectsButton_Main.Name = "testsSubjectsButton_Main";
+            this.testsSubjectsButton_Main.Size = new System.Drawing.Size(115, 35);
+            this.testsSubjectsButton_Main.TabIndex = 6;
+            this.testsSubjectsButton_Main.Text = "Контрольні роботи та предмети";
+            this.testsSubjectsButton_Main.UseVisualStyleBackColor = true;
+            this.testsSubjectsButton_Main.Click += new System.EventHandler(this.testsSubjectsButton_Main_Click);
             // 
             // button5
             // 
@@ -203,7 +204,7 @@
             this.Controls.Add(this.pfilesButton_Main);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.testsSubjectsButton_Main);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -226,7 +227,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button testsSubjectsButton_Main;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button pfilesButton_Main;

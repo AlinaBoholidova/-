@@ -197,7 +197,8 @@ namespace Курсовая
                     if (allCheckBox_Pupils.Checked)
                     {
                         SqlDataAdapter oda = new SqlDataAdapter(select +
-                            "CONCAT(Pupil_ID, SNP, BirthDate) LIKE '%" + toSearch + "%'", sqlconn);
+                            "CONCAT(Pupil_ID, SNP, CONVERT(varchar, BirthDate, 104)) " +
+                            "LIKE '%" + toSearch + "%'", sqlconn);
                         DataTable dt = new DataTable();
                         oda.Fill(dt);
                         pupilDataGridView.DataSource = dt;
@@ -224,7 +225,7 @@ namespace Курсовая
                     else if (birthCheckBox_Pupils.Checked)
                     {
                         SqlDataAdapter oda = new SqlDataAdapter(select +
-                            "BirthDate LIKE '%" + toSearch + "%'", sqlconn);
+                            "CONVERT(varchar, BirthDate, 104) LIKE '%" + toSearch + "%'", sqlconn);
                         DataTable dt = new DataTable();
                         oda.Fill(dt);
                         pupilDataGridView.DataSource = dt;

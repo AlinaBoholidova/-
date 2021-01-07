@@ -58,5 +58,12 @@ namespace Курсовая
             statistics.statsTabControl.SelectedTab = statistics.debtersTabPage;
             statistics.Show();
         }
+
+        private void testsSubjectsButton_Main_Click(object sender, EventArgs e)
+        {
+            Subjects subjects = new Subjects();
+            this.Hide();
+            subjects.Show();
+        }
     }
 }
