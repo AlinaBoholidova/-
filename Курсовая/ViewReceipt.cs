@@ -23,9 +23,8 @@ namespace Курсовая
 
         private void ViewReceipt_Load(object sender, EventArgs e)
         {
-
-
-            string select = "SELECT Payment.Payment_ID, Pupil.SNP, PaymentRate.PaymentRate_type, PaymentRate.Sum, Payment.Month " +
+            string select = "SELECT Payment.Payment_ID, Pupil.SNP, PaymentRate.PaymentRate_type, " +
+                "PaymentRate.Sum, Payment.Month " +
                 "FROM Pupil INNER JOIN Payment ON Pupil.Pupil_ID = Payment.Pupil_ID INNER JOIN " +
                 "PaymentRate ON Payment.PaymentRate_ID = PaymentRate.PaymentRate_ID " +
                 $"WHERE Payment.Paid = 0";
@@ -37,19 +36,23 @@ namespace Курсовая
             da.Fill(dt);
             paymentDataGridView.DataSource = dt;
             sqlconn.Close();
+
+            paymentDataGridView.Columns[0].HeaderText = "№ квитанції";
+            paymentDataGridView.Columns[1].HeaderText = "ПІБ учня";
+            paymentDataGridView.Columns[2].HeaderText = "Тип тарифу";
+            paymentDataGridView.Columns[3].HeaderText = "Сума";
+            paymentDataGridView.Columns[4].HeaderText = "Місяць";
         }
 
         private void receiptPreviewButton_Click(object sender, EventArgs e)
         {
             this.receiptReportViewer.RefreshReport();
-
             int id = Convert.ToInt32(paymentDataGridView.SelectedRows[0].Cells[0].Value);
-
             string select = "SELECT Payment.Payment_ID, Pupil.SNP, PaymentRate.PaymentRate_type, " +
                 "PaymentRate.Sum, Payment.Month " +
                 "FROM Pupil INNER JOIN Payment ON Pupil.Pupil_ID = Payment.Pupil_ID INNER JOIN " +
                 "PaymentRate ON Payment.PaymentRate_ID = PaymentRate.PaymentRate_ID " +
-                $"WHERE Payment.Paid = 0 AND Payment.Pupil_ID = " +
+                "WHERE Payment.Paid = 0 AND Payment.Pupil_ID = " +
                 $"(SELECT Pupil_ID FROM Payment WHERE Payment_ID = {id})";
 
             SqlConnection sqlconn = new SqlConnection(ConnectionString);

@@ -29,61 +29,106 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pupilBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.scoresDataGridView = new System.Windows.Forms.DataGridView();
+            this.scoresReportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.idComboBox = new System.Windows.Forms.ComboBox();
+            this.SNPlabel = new System.Windows.Forms.Label();
+            this.previewButton = new System.Windows.Forms.Button();
+            this.fromDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.toDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.timeCheckBox = new System.Windows.Forms.CheckBox();
             this.schoolCourseDataSet = new Курсовая.SchoolCourseDataSet();
+            this.pupilBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pupilTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.PupilTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pupilBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scoresDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pupilBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // scoresDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 83);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(391, 233);
-            this.dataGridView1.TabIndex = 0;
+            this.scoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.scoresDataGridView.Location = new System.Drawing.Point(12, 83);
+            this.scoresDataGridView.Name = "scoresDataGridView";
+            this.scoresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.scoresDataGridView.Size = new System.Drawing.Size(391, 233);
+            this.scoresDataGridView.TabIndex = 0;
             // 
-            // reportViewer1
+            // scoresReportViewer
             // 
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Курсовая.Scores.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(445, 33);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(434, 312);
-            this.reportViewer1.TabIndex = 1;
+            this.scoresReportViewer.LocalReport.ReportEmbeddedResource = "Курсовая.Scores.rdlc";
+            this.scoresReportViewer.Location = new System.Drawing.Point(445, 33);
+            this.scoresReportViewer.Name = "scoresReportViewer";
+            this.scoresReportViewer.ServerReport.BearerToken = null;
+            this.scoresReportViewer.Size = new System.Drawing.Size(434, 312);
+            this.scoresReportViewer.TabIndex = 1;
             // 
-            // comboBox1
+            // idComboBox
             // 
-            this.comboBox1.DataSource = this.pupilBindingSource;
-            this.comboBox1.DisplayMember = "Pupil_ID";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(55, 21);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.idComboBox.DataSource = this.pupilBindingSource;
+            this.idComboBox.DisplayMember = "Pupil_ID";
+            this.idComboBox.FormattingEnabled = true;
+            this.idComboBox.Location = new System.Drawing.Point(59, 34);
+            this.idComboBox.Name = "idComboBox";
+            this.idComboBox.Size = new System.Drawing.Size(55, 21);
+            this.idComboBox.TabIndex = 2;
+            this.idComboBox.SelectedIndexChanged += new System.EventHandler(this.idComboBox_SelectedIndexChanged);
             // 
-            // pupilBindingSource
+            // SNPlabel
             // 
-            this.pupilBindingSource.DataMember = "Pupil";
-            this.pupilBindingSource.DataSource = this.schoolCourseDataSet;
+            this.SNPlabel.AutoSize = true;
+            this.SNPlabel.Location = new System.Drawing.Point(129, 40);
+            this.SNPlabel.Name = "SNPlabel";
+            this.SNPlabel.Size = new System.Drawing.Size(35, 13);
+            this.SNPlabel.TabIndex = 3;
+            this.SNPlabel.Text = "label1";
+            // 
+            // previewButton
+            // 
+            this.previewButton.Location = new System.Drawing.Point(309, 22);
+            this.previewButton.Name = "previewButton";
+            this.previewButton.Size = new System.Drawing.Size(94, 49);
+            this.previewButton.TabIndex = 4;
+            this.previewButton.Text = "Перегляд виписки оцінок";
+            this.previewButton.UseVisualStyleBackColor = true;
+            this.previewButton.Click += new System.EventHandler(this.previewButton_Click);
+            // 
+            // fromDateTimePicker
+            // 
+            this.fromDateTimePicker.Location = new System.Drawing.Point(46, 389);
+            this.fromDateTimePicker.Name = "fromDateTimePicker";
+            this.fromDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.fromDateTimePicker.TabIndex = 5;
+            // 
+            // toDateTimePicker
+            // 
+            this.toDateTimePicker.Location = new System.Drawing.Point(296, 389);
+            this.toDateTimePicker.Name = "toDateTimePicker";
+            this.toDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.toDateTimePicker.TabIndex = 6;
+            // 
+            // timeCheckBox
+            // 
+            this.timeCheckBox.AutoSize = true;
+            this.timeCheckBox.Location = new System.Drawing.Point(632, 389);
+            this.timeCheckBox.Name = "timeCheckBox";
+            this.timeCheckBox.Size = new System.Drawing.Size(86, 17);
+            this.timeCheckBox.TabIndex = 9;
+            this.timeCheckBox.Text = "За весь час";
+            this.timeCheckBox.UseVisualStyleBackColor = true;
             // 
             // schoolCourseDataSet
             // 
             this.schoolCourseDataSet.DataSetName = "SchoolCourseDataSet";
             this.schoolCourseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pupilBindingSource
+            // 
+            this.pupilBindingSource.DataMember = "Pupil";
+            this.pupilBindingSource.DataSource = this.schoolCourseDataSet;
             // 
             // pupilTableAdapter
             // 
@@ -92,86 +137,53 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(113, 40);
+            this.label1.Location = new System.Drawing.Point(7, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(291, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 49);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Перегляд виписки оцінок";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(7, 360);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 5;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(231, 360);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 6;
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "ID учня:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(524, 382);
+            this.label2.Location = new System.Drawing.Point(10, 389);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Між";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(691, 381);
+            this.label3.Location = new System.Drawing.Point(261, 393);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "label3";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(179, 403);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(86, 17);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "За весь час";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.label3.Size = new System.Drawing.Size(18, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "та";
             // 
             // ViewScores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 446);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.reportViewer1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.timeCheckBox);
+            this.Controls.Add(this.toDateTimePicker);
+            this.Controls.Add(this.fromDateTimePicker);
+            this.Controls.Add(this.previewButton);
+            this.Controls.Add(this.SNPlabel);
+            this.Controls.Add(this.idComboBox);
+            this.Controls.Add(this.scoresReportViewer);
+            this.Controls.Add(this.scoresDataGridView);
             this.Name = "ViewScores";
             this.Text = "ViewScores";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ViewScores_FormClosing);
             this.Load += new System.EventHandler(this.ViewScores_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pupilBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scoresDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pupilBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,18 +191,19 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingSource pupilBindingSource;
+        private System.Windows.Forms.DataGridView scoresDataGridView;
+        private Microsoft.Reporting.WinForms.ReportViewer scoresReportViewer;
+        private System.Windows.Forms.ComboBox idComboBox;
+        private System.Windows.Forms.Label SNPlabel;
+        private System.Windows.Forms.Button previewButton;
+        private System.Windows.Forms.DateTimePicker fromDateTimePicker;
+        private System.Windows.Forms.DateTimePicker toDateTimePicker;
+        private System.Windows.Forms.CheckBox timeCheckBox;
         private SchoolCourseDataSet schoolCourseDataSet;
+        private System.Windows.Forms.BindingSource pupilBindingSource;
         private SchoolCourseDataSetTableAdapters.PupilTableAdapter pupilTableAdapter;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
