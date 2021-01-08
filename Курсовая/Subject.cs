@@ -13,6 +13,7 @@ namespace Курсовая
     public partial class Subject : Form
     {
         readonly bool edit;
+        private readonly string abbr;
 
         public Subject()
         {
@@ -23,6 +24,7 @@ namespace Курсовая
         public Subject(string abbr, string name) : this()
         {
             edit = true;
+            this.abbr = abbr;
             subject_abbrTextBox.Text = abbr;
             subject_nameTextBox.Text = name;
         }
@@ -40,10 +42,10 @@ namespace Курсовая
 
         private void OK_Subject_Click(object sender, EventArgs e)
         {
-            string abbr = subject_abbrTextBox.Text;
+            string newAbbr = subject_abbrTextBox.Text;
             if (edit)
             {
-                subjectTableAdapter.UpdateQuery(Convert.ToString(subject_nameTextBox.Text), abbr);
+                subjectTableAdapter.UpdateQuery(newAbbr, Convert.ToString(subject_nameTextBox.Text), abbr);
             }
             else
             {

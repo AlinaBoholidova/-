@@ -9158,11 +9158,12 @@ SELECT Subject_abbr, Subject_name FROM Subject WHERE (Subject_abbr = @Subject_ab
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject_name", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Subject_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE [dbo].[Subject] SET [Subject_abbr] = @Subject_abbr, [Subject_name] = @Subj" +
-                "ect_name WHERE ([Subject_abbr] = @Subject_abbr)";
+            this._commandCollection[4].CommandText = "UPDATE [dbo].[Subject] SET [Subject_abbr] = @NewSubject_abbr, [Subject_name] = @S" +
+                "ubject_name WHERE ([Subject_abbr] = @OriginalSubject_abbr)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject_abbr", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Subject_abbr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewSubject_abbr", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Subject_abbr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject_name", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Subject_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OriginalSubject_abbr", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Subject_abbr", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9441,19 +9442,25 @@ SELECT Subject_abbr, Subject_name FROM Subject WHERE (Subject_abbr = @Subject_ab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(string Subject_abbr, string Subject_name) {
+        public virtual int UpdateQuery(string NewSubject_abbr, string Subject_name, string OriginalSubject_abbr) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
-            if ((Subject_abbr == null)) {
-                throw new global::System.ArgumentNullException("Subject_abbr");
+            if ((NewSubject_abbr == null)) {
+                throw new global::System.ArgumentNullException("NewSubject_abbr");
             }
             else {
-                command.Parameters[0].Value = ((string)(Subject_abbr));
+                command.Parameters[0].Value = ((string)(NewSubject_abbr));
             }
             if ((Subject_name == null)) {
                 throw new global::System.ArgumentNullException("Subject_name");
             }
             else {
                 command.Parameters[1].Value = ((string)(Subject_name));
+            }
+            if ((OriginalSubject_abbr == null)) {
+                throw new global::System.ArgumentNullException("OriginalSubject_abbr");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(OriginalSubject_abbr));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

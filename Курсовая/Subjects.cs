@@ -265,6 +265,29 @@ namespace Курсовая
             }
         }
 
+        private void toFilter_Tests_Click(object sender, EventArgs e)
+        {
+            string fromDate = fromDateTimePicker.Value.ToString("yyyy-MM-dd");
+            string toDate = toDateTimePicker.Value.Date.ToString("yyyy-MM-dd");
+            string select = "SELECT * FROM Test WHERE Test_date " +
+                $"BETWEEN CONVERT(datetime, '{fromDate}') AND CONVERT(datetime, '{toDate}')";
+
+            try
+            {
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                sqlconn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(select, sqlconn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                testsDataGridView.DataSource = dt;
+                sqlconn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Error: " + ex.Message);
+            }
+        }
+
         private void add_Subjects_Click(object sender, EventArgs e)
         {
             var add = new Subject();
@@ -282,6 +305,7 @@ namespace Курсовая
                 row[1].ToString());
             edt.ShowDialog();
             subjectTableAdapter.Fill(schoolCourseDataSet.Subject);
+            testTableAdapter.Fill(schoolCourseDataSet.Test);
             schoolCourseDataSet.AcceptChanges();
         }
 
@@ -295,5 +319,6 @@ namespace Курсовая
                 schoolCourseDataSet.AcceptChanges();
             }
         }
+
     }
 }

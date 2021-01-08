@@ -44,6 +44,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // subject_abbrLabel
+            // 
+            subject_abbrLabel.AutoSize = true;
+            subject_abbrLabel.Location = new System.Drawing.Point(22, 34);
+            subject_abbrLabel.Name = "subject_abbrLabel";
+            subject_abbrLabel.Size = new System.Drawing.Size(122, 13);
+            subject_abbrLabel.TabIndex = 12;
+            subject_abbrLabel.Text = "Абревіатура предмету:";
+            // 
+            // subject_nameLabel
+            // 
+            subject_nameLabel.AutoSize = true;
+            subject_nameLabel.Location = new System.Drawing.Point(22, 76);
+            subject_nameLabel.Name = "subject_nameLabel";
+            subject_nameLabel.Size = new System.Drawing.Size(93, 13);
+            subject_nameLabel.TabIndex = 13;
+            subject_nameLabel.Text = "Назва предмету:";
+            // 
             // Cancel_Subject
             // 
             this.Cancel_Subject.Location = new System.Drawing.Point(208, 133);
@@ -78,35 +96,15 @@
             // 
             this.subjectTableAdapter.ClearBeforeFill = true;
             // 
-            // subject_abbrLabel
-            // 
-            subject_abbrLabel.AutoSize = true;
-            subject_abbrLabel.Location = new System.Drawing.Point(22, 34);
-            subject_abbrLabel.Name = "subject_abbrLabel";
-            subject_abbrLabel.Size = new System.Drawing.Size(122, 13);
-            subject_abbrLabel.TabIndex = 12;
-            subject_abbrLabel.Text = "Абревіатура предмету:";
-            // 
             // subject_abbrTextBox
             // 
-            this.subject_abbrTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.subjectBindingSource, "Subject_abbr", true));
             this.subject_abbrTextBox.Location = new System.Drawing.Point(165, 31);
             this.subject_abbrTextBox.Name = "subject_abbrTextBox";
             this.subject_abbrTextBox.Size = new System.Drawing.Size(161, 20);
             this.subject_abbrTextBox.TabIndex = 13;
             // 
-            // subject_nameLabel
-            // 
-            subject_nameLabel.AutoSize = true;
-            subject_nameLabel.Location = new System.Drawing.Point(22, 76);
-            subject_nameLabel.Name = "subject_nameLabel";
-            subject_nameLabel.Size = new System.Drawing.Size(93, 13);
-            subject_nameLabel.TabIndex = 13;
-            subject_nameLabel.Text = "Назва предмету:";
-            // 
             // subject_nameTextBox
             // 
-            this.subject_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.subjectBindingSource, "Subject_name", true));
             this.subject_nameTextBox.Location = new System.Drawing.Point(165, 73);
             this.subject_nameTextBox.Name = "subject_nameTextBox";
             this.subject_nameTextBox.Size = new System.Drawing.Size(161, 20);

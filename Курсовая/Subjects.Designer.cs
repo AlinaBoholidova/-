@@ -71,6 +71,13 @@
             this.add_Subjects = new System.Windows.Forms.Button();
             this.subjectTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.SubjectTableAdapter();
             this.testTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.TestTableAdapter();
+            this.toFilter_Tests = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.fromDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.toDateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.subjectsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).BeginInit();
@@ -199,7 +206,7 @@
             // allCheckBox_Subjects
             // 
             this.allCheckBox_Subjects.AutoSize = true;
-            this.allCheckBox_Subjects.Location = new System.Drawing.Point(522, 345);
+            this.allCheckBox_Subjects.Location = new System.Drawing.Point(547, 340);
             this.allCheckBox_Subjects.Name = "allCheckBox_Subjects";
             this.allCheckBox_Subjects.Size = new System.Drawing.Size(69, 17);
             this.allCheckBox_Subjects.TabIndex = 38;
@@ -209,7 +216,7 @@
             // abbrCheckBox_Subjects
             // 
             this.abbrCheckBox_Subjects.AutoSize = true;
-            this.abbrCheckBox_Subjects.Location = new System.Drawing.Point(522, 368);
+            this.abbrCheckBox_Subjects.Location = new System.Drawing.Point(547, 363);
             this.abbrCheckBox_Subjects.Name = "abbrCheckBox_Subjects";
             this.abbrCheckBox_Subjects.Size = new System.Drawing.Size(138, 17);
             this.abbrCheckBox_Subjects.TabIndex = 37;
@@ -218,7 +225,7 @@
             // 
             // toSearch_Subjects
             // 
-            this.toSearch_Subjects.Location = new System.Drawing.Point(536, 439);
+            this.toSearch_Subjects.Location = new System.Drawing.Point(561, 434);
             this.toSearch_Subjects.Name = "toSearch_Subjects";
             this.toSearch_Subjects.Size = new System.Drawing.Size(75, 23);
             this.toSearch_Subjects.TabIndex = 36;
@@ -229,7 +236,7 @@
             // nameCheckBox_Subjects
             // 
             this.nameCheckBox_Subjects.AutoSize = true;
-            this.nameCheckBox_Subjects.Location = new System.Drawing.Point(522, 390);
+            this.nameCheckBox_Subjects.Location = new System.Drawing.Point(547, 385);
             this.nameCheckBox_Subjects.Name = "nameCheckBox_Subjects";
             this.nameCheckBox_Subjects.Size = new System.Drawing.Size(109, 17);
             this.nameCheckBox_Subjects.TabIndex = 35;
@@ -238,7 +245,7 @@
             // 
             // searchTextBox_Subjects
             // 
-            this.searchTextBox_Subjects.Location = new System.Drawing.Point(483, 413);
+            this.searchTextBox_Subjects.Location = new System.Drawing.Point(508, 408);
             this.searchTextBox_Subjects.Name = "searchTextBox_Subjects";
             this.searchTextBox_Subjects.Size = new System.Drawing.Size(195, 20);
             this.searchTextBox_Subjects.TabIndex = 34;
@@ -246,7 +253,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(544, 320);
+            this.label3.Location = new System.Drawing.Point(569, 315);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 33;
@@ -325,14 +332,14 @@
             "ID контрольної",
             "Абревіатура предмету",
             "Дата написання"});
-            this.sortComboBox_Tests.Location = new System.Drawing.Point(240, 371);
+            this.sortComboBox_Tests.Location = new System.Drawing.Point(251, 337);
             this.sortComboBox_Tests.Name = "sortComboBox_Tests";
             this.sortComboBox_Tests.Size = new System.Drawing.Size(140, 21);
             this.sortComboBox_Tests.TabIndex = 48;
             // 
             // toSort_Tests
             // 
-            this.toSort_Tests.Location = new System.Drawing.Point(274, 418);
+            this.toSort_Tests.Location = new System.Drawing.Point(285, 384);
             this.toSort_Tests.Name = "toSort_Tests";
             this.toSort_Tests.Size = new System.Drawing.Size(75, 23);
             this.toSort_Tests.TabIndex = 47;
@@ -343,7 +350,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(271, 330);
+            this.label5.Location = new System.Drawing.Point(282, 296);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 46;
@@ -355,14 +362,14 @@
             this.sortComboBox_Subjects.Items.AddRange(new object[] {
             "Абревіатура предмету",
             "Назва предмету"});
-            this.sortComboBox_Subjects.Location = new System.Drawing.Point(702, 386);
+            this.sortComboBox_Subjects.Location = new System.Drawing.Point(727, 381);
             this.sortComboBox_Subjects.Name = "sortComboBox_Subjects";
             this.sortComboBox_Subjects.Size = new System.Drawing.Size(140, 21);
             this.sortComboBox_Subjects.TabIndex = 51;
             // 
             // toSort_Subjects
             // 
-            this.toSort_Subjects.Location = new System.Drawing.Point(736, 433);
+            this.toSort_Subjects.Location = new System.Drawing.Point(761, 428);
             this.toSort_Subjects.Name = "toSort_Subjects";
             this.toSort_Subjects.Size = new System.Drawing.Size(75, 23);
             this.toSort_Subjects.TabIndex = 50;
@@ -373,7 +380,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(733, 345);
+            this.label6.Location = new System.Drawing.Point(758, 340);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 13);
             this.label6.TabIndex = 49;
@@ -467,11 +474,78 @@
             // 
             this.testTableAdapter.ClearBeforeFill = true;
             // 
+            // toFilter_Tests
+            // 
+            this.toFilter_Tests.Location = new System.Drawing.Point(277, 521);
+            this.toFilter_Tests.Name = "toFilter_Tests";
+            this.toFilter_Tests.Size = new System.Drawing.Size(83, 23);
+            this.toFilter_Tests.TabIndex = 61;
+            this.toFilter_Tests.Text = "Фільтрувати";
+            this.toFilter_Tests.UseVisualStyleBackColor = true;
+            this.toFilter_Tests.Click += new System.EventHandler(this.toFilter_Tests_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(285, 423);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.TabIndex = 60;
+            this.label7.Text = "Фільтрація";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(270, 449);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 13);
+            this.label8.TabIndex = 62;
+            this.label8.Text = "Дата написання";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(194, 484);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(26, 13);
+            this.label9.TabIndex = 63;
+            this.label9.Text = "Між";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(432, 484);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(18, 13);
+            this.label10.TabIndex = 64;
+            this.label10.Text = "та";
+            // 
+            // fromDateTimePicker
+            // 
+            this.fromDateTimePicker.Location = new System.Drawing.Point(226, 484);
+            this.fromDateTimePicker.Name = "fromDateTimePicker";
+            this.fromDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.fromDateTimePicker.TabIndex = 65;
+            // 
+            // toDateTimePicker
+            // 
+            this.toDateTimePicker.Location = new System.Drawing.Point(457, 484);
+            this.toDateTimePicker.Name = "toDateTimePicker";
+            this.toDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.toDateTimePicker.TabIndex = 66;
+            // 
             // Subjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 564);
+            this.Controls.Add(this.toDateTimePicker);
+            this.Controls.Add(this.fromDateTimePicker);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.toFilter_Tests);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.delete_Subjects);
             this.Controls.Add(this.change_Subjects);
             this.Controls.Add(this.add_Subjects);
@@ -505,6 +579,7 @@
             this.Controls.Add(this.testsDataGridView);
             this.Controls.Add(this.subjectsDataGridView);
             this.Name = "Subjects";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Предмети";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Subjects_FormClosing);
             this.Load += new System.EventHandler(this.Subjects_Load);
@@ -562,5 +637,12 @@
         private System.Windows.Forms.Button delete_Subjects;
         private System.Windows.Forms.Button change_Subjects;
         private System.Windows.Forms.Button add_Subjects;
+        private System.Windows.Forms.Button toFilter_Tests;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker fromDateTimePicker;
+        private System.Windows.Forms.DateTimePicker toDateTimePicker;
     }
 }
