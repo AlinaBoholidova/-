@@ -123,7 +123,6 @@ namespace Курсовая
                 }
             }
 
-
             Close();
         }
 

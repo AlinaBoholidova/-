@@ -33,22 +33,21 @@ namespace Курсовая
         {
             string abbr = "";
 
-
-
-            //if (edit)
-            //{
-            //    testTableAdapter.UpdateQuery();
-            //}
-            //else
-            //{
-            //    testTableAdapter.InsertQuery();
-            //}
+            if (subject_abbrComboBox.SelectedIndex > -1)
+            {
+                abbr = subject_abbrComboBox.Text;
+            }
+            if (edit)
+            {
+                testTableAdapter.UpdateQuery(abbr, Convert.ToString(test_dateDateTimePicker.Value.Date), id);
+            }
+            else
+            {
+                testTableAdapter.InsertQuery(abbr, Convert.ToString(test_dateDateTimePicker.Value.Date));
+            }
 
             Close();
         }
-
-
-
 
         private void Test_Load(object sender, EventArgs e)
         {

@@ -143,6 +143,27 @@ namespace Курсовая
             }
         }
 
+        private void add_Tests_Click(object sender, EventArgs e)
+        {
+            var add = new Test();
+            add.ShowDialog();
+            testTableAdapter.Fill(schoolCourseDataSet.Test);
+            schoolCourseDataSet.AcceptChanges();
+        }
+
+        private void change_Tests_Click(object sender, EventArgs e)
+        {
+            var ds = new SchoolCourseDataSet.TestDataTable();
+            testTableAdapter.FillBy(ds, Convert.ToInt32(testsDataGridView.SelectedRows[0].Cells[0].Value));
+            object[] row = ds.Rows[0].ItemArray;
+            var edt = new Test(Convert.ToInt32(row[0]),
+                row[1].ToString(),
+                Convert.ToDateTime(row[2]));
+            edt.ShowDialog();
+            testTableAdapter.Fill(schoolCourseDataSet.Test);
+            schoolCourseDataSet.AcceptChanges();
+        }
+
         private void delete_Tests_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Ви дійсно хочете видалити обрану контрольну роботу?", "Видалення контрольної роботи",
@@ -244,6 +265,26 @@ namespace Курсовая
             }
         }
 
+        private void add_Subjects_Click(object sender, EventArgs e)
+        {
+            var add = new Subject();
+            add.ShowDialog();
+            subjectTableAdapter.Fill(schoolCourseDataSet.Subject);
+            schoolCourseDataSet.AcceptChanges();
+        }
+
+        private void change_Subjects_Click(object sender, EventArgs e)
+        {
+            var ds = new SchoolCourseDataSet.SubjectDataTable();
+            subjectTableAdapter.FillBy(ds, Convert.ToString(subjectsDataGridView.SelectedRows[0].Cells[0].Value));
+            object[] row = ds.Rows[0].ItemArray;
+            var edt = new Subject(row[0].ToString(),
+                row[1].ToString());
+            edt.ShowDialog();
+            subjectTableAdapter.Fill(schoolCourseDataSet.Subject);
+            schoolCourseDataSet.AcceptChanges();
+        }
+
         private void delete_Subjects_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Ви дійсно хочете видалити обраний предмет?", "Видалення навчального предмету",
@@ -253,14 +294,6 @@ namespace Курсовая
                 subjectTableAdapter.Fill(schoolCourseDataSet.Subject);
                 schoolCourseDataSet.AcceptChanges();
             }
-        }
-
-        private void add_Tests_Click(object sender, EventArgs e)
-        {
-            var add = new Test();
-            add.ShowDialog();
-            testTableAdapter.Fill(schoolCourseDataSet.Test);
-            schoolCourseDataSet.AcceptChanges();
         }
     }
 }

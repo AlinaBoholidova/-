@@ -30,7 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.subjectsDataGridView = new System.Windows.Forms.DataGridView();
+            this.subjectabbrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.schoolCourseDataSet = new Курсовая.SchoolCourseDataSet();
             this.testsDataGridView = new System.Windows.Forms.DataGridView();
+            this.testIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectabbrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.back_Subjects = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,21 +69,13 @@
             this.delete_Subjects = new System.Windows.Forms.Button();
             this.change_Subjects = new System.Windows.Forms.Button();
             this.add_Subjects = new System.Windows.Forms.Button();
-            this.testIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectabbrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.testdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.schoolCourseDataSet = new Курсовая.SchoolCourseDataSet();
-            this.subjectabbrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.subjectTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.SubjectTableAdapter();
             this.testTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.TestTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.subjectsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // subjectsDataGridView
@@ -95,6 +95,32 @@
             this.subjectsDataGridView.Size = new System.Drawing.Size(319, 196);
             this.subjectsDataGridView.TabIndex = 0;
             // 
+            // subjectabbrDataGridViewTextBoxColumn
+            // 
+            this.subjectabbrDataGridViewTextBoxColumn.DataPropertyName = "Subject_abbr";
+            this.subjectabbrDataGridViewTextBoxColumn.HeaderText = "Абревіатура предмету";
+            this.subjectabbrDataGridViewTextBoxColumn.Name = "subjectabbrDataGridViewTextBoxColumn";
+            this.subjectabbrDataGridViewTextBoxColumn.ReadOnly = true;
+            this.subjectabbrDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // subjectnameDataGridViewTextBoxColumn
+            // 
+            this.subjectnameDataGridViewTextBoxColumn.DataPropertyName = "Subject_name";
+            this.subjectnameDataGridViewTextBoxColumn.HeaderText = "Назва предмету";
+            this.subjectnameDataGridViewTextBoxColumn.Name = "subjectnameDataGridViewTextBoxColumn";
+            this.subjectnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.subjectnameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // subjectBindingSource
+            // 
+            this.subjectBindingSource.DataMember = "Subject";
+            this.subjectBindingSource.DataSource = this.schoolCourseDataSet;
+            // 
+            // schoolCourseDataSet
+            // 
+            this.schoolCourseDataSet.DataSetName = "SchoolCourseDataSet";
+            this.schoolCourseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // testsDataGridView
             // 
             this.testsDataGridView.AllowUserToAddRows = false;
@@ -112,6 +138,35 @@
             this.testsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.testsDataGridView.Size = new System.Drawing.Size(362, 196);
             this.testsDataGridView.TabIndex = 1;
+            // 
+            // testIDDataGridViewTextBoxColumn
+            // 
+            this.testIDDataGridViewTextBoxColumn.DataPropertyName = "Test_ID";
+            this.testIDDataGridViewTextBoxColumn.HeaderText = "ID контрольної";
+            this.testIDDataGridViewTextBoxColumn.Name = "testIDDataGridViewTextBoxColumn";
+            this.testIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.testIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // subjectabbrDataGridViewTextBoxColumn1
+            // 
+            this.subjectabbrDataGridViewTextBoxColumn1.DataPropertyName = "Subject_abbr";
+            this.subjectabbrDataGridViewTextBoxColumn1.HeaderText = "Абревіатура предмету";
+            this.subjectabbrDataGridViewTextBoxColumn1.Name = "subjectabbrDataGridViewTextBoxColumn1";
+            this.subjectabbrDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.subjectabbrDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // testdateDataGridViewTextBoxColumn
+            // 
+            this.testdateDataGridViewTextBoxColumn.DataPropertyName = "Test_date";
+            this.testdateDataGridViewTextBoxColumn.HeaderText = "Дата написання";
+            this.testdateDataGridViewTextBoxColumn.Name = "testdateDataGridViewTextBoxColumn";
+            this.testdateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.testdateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // testBindingSource
+            // 
+            this.testBindingSource.DataMember = "Test";
+            this.testBindingSource.DataSource = this.schoolCourseDataSet;
             // 
             // back_Subjects
             // 
@@ -362,6 +417,7 @@
             this.change_Tests.TabIndex = 55;
             this.change_Tests.Text = "Змінити дані";
             this.change_Tests.UseVisualStyleBackColor = true;
+            this.change_Tests.Click += new System.EventHandler(this.change_Tests_Click);
             // 
             // delete_Tests
             // 
@@ -391,6 +447,7 @@
             this.change_Subjects.TabIndex = 58;
             this.change_Subjects.Text = "Змінити дані";
             this.change_Subjects.UseVisualStyleBackColor = true;
+            this.change_Subjects.Click += new System.EventHandler(this.change_Subjects_Click);
             // 
             // add_Subjects
             // 
@@ -400,61 +457,7 @@
             this.add_Subjects.TabIndex = 57;
             this.add_Subjects.Text = "Додати предмет";
             this.add_Subjects.UseVisualStyleBackColor = true;
-            // 
-            // testIDDataGridViewTextBoxColumn
-            // 
-            this.testIDDataGridViewTextBoxColumn.DataPropertyName = "Test_ID";
-            this.testIDDataGridViewTextBoxColumn.HeaderText = "ID контрольної";
-            this.testIDDataGridViewTextBoxColumn.Name = "testIDDataGridViewTextBoxColumn";
-            this.testIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.testIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // subjectabbrDataGridViewTextBoxColumn1
-            // 
-            this.subjectabbrDataGridViewTextBoxColumn1.DataPropertyName = "Subject_abbr";
-            this.subjectabbrDataGridViewTextBoxColumn1.HeaderText = "Абревіатура предмету";
-            this.subjectabbrDataGridViewTextBoxColumn1.Name = "subjectabbrDataGridViewTextBoxColumn1";
-            this.subjectabbrDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.subjectabbrDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // testdateDataGridViewTextBoxColumn
-            // 
-            this.testdateDataGridViewTextBoxColumn.DataPropertyName = "Test_date";
-            this.testdateDataGridViewTextBoxColumn.HeaderText = "Дата написання";
-            this.testdateDataGridViewTextBoxColumn.Name = "testdateDataGridViewTextBoxColumn";
-            this.testdateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.testdateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // testBindingSource
-            // 
-            this.testBindingSource.DataMember = "Test";
-            this.testBindingSource.DataSource = this.schoolCourseDataSet;
-            // 
-            // schoolCourseDataSet
-            // 
-            this.schoolCourseDataSet.DataSetName = "SchoolCourseDataSet";
-            this.schoolCourseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // subjectabbrDataGridViewTextBoxColumn
-            // 
-            this.subjectabbrDataGridViewTextBoxColumn.DataPropertyName = "Subject_abbr";
-            this.subjectabbrDataGridViewTextBoxColumn.HeaderText = "Абревіатура предмету";
-            this.subjectabbrDataGridViewTextBoxColumn.Name = "subjectabbrDataGridViewTextBoxColumn";
-            this.subjectabbrDataGridViewTextBoxColumn.ReadOnly = true;
-            this.subjectabbrDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // subjectnameDataGridViewTextBoxColumn
-            // 
-            this.subjectnameDataGridViewTextBoxColumn.DataPropertyName = "Subject_name";
-            this.subjectnameDataGridViewTextBoxColumn.HeaderText = "Назва предмету";
-            this.subjectnameDataGridViewTextBoxColumn.Name = "subjectnameDataGridViewTextBoxColumn";
-            this.subjectnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.subjectnameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // subjectBindingSource
-            // 
-            this.subjectBindingSource.DataMember = "Subject";
-            this.subjectBindingSource.DataSource = this.schoolCourseDataSet;
+            this.add_Subjects.Click += new System.EventHandler(this.add_Subjects_Click);
             // 
             // subjectTableAdapter
             // 
@@ -506,10 +509,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Subjects_FormClosing);
             this.Load += new System.EventHandler(this.Subjects_Load);
             ((System.ComponentModel.ISupportInitialize)(this.subjectsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subjectBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
