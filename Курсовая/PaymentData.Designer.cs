@@ -1,6 +1,6 @@
 ﻿namespace Курсовая
 {
-    partial class Payment
+    partial class PaymentData
     {
         /// <summary>
         /// Required designer variable.

@@ -6217,7 +6217,7 @@ SELECT Pupil_ID, Activity_ID, Distribution_ID FROM AdditionalParticipation WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Pupil_ID, Activity_ID, Distribution_ID FROM dbo.AdditionalParticipation";
@@ -6229,6 +6229,13 @@ FROM AdditionalActivity LEFT OUTER JOIN AdditionalParticipation
 ON AdditionalActivity.Activity_ID = AdditionalParticipation.Activity_ID
 GROUP BY AdditionalActivity.Activity_ID, AdditionalActivity.Activity_name";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        AdditionalParticipation.Pupil_ID, SUM(PointsDistribution.Points) AS Expr1
+FROM            AdditionalParticipation LEFT OUTER JOIN
+                         PointsDistribution ON AdditionalParticipation.Distribution_ID = PointsDistribution.Distribution_ID
+GROUP BY AdditionalParticipation.Pupil_ID";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6274,6 +6281,30 @@ GROUP BY AdditionalActivity.Activity_ID, AdditionalActivity.Activity_name";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual SchoolCourseDataSet.AdditionalParticipationDataTable GetDataBy() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            SchoolCourseDataSet.AdditionalParticipationDataTable dataTable = new SchoolCourseDataSet.AdditionalParticipationDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(SchoolCourseDataSet.AdditionalParticipationDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SchoolCourseDataSet.AdditionalParticipationDataTable GetDataBy1() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             SchoolCourseDataSet.AdditionalParticipationDataTable dataTable = new SchoolCourseDataSet.AdditionalParticipationDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6562,7 +6593,7 @@ SELECT Record_ID, Pupil_ID, Test_ID, Score FROM JournalRecord WHERE (Record_ID =
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Record_ID, Pupil_ID, Test_ID, Score FROM dbo.JournalRecord";
@@ -6573,6 +6604,14 @@ SELECT Record_ID, Pupil_ID, Test_ID, Score FROM JournalRecord WHERE (Record_ID =
                 "nalRecord.Score)) AS Missed \r\nFROM Pupil LEFT OUTER JOIN JournalRecord ON Pupil." +
                 "Pupil_ID = JournalRecord.Pupil_ID\r\nGROUP BY Pupil.Pupil_ID, Pupil.SNP\r\n";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        JournalRecord.Pupil_ID, Test.Subject_abbr, AVG(JournalRecord.Score) AS Expr1
+FROM            JournalRecord INNER JOIN
+                         Test ON JournalRecord.Test_ID = Test.Test_ID INNER JOIN
+                         Subject ON Test.Subject_abbr = Subject.Subject_abbr
+GROUP BY JournalRecord.Pupil_ID, Test.Subject_abbr";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6610,6 +6649,30 @@ SELECT Record_ID, Pupil_ID, Test_ID, Score FROM JournalRecord WHERE (Record_ID =
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(SchoolCourseDataSet.JournalRecordDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SchoolCourseDataSet.JournalRecordDataTable GetDataBy1() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            SchoolCourseDataSet.JournalRecordDataTable dataTable = new SchoolCourseDataSet.JournalRecordDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6989,7 +7052,7 @@ WHERE        (Payment.Paid = 0)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual SchoolCourseDataSet.PaymentDataTable GetDataBy() {
+        public virtual SchoolCourseDataSet.PaymentDataTable GetDataBy1() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             SchoolCourseDataSet.PaymentDataTable dataTable = new SchoolCourseDataSet.PaymentDataTable();
             this.Adapter.Fill(dataTable);

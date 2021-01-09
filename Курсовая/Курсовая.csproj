@@ -81,12 +81,13 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Payment.cs">
+    <Compile Include="PaymentData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Payment.Designer.cs">
-      <DependentUpon>Payment.cs</DependentUpon>
+    <Compile Include="PaymentData.Designer.cs">
+      <DependentUpon>PaymentData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payment.cs" />
     <Compile Include="Payments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +119,12 @@
     </Compile>
     <Compile Include="Pupils.Designer.cs">
       <DependentUpon>Pupils.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rating.Designer.cs">
+      <DependentUpon>Rating.cs</DependentUpon>
     </Compile>
     <Compile Include="SchoolCourseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -168,8 +175,8 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Payment.resx">
-      <DependentUpon>Payment.cs</DependentUpon>
+    <EmbeddedResource Include="PaymentData.resx">
+      <DependentUpon>PaymentData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payments.resx">
       <DependentUpon>Payments.cs</DependentUpon>
@@ -194,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pupils.resx">
       <DependentUpon>Pupils.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rating.resx">
+      <DependentUpon>Rating.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Receipt.rdlc" />
     <EmbeddedResource Include="Scores.rdlc" />

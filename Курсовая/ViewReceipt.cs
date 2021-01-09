@@ -70,5 +70,12 @@ namespace Курсовая
             receiptReportViewer.LocalReport.DataSources.Add(paymentRateRDS);
             receiptReportViewer.RefreshReport();
         }
+
+        private void back_Subjects_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Hide();
+        }
     }
 }

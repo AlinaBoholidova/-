@@ -65,5 +65,33 @@ namespace Курсовая
             this.Hide();
             subjects.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ViewReceipt subjects = new ViewReceipt();
+            this.Hide();
+            subjects.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ViewScores subjects = new ViewScores();
+            this.Hide();
+            subjects.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Rating subjects = new Rating();
+            this.Hide();
+            subjects.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Payments payments = new Payments();
+            this.Hide();
+            payments.Show();
+        }
     }
 }

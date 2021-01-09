@@ -39,7 +39,7 @@ namespace Курсовая
 
         private void add_Payment_Click(object sender, EventArgs e)
         {
-            var add = new Payment();
+            var add = new PaymentData();
             add.ShowDialog();
             paymentTableAdapter.Fill(schoolCourseDataSet.Payment);
             schoolCourseDataSet.AcceptChanges();
@@ -50,7 +50,7 @@ namespace Курсовая
             var ds = new SchoolCourseDataSet.PaymentDataTable();
             paymentTableAdapter.FillBy1(ds, Convert.ToInt32(paymentDataGridView.SelectedRows[0].Cells[0].Value));
             object[] row = ds.Rows[0].ItemArray;
-            var edt = new Payment(Convert.ToInt32(row[0]),
+            var edt = new PaymentData(Convert.ToInt32(row[0]),
                 Convert.ToInt32(row[1]),
                 Convert.ToInt32(row[2]),
                 Convert.ToString(row[3]),
