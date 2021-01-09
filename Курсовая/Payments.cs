@@ -70,5 +70,49 @@ namespace Курсовая
                 schoolCourseDataSet.AcceptChanges();
             }
         }
+
+        private void add_Rate_Click(object sender, EventArgs e)
+        {
+            var add = new PaymentRate();
+            add.ShowDialog();
+            paymentRateTableAdapter.Fill(schoolCourseDataSet.PaymentRate);
+            schoolCourseDataSet.AcceptChanges();
+        }
+
+        private void change_Rate_Click(object sender, EventArgs e)
+        {
+            var ds = new SchoolCourseDataSet.PaymentRateDataTable();
+            paymentRateTableAdapter.FillBy(ds, Convert.ToInt32(rateDataGridView.SelectedRows[0].Cells[0].Value));
+            object[] row = ds.Rows[0].ItemArray;
+            var edt = new PaymentRate(Convert.ToInt32(row[0]),
+                row[1].ToString(),
+                Convert.ToInt32(row[2]));
+            edt.ShowDialog();
+            paymentRateTableAdapter.Fill(schoolCourseDataSet.PaymentRate);
+            schoolCourseDataSet.AcceptChanges();
+        }
+
+        private void delete_Rate_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Ви дійсно хочете видалити обраний тариф?", "Видалення тарифу",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                paymentRateTableAdapter.DeleteQuery(Convert.ToInt32(rateDataGridView.SelectedRows[0].Cells[0].Value));
+                paymentRateTableAdapter.Fill(schoolCourseDataSet.PaymentRate);
+                schoolCourseDataSet.AcceptChanges();
+            }
+        }
+
+        private void showAll_Payment_Click(object sender, EventArgs e)
+        {
+            this.paymentTableAdapter.Fill(this.schoolCourseDataSet.Payment);
+            paymentDataGridView.DataSource = paymentBindingSource;
+        }
+
+        private void showAll_Rate_Click(object sender, EventArgs e)
+        {
+            this.paymentRateTableAdapter.Fill(this.schoolCourseDataSet.PaymentRate);
+            rateDataGridView.DataSource = rateBindingSource;
+        }
     }
 }
