@@ -40,5 +40,15 @@ namespace Курсовая
                 passwordTextBox_Login.Clear();
             }
         }
+
+        private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            passwordTextBox_Login.PasswordChar = checkBoxShowPassword.Checked ? '\0' : '•';
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

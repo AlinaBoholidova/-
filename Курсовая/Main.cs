@@ -107,5 +107,21 @@ namespace Курсовая
             this.Hide();
             points.Show();
         }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void exitPictureBox_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Ви дійсно хочете вийти з програми?", "Вихід",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

@@ -141,6 +141,7 @@ namespace Курсовая
             da.Fill(dt);
             sqlconn.Close();
             ReportDataSource pupilRDS = new ReportDataSource("scoresDataSet", dt);
+            scoresReportViewer.LocalReport.ReportPath = @"Reports/Scores.rdlc";
             scoresReportViewer.LocalReport.DataSources.Clear();
             scoresReportViewer.LocalReport.DataSources.Add(pupilRDS);
             scoresReportViewer.LocalReport.SetParameters(reportParameters);

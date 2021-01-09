@@ -64,6 +64,7 @@ namespace Курсовая
             ReportDataSource pupilRDS = new ReportDataSource("pupilDataSet", dt);
             ReportDataSource paymentRDS = new ReportDataSource("paymentDataSet", dt);
             ReportDataSource paymentRateRDS = new ReportDataSource("paymentRateDataSet", dt);
+            receiptReportViewer.LocalReport.ReportPath = @"Reports/Receipt.rdlc";
             receiptReportViewer.LocalReport.DataSources.Clear();
             receiptReportViewer.LocalReport.DataSources.Add(pupilRDS);
             receiptReportViewer.LocalReport.DataSources.Add(paymentRDS);

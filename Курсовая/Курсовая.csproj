@@ -193,16 +193,16 @@
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
-    <Compile Include="ViewReceipt.cs">
+    <Compile Include="Reports\ViewReceipt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewReceipt.Designer.cs">
+    <Compile Include="Reports\ViewReceipt.Designer.cs">
       <DependentUpon>ViewReceipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewScores.cs">
+    <Compile Include="Reports\ViewScores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewScores.Designer.cs">
+    <Compile Include="Reports\ViewScores.Designer.cs">
       <DependentUpon>ViewScores.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdditionalActivity.resx">
@@ -249,6 +249,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="PupilData.resx">
       <DependentUpon>PupilData.cs</DependentUpon>
@@ -259,8 +260,12 @@
     <EmbeddedResource Include="Rating.resx">
       <DependentUpon>Rating.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Receipt.rdlc" />
-    <EmbeddedResource Include="Scores.rdlc" />
+    <EmbeddedResource Include="Reports\Receipt.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Scores.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,10 +278,10 @@
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewReceipt.resx">
+    <EmbeddedResource Include="Reports\ViewReceipt.resx">
       <DependentUpon>ViewReceipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewScores.resx">
+    <EmbeddedResource Include="Reports\ViewScores.resx">
       <DependentUpon>ViewScores.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -305,6 +310,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\user.png" />
+    <None Include="Resources\password.png" />
+    <None Include="Resources\back.jpg" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\subject.png" />
+    <None Include="Resources\payment.png" />
+    <None Include="Resources\activity.png" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\folder.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
