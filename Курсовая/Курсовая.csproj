@@ -69,6 +69,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdditionalActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdditionalActivity.Designer.cs">
+      <DependentUpon>AdditionalActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdditionalActivityData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdditionalActivityData.Designer.cs">
+      <DependentUpon>AdditionalActivityData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdditionalParticipation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdditionalParticipation.Designer.cs">
+      <DependentUpon>AdditionalParticipation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +193,15 @@
     <Compile Include="ViewScores.Designer.cs">
       <DependentUpon>ViewScores.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdditionalActivity.resx">
+      <DependentUpon>AdditionalActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdditionalActivityData.resx">
+      <DependentUpon>AdditionalActivityData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdditionalParticipation.resx">
+      <DependentUpon>AdditionalParticipation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

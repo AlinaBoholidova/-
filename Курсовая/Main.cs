@@ -93,5 +93,12 @@ namespace Курсовая
             this.Hide();
             payments.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AdditionalActivity activity = new AdditionalActivity();
+            this.Hide();
+            activity.Show();
+        }
     }
 }

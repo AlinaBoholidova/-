@@ -25,8 +25,9 @@ namespace Курсовая
             //Application.Run(new ViewReceipt());
             //Application.Run(new ViewScores());
             //Application.Run(new Subjects());
-            Application.Run(new Payments());
+            //Application.Run(new Payments());
             //Application.Run(new Rating());
+            Application.Run(new AdditionalActivity());
 
             //DataContext db = new DataContext(СonnectionString);
 
