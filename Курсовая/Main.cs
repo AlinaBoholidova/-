@@ -100,5 +100,12 @@ namespace Курсовая
             this.Hide();
             activity.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Points points = new Points();
+            this.Hide();
+            points.Show();
+        }
     }
 }
