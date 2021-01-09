@@ -27,21 +27,15 @@ namespace Курсовая
         {
             edit = true;
             this.id = id;
-            pupil_IDComboBox.SelectedIndex = pupil_IDComboBox.Items.IndexOf(pupil_id);
-            paymentRate_IDComboBox.SelectedIndex = paymentRate_IDComboBox.Items.IndexOf(rate_id);
+
+            pupil_IDComboBox.ValueMember = pupil_id.ToString();
+            pupil_IDComboBox.SelectedValue = pupil_id;
+            paymentRate_IDComboBox.SelectedValue = rate_id;
             monthComboBox.SelectedIndex = monthComboBox.Items.IndexOf(month);
             if (paid)
             {
                 paidCheckBox.Checked = true;
             }
-
-            string pupil_IDSelect = $"SELECT Pupil_ID FROM Pupil WHERE Pupil_ID = {id}";
-            string paymentRate_IDSelect = $"SELECT PaymentRate_ID FROM PaymentRate " +
-                $"WHERE PaymentRate_ID = {paymentRate_IDComboBox.SelectedIndex}";
-            string 
-            SqlConnection sqlconn = new SqlConnection(ConnectionString);
-            SqlCommand pupil_IDCommand = new SqlCommand(pupil_IDSelect, sqlconn);
-            SqlCommand paymentRate_IDCommand = new SqlCommand(pupil_IDSelect, sqlconn);
         }
 
         private void Payment_Load(object sender, EventArgs e)
@@ -52,7 +46,38 @@ namespace Курсовая
             this.paymentRateTableAdapter.Fill(this.schoolCourseDataSet.PaymentRate);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "schoolCourseDataSet.Pupil". При необходимости она может быть перемещена или удалена.
             this.pupilTableAdapter.Fill(this.schoolCourseDataSet.Pupil);
+
+            int pupil_id = Convert.ToInt32(pupil_IDComboBox.Text);
+            int rate_id = Convert.ToInt32(paymentRate_IDComboBox.Text);
+
+            string pupilSNPSelect = $"SELECT SNP FROM Pupil WHERE Pupil_ID = {pupil_id}";
+            string paymentRateTypeSelect = $"SELECT PaymentRate_type FROM PaymentRate " +
+                $"WHERE PaymentRate_ID = {rate_id}";
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            SqlCommand pupilSNPCommand = new SqlCommand(pupilSNPSelect, sqlconn);
+            SqlCommand paymentRateTypeCommand = new SqlCommand(paymentRateTypeSelect, sqlconn);
+            SqlDataReader pupilSNPReader;
+            SqlDataReader paymentRateTypeReader;
+            sqlconn.Open();
+            pupilSNPReader = pupilSNPCommand.ExecuteReader();
+            List<string> lstpupilSNP = new List<string>();
+            while (pupilSNPReader.Read())
+            {
+                lstpupilSNP.Add(pupilSNPReader[0].ToString());
+            }
+            sqlconn.Close();
+            sqlconn.Open();
+            paymentRateTypeReader = paymentRateTypeCommand.ExecuteReader();
+            List<string> lstpaymentRateType = new List<string>();
+            while (paymentRateTypeReader.Read())
+            {
+                lstpaymentRateType.Add(paymentRateTypeReader[0].ToString());
+            }
+            sqlconn.Close();
+            pupil.Text = lstpupilSNP[0];
+            paymentRate_ID.Text = lstpaymentRateType[0];
         }
+
 
         private void Cancel_Payment_Click(object sender, EventArgs e)
         {
@@ -61,14 +86,76 @@ namespace Курсовая
 
         private void OK_Payment_Click(object sender, EventArgs e)
         {
+            int pupil_ID = Convert.ToInt32(pupil_IDComboBox.Text);
+            int paymentRate_ID = Convert.ToInt32(paymentRate_IDComboBox.Text);
+            string month = monthComboBox.Text;
+            bool paid = false;
+            if (paidCheckBox.Checked == true)
+            {
+                paid = true;
+            }
 
             if (edit)
             {
-                paymentTableAdapter.UpdateQuery();
+                paymentTableAdapter.UpdateQuery(pupil_ID, paymentRate_ID, month, paid, id);
             }
             else
             {
-                paymentTableAdapter.InsertQuery();
+                paymentTableAdapter.InsertQuery(pupil_ID, paymentRate_ID, month, paid);
+            }
+            Close();
+        }
+
+        private void pupil_IDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int pupil_id = Convert.ToInt32(pupil_IDComboBox.Text);
+
+                string pupilSNPSelect = $"SELECT SNP FROM Pupil WHERE Pupil_ID = {pupil_id}";
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                SqlCommand pupilSNPCommand = new SqlCommand(pupilSNPSelect, sqlconn);
+                SqlDataReader pupilSNPReader;
+                sqlconn.Open();
+                pupilSNPReader = pupilSNPCommand.ExecuteReader();
+                List<string> lstPupilSNP = new List<string>();
+                while (pupilSNPReader.Read())
+                {
+                    lstPupilSNP.Add(pupilSNPReader[0].ToString());
+                }
+                sqlconn.Close();
+                pupil.Text = lstPupilSNP[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Error: " + ex.Message);
+            }
+        }
+
+        private void paymentRate_IDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int rate_id = Convert.ToInt32(paymentRate_IDComboBox.Text);
+
+                string paymentRateTypeSelect = $"SELECT PaymentRate_type FROM PaymentRate " +
+                $"WHERE PaymentRate_ID = {rate_id}";
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                SqlCommand paymentRateTypeCommand = new SqlCommand(paymentRateTypeSelect, sqlconn);
+                SqlDataReader paymentRateTypeReader;
+                sqlconn.Open();
+                paymentRateTypeReader = paymentRateTypeCommand.ExecuteReader();
+                List<string> lstpaymentRateType = new List<string>();
+                while (paymentRateTypeReader.Read())
+                {
+                    lstpaymentRateType.Add(paymentRateTypeReader[0].ToString());
+                }
+                sqlconn.Close();
+                paymentRate_ID.Text = lstpaymentRateType[0];
+            }
+            catch
+            {
+
             }
         }
     }

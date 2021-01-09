@@ -29,8 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.paymentDataGridView = new System.Windows.Forms.DataGridView();
+            this.paymentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pupilIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentRateIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paidDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.paymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.schoolCourseDataSet = new Курсовая.SchoolCourseDataSet();
+            this.rateDataGridView = new System.Windows.Forms.DataGridView();
+            this.paymentRateIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentRatetypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.delete_Payment = new System.Windows.Forms.Button();
@@ -42,63 +53,130 @@
             this.add_Rate = new System.Windows.Forms.Button();
             this.showAll_Rate = new System.Windows.Forms.Button();
             this.back_Payments = new System.Windows.Forms.Button();
-            this.schoolCourseDataSet = new Курсовая.SchoolCourseDataSet();
-            this.paymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.paymentTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.PaymentTableAdapter();
-            this.rateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.paymentRateTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.PaymentRateTableAdapter();
-            this.paymentRateIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentRatetypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pupilIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentRateIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paidDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rateDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rateBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // paymentDataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.paymentDataGridView.AllowUserToAddRows = false;
+            this.paymentDataGridView.AllowUserToDeleteRows = false;
+            this.paymentDataGridView.AutoGenerateColumns = false;
+            this.paymentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.paymentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.paymentIDDataGridViewTextBoxColumn,
             this.pupilIDDataGridViewTextBoxColumn,
             this.paymentRateIDDataGridViewTextBoxColumn,
             this.monthDataGridViewTextBoxColumn,
             this.paidDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.paymentBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 97);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(438, 180);
-            this.dataGridView1.TabIndex = 0;
+            this.paymentDataGridView.DataSource = this.paymentBindingSource;
+            this.paymentDataGridView.Location = new System.Drawing.Point(12, 97);
+            this.paymentDataGridView.Name = "paymentDataGridView";
+            this.paymentDataGridView.ReadOnly = true;
+            this.paymentDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.paymentDataGridView.Size = new System.Drawing.Size(438, 180);
+            this.paymentDataGridView.TabIndex = 0;
             // 
-            // dataGridView2
+            // paymentIDDataGridViewTextBoxColumn
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.paymentIDDataGridViewTextBoxColumn.DataPropertyName = "Payment_ID";
+            this.paymentIDDataGridViewTextBoxColumn.HeaderText = "ID оплати";
+            this.paymentIDDataGridViewTextBoxColumn.Name = "paymentIDDataGridViewTextBoxColumn";
+            this.paymentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.paymentIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // pupilIDDataGridViewTextBoxColumn
+            // 
+            this.pupilIDDataGridViewTextBoxColumn.DataPropertyName = "Pupil_ID";
+            this.pupilIDDataGridViewTextBoxColumn.HeaderText = "ID учня";
+            this.pupilIDDataGridViewTextBoxColumn.Name = "pupilIDDataGridViewTextBoxColumn";
+            this.pupilIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pupilIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // paymentRateIDDataGridViewTextBoxColumn
+            // 
+            this.paymentRateIDDataGridViewTextBoxColumn.DataPropertyName = "PaymentRate_ID";
+            this.paymentRateIDDataGridViewTextBoxColumn.HeaderText = "ID тарифу";
+            this.paymentRateIDDataGridViewTextBoxColumn.Name = "paymentRateIDDataGridViewTextBoxColumn";
+            this.paymentRateIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.paymentRateIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // monthDataGridViewTextBoxColumn
+            // 
+            this.monthDataGridViewTextBoxColumn.DataPropertyName = "Month";
+            this.monthDataGridViewTextBoxColumn.HeaderText = "Місяць";
+            this.monthDataGridViewTextBoxColumn.Name = "monthDataGridViewTextBoxColumn";
+            this.monthDataGridViewTextBoxColumn.ReadOnly = true;
+            this.monthDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // paidDataGridViewCheckBoxColumn
+            // 
+            this.paidDataGridViewCheckBoxColumn.DataPropertyName = "Paid";
+            this.paidDataGridViewCheckBoxColumn.HeaderText = "Сплачено";
+            this.paidDataGridViewCheckBoxColumn.Name = "paidDataGridViewCheckBoxColumn";
+            this.paidDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // paymentBindingSource
+            // 
+            this.paymentBindingSource.DataMember = "Payment";
+            this.paymentBindingSource.DataSource = this.schoolCourseDataSet;
+            // 
+            // schoolCourseDataSet
+            // 
+            this.schoolCourseDataSet.DataSetName = "SchoolCourseDataSet";
+            this.schoolCourseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rateDataGridView
+            // 
+            this.rateDataGridView.AllowUserToAddRows = false;
+            this.rateDataGridView.AllowUserToDeleteRows = false;
+            this.rateDataGridView.AutoGenerateColumns = false;
+            this.rateDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rateDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.paymentRateIDDataGridViewTextBoxColumn1,
             this.paymentRatetypeDataGridViewTextBoxColumn,
             this.sumDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.rateBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(514, 97);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(312, 180);
-            this.dataGridView2.TabIndex = 1;
+            this.rateDataGridView.DataSource = this.rateBindingSource;
+            this.rateDataGridView.Location = new System.Drawing.Point(514, 97);
+            this.rateDataGridView.Name = "rateDataGridView";
+            this.rateDataGridView.ReadOnly = true;
+            this.rateDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.rateDataGridView.Size = new System.Drawing.Size(312, 180);
+            this.rateDataGridView.TabIndex = 1;
+            // 
+            // paymentRateIDDataGridViewTextBoxColumn1
+            // 
+            this.paymentRateIDDataGridViewTextBoxColumn1.DataPropertyName = "PaymentRate_ID";
+            this.paymentRateIDDataGridViewTextBoxColumn1.HeaderText = "ID тарифу";
+            this.paymentRateIDDataGridViewTextBoxColumn1.Name = "paymentRateIDDataGridViewTextBoxColumn1";
+            this.paymentRateIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.paymentRateIDDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // paymentRatetypeDataGridViewTextBoxColumn
+            // 
+            this.paymentRatetypeDataGridViewTextBoxColumn.DataPropertyName = "PaymentRate_type";
+            this.paymentRatetypeDataGridViewTextBoxColumn.HeaderText = "Тип тарифу";
+            this.paymentRatetypeDataGridViewTextBoxColumn.Name = "paymentRatetypeDataGridViewTextBoxColumn";
+            this.paymentRatetypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.paymentRatetypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // sumDataGridViewTextBoxColumn
+            // 
+            this.sumDataGridViewTextBoxColumn.DataPropertyName = "Sum";
+            this.sumDataGridViewTextBoxColumn.HeaderText = "Сума";
+            this.sumDataGridViewTextBoxColumn.Name = "sumDataGridViewTextBoxColumn";
+            this.sumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sumDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // rateBindingSource
+            // 
+            this.rateBindingSource.DataMember = "PaymentRate";
+            this.rateBindingSource.DataSource = this.schoolCourseDataSet;
             // 
             // label1
             // 
@@ -126,6 +204,7 @@
             this.delete_Payment.TabIndex = 60;
             this.delete_Payment.Text = "Видалити оплату";
             this.delete_Payment.UseVisualStyleBackColor = true;
+            this.delete_Payment.Click += new System.EventHandler(this.delete_Payment_Click);
             // 
             // change_Payment
             // 
@@ -135,6 +214,7 @@
             this.change_Payment.TabIndex = 59;
             this.change_Payment.Text = "Змінити дані";
             this.change_Payment.UseVisualStyleBackColor = true;
+            this.change_Payment.Click += new System.EventHandler(this.change_Payment_Click);
             // 
             // add_Payment
             // 
@@ -144,6 +224,7 @@
             this.add_Payment.TabIndex = 58;
             this.add_Payment.Text = "Додати оплату";
             this.add_Payment.UseVisualStyleBackColor = true;
+            this.add_Payment.Click += new System.EventHandler(this.add_Payment_Click);
             // 
             // showAll_Payment
             // 
@@ -200,91 +281,13 @@
             this.back_Payments.UseVisualStyleBackColor = true;
             this.back_Payments.Click += new System.EventHandler(this.back_Payments_Click);
             // 
-            // schoolCourseDataSet
-            // 
-            this.schoolCourseDataSet.DataSetName = "SchoolCourseDataSet";
-            this.schoolCourseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // paymentBindingSource
-            // 
-            this.paymentBindingSource.DataMember = "Payment";
-            this.paymentBindingSource.DataSource = this.schoolCourseDataSet;
-            // 
             // paymentTableAdapter
             // 
             this.paymentTableAdapter.ClearBeforeFill = true;
             // 
-            // rateBindingSource
-            // 
-            this.rateBindingSource.DataMember = "PaymentRate";
-            this.rateBindingSource.DataSource = this.schoolCourseDataSet;
-            // 
             // paymentRateTableAdapter
             // 
             this.paymentRateTableAdapter.ClearBeforeFill = true;
-            // 
-            // paymentRateIDDataGridViewTextBoxColumn1
-            // 
-            this.paymentRateIDDataGridViewTextBoxColumn1.DataPropertyName = "PaymentRate_ID";
-            this.paymentRateIDDataGridViewTextBoxColumn1.HeaderText = "ID тарифу";
-            this.paymentRateIDDataGridViewTextBoxColumn1.Name = "paymentRateIDDataGridViewTextBoxColumn1";
-            this.paymentRateIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.paymentRateIDDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // paymentRatetypeDataGridViewTextBoxColumn
-            // 
-            this.paymentRatetypeDataGridViewTextBoxColumn.DataPropertyName = "PaymentRate_type";
-            this.paymentRatetypeDataGridViewTextBoxColumn.HeaderText = "Тип тарифу";
-            this.paymentRatetypeDataGridViewTextBoxColumn.Name = "paymentRatetypeDataGridViewTextBoxColumn";
-            this.paymentRatetypeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.paymentRatetypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // sumDataGridViewTextBoxColumn
-            // 
-            this.sumDataGridViewTextBoxColumn.DataPropertyName = "Sum";
-            this.sumDataGridViewTextBoxColumn.HeaderText = "Сума";
-            this.sumDataGridViewTextBoxColumn.Name = "sumDataGridViewTextBoxColumn";
-            this.sumDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sumDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // paymentIDDataGridViewTextBoxColumn
-            // 
-            this.paymentIDDataGridViewTextBoxColumn.DataPropertyName = "Payment_ID";
-            this.paymentIDDataGridViewTextBoxColumn.HeaderText = "ID оплати";
-            this.paymentIDDataGridViewTextBoxColumn.Name = "paymentIDDataGridViewTextBoxColumn";
-            this.paymentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.paymentIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // pupilIDDataGridViewTextBoxColumn
-            // 
-            this.pupilIDDataGridViewTextBoxColumn.DataPropertyName = "Pupil_ID";
-            this.pupilIDDataGridViewTextBoxColumn.HeaderText = "ID учня";
-            this.pupilIDDataGridViewTextBoxColumn.Name = "pupilIDDataGridViewTextBoxColumn";
-            this.pupilIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pupilIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // paymentRateIDDataGridViewTextBoxColumn
-            // 
-            this.paymentRateIDDataGridViewTextBoxColumn.DataPropertyName = "PaymentRate_ID";
-            this.paymentRateIDDataGridViewTextBoxColumn.HeaderText = "ID тарифу";
-            this.paymentRateIDDataGridViewTextBoxColumn.Name = "paymentRateIDDataGridViewTextBoxColumn";
-            this.paymentRateIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.paymentRateIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // monthDataGridViewTextBoxColumn
-            // 
-            this.monthDataGridViewTextBoxColumn.DataPropertyName = "Month";
-            this.monthDataGridViewTextBoxColumn.HeaderText = "Місяць";
-            this.monthDataGridViewTextBoxColumn.Name = "monthDataGridViewTextBoxColumn";
-            this.monthDataGridViewTextBoxColumn.ReadOnly = true;
-            this.monthDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // paidDataGridViewCheckBoxColumn
-            // 
-            this.paidDataGridViewCheckBoxColumn.DataPropertyName = "Paid";
-            this.paidDataGridViewCheckBoxColumn.HeaderText = "Сплачено";
-            this.paidDataGridViewCheckBoxColumn.Name = "paidDataGridViewCheckBoxColumn";
-            this.paidDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // Payments
             // 
@@ -302,17 +305,17 @@
             this.Controls.Add(this.showAll_Payment);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.rateDataGridView);
+            this.Controls.Add(this.paymentDataGridView);
             this.Name = "Payments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Оплата";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Payments_FormClosing);
             this.Load += new System.EventHandler(this.Payments_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rateDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rateBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -321,8 +324,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView paymentDataGridView;
+        private System.Windows.Forms.DataGridView rateDataGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button delete_Payment;

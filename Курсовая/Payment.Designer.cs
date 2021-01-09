@@ -37,18 +37,17 @@
             this.OK_Payment = new System.Windows.Forms.Button();
             this.schoolCourseDataSet = new Курсовая.SchoolCourseDataSet();
             this.pupil_IDComboBox = new System.Windows.Forms.ComboBox();
+            this.pupilBbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.paymentRate_IDComboBox = new System.Windows.Forms.ComboBox();
+            this.rateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.monthComboBox = new System.Windows.Forms.ComboBox();
             this.paidCheckBox = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pupilBbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pupil = new System.Windows.Forms.Label();
             this.pupilTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.PupilTableAdapter();
             this.paymentRateTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.PaymentRateTableAdapter();
             this.paymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.paymentTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.PaymentTableAdapter();
+            this.paymentRate_ID = new System.Windows.Forms.Label();
             pupil_IDLabel = new System.Windows.Forms.Label();
             paymentRate_IDLabel = new System.Windows.Forms.Label();
             monthLabel = new System.Windows.Forms.Label();
@@ -58,6 +57,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.rateBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pupil_IDLabel
+            // 
+            pupil_IDLabel.AutoSize = true;
+            pupil_IDLabel.Location = new System.Drawing.Point(26, 32);
+            pupil_IDLabel.Name = "pupil_IDLabel";
+            pupil_IDLabel.Size = new System.Drawing.Size(46, 13);
+            pupil_IDLabel.TabIndex = 14;
+            pupil_IDLabel.Text = "ID учня:";
+            // 
+            // paymentRate_IDLabel
+            // 
+            paymentRate_IDLabel.AutoSize = true;
+            paymentRate_IDLabel.Location = new System.Drawing.Point(26, 72);
+            paymentRate_IDLabel.Name = "paymentRate_IDLabel";
+            paymentRate_IDLabel.Size = new System.Drawing.Size(60, 13);
+            paymentRate_IDLabel.TabIndex = 15;
+            paymentRate_IDLabel.Text = "ID тарифу:";
+            // 
+            // monthLabel
+            // 
+            monthLabel.AutoSize = true;
+            monthLabel.Location = new System.Drawing.Point(26, 119);
+            monthLabel.Name = "monthLabel";
+            monthLabel.Size = new System.Drawing.Size(45, 13);
+            monthLabel.TabIndex = 16;
+            monthLabel.Text = "Місяць:";
+            // 
+            // paidLabel
+            // 
+            paidLabel.AutoSize = true;
+            paidLabel.Location = new System.Drawing.Point(26, 170);
+            paidLabel.Name = "paidLabel";
+            paidLabel.Size = new System.Drawing.Size(72, 13);
+            paidLabel.TabIndex = 17;
+            paidLabel.Text = "Стан сплати:";
             // 
             // Cancel_Payment
             // 
@@ -84,15 +119,6 @@
             this.schoolCourseDataSet.DataSetName = "SchoolCourseDataSet";
             this.schoolCourseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // pupil_IDLabel
-            // 
-            pupil_IDLabel.AutoSize = true;
-            pupil_IDLabel.Location = new System.Drawing.Point(26, 32);
-            pupil_IDLabel.Name = "pupil_IDLabel";
-            pupil_IDLabel.Size = new System.Drawing.Size(46, 13);
-            pupil_IDLabel.TabIndex = 14;
-            pupil_IDLabel.Text = "ID учня:";
-            // 
             // pupil_IDComboBox
             // 
             this.pupil_IDComboBox.DataSource = this.pupilBbindingSource;
@@ -102,15 +128,12 @@
             this.pupil_IDComboBox.Name = "pupil_IDComboBox";
             this.pupil_IDComboBox.Size = new System.Drawing.Size(121, 21);
             this.pupil_IDComboBox.TabIndex = 15;
+            this.pupil_IDComboBox.SelectedIndexChanged += new System.EventHandler(this.pupil_IDComboBox_SelectedIndexChanged);
             // 
-            // paymentRate_IDLabel
+            // pupilBbindingSource
             // 
-            paymentRate_IDLabel.AutoSize = true;
-            paymentRate_IDLabel.Location = new System.Drawing.Point(26, 72);
-            paymentRate_IDLabel.Name = "paymentRate_IDLabel";
-            paymentRate_IDLabel.Size = new System.Drawing.Size(60, 13);
-            paymentRate_IDLabel.TabIndex = 15;
-            paymentRate_IDLabel.Text = "ID тарифу:";
+            this.pupilBbindingSource.DataMember = "Pupil";
+            this.pupilBbindingSource.DataSource = this.schoolCourseDataSet;
             // 
             // paymentRate_IDComboBox
             // 
@@ -121,15 +144,12 @@
             this.paymentRate_IDComboBox.Name = "paymentRate_IDComboBox";
             this.paymentRate_IDComboBox.Size = new System.Drawing.Size(121, 21);
             this.paymentRate_IDComboBox.TabIndex = 16;
+            this.paymentRate_IDComboBox.SelectedIndexChanged += new System.EventHandler(this.paymentRate_IDComboBox_SelectedIndexChanged);
             // 
-            // monthLabel
+            // rateBindingSource
             // 
-            monthLabel.AutoSize = true;
-            monthLabel.Location = new System.Drawing.Point(26, 119);
-            monthLabel.Name = "monthLabel";
-            monthLabel.Size = new System.Drawing.Size(45, 13);
-            monthLabel.TabIndex = 16;
-            monthLabel.Text = "Місяць:";
+            this.rateBindingSource.DataMember = "PaymentRate";
+            this.rateBindingSource.DataSource = this.schoolCourseDataSet;
             // 
             // monthComboBox
             // 
@@ -161,42 +181,14 @@
             this.paidCheckBox.Text = "Сплачено";
             this.paidCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // pupil
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(289, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "pupil_IDLabel";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(289, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 13);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "paymentRate_IDLabel";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(289, 119);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "monthLabel";
-            // 
-            // pupilBbindingSource
-            // 
-            this.pupilBbindingSource.DataMember = "Pupil";
-            this.pupilBbindingSource.DataSource = this.schoolCourseDataSet;
-            // 
-            // rateBindingSource
-            // 
-            this.rateBindingSource.DataMember = "PaymentRate";
-            this.rateBindingSource.DataSource = this.schoolCourseDataSet;
+            this.pupil.AutoSize = true;
+            this.pupil.Location = new System.Drawing.Point(289, 32);
+            this.pupil.Name = "pupil";
+            this.pupil.Size = new System.Drawing.Size(72, 13);
+            this.pupil.TabIndex = 19;
+            this.pupil.Text = "pupil_IDLabel";
             // 
             // pupilTableAdapter
             // 
@@ -205,15 +197,6 @@
             // paymentRateTableAdapter
             // 
             this.paymentRateTableAdapter.ClearBeforeFill = true;
-            // 
-            // paidLabel
-            // 
-            paidLabel.AutoSize = true;
-            paidLabel.Location = new System.Drawing.Point(26, 170);
-            paidLabel.Name = "paidLabel";
-            paidLabel.Size = new System.Drawing.Size(72, 13);
-            paidLabel.TabIndex = 17;
-            paidLabel.Text = "Стан сплати:";
             // 
             // paymentBindingSource
             // 
@@ -224,14 +207,22 @@
             // 
             this.paymentTableAdapter.ClearBeforeFill = true;
             // 
+            // paymentRate_ID
+            // 
+            this.paymentRate_ID.AutoSize = true;
+            this.paymentRate_ID.Location = new System.Drawing.Point(289, 72);
+            this.paymentRate_ID.Name = "paymentRate_ID";
+            this.paymentRate_ID.Size = new System.Drawing.Size(113, 13);
+            this.paymentRate_ID.TabIndex = 20;
+            this.paymentRate_ID.Text = "paymentRate_IDLabel";
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 301);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.paymentRate_ID);
+            this.Controls.Add(this.pupil);
             this.Controls.Add(paidLabel);
             this.Controls.Add(this.paidCheckBox);
             this.Controls.Add(monthLabel);
@@ -263,14 +254,13 @@
         private System.Windows.Forms.ComboBox paymentRate_IDComboBox;
         private System.Windows.Forms.ComboBox monthComboBox;
         private System.Windows.Forms.CheckBox paidCheckBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label pupil;
         private System.Windows.Forms.BindingSource pupilBbindingSource;
         private System.Windows.Forms.BindingSource rateBindingSource;
         private SchoolCourseDataSetTableAdapters.PupilTableAdapter pupilTableAdapter;
         private SchoolCourseDataSetTableAdapters.PaymentRateTableAdapter paymentRateTableAdapter;
         private System.Windows.Forms.BindingSource paymentBindingSource;
         private SchoolCourseDataSetTableAdapters.PaymentTableAdapter paymentTableAdapter;
+        private System.Windows.Forms.Label paymentRate_ID;
     }
 }

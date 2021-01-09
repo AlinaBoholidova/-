@@ -37,6 +37,38 @@ namespace Курсовая
             this.paymentTableAdapter.Fill(this.schoolCourseDataSet.Payment);
         }
 
+        private void add_Payment_Click(object sender, EventArgs e)
+        {
+            var add = new Payment();
+            add.ShowDialog();
+            paymentTableAdapter.Fill(schoolCourseDataSet.Payment);
+            schoolCourseDataSet.AcceptChanges();
+        }
 
+        private void change_Payment_Click(object sender, EventArgs e)
+        {
+            var ds = new SchoolCourseDataSet.PaymentDataTable();
+            paymentTableAdapter.FillBy1(ds, Convert.ToInt32(paymentDataGridView.SelectedRows[0].Cells[0].Value));
+            object[] row = ds.Rows[0].ItemArray;
+            var edt = new Payment(Convert.ToInt32(row[0]),
+                Convert.ToInt32(row[1]),
+                Convert.ToInt32(row[2]),
+                Convert.ToString(row[3]),
+                Convert.ToBoolean(row[4]));
+            edt.ShowDialog();
+            paymentTableAdapter.Fill(schoolCourseDataSet.Payment);
+            schoolCourseDataSet.AcceptChanges();
+        }
+
+        private void delete_Payment_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Ви дійсно хочете видалити обрану оплату?", "Видалення оплати",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                paymentTableAdapter.DeleteQuery(Convert.ToInt32(paymentDataGridView.SelectedRows[0].Cells[0].Value));
+                paymentTableAdapter.Fill(schoolCourseDataSet.Payment);
+                schoolCourseDataSet.AcceptChanges();
+            }
+        }
     }
 }
