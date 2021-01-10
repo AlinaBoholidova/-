@@ -31,12 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label subject_abbrLabel;
             System.Windows.Forms.Label test_dateLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Test));
             this.Cancel_Test = new System.Windows.Forms.Button();
             this.OK_Test = new System.Windows.Forms.Button();
             this.schoolCourseDataSet = new Курсовая.SchoolCourseDataSet();
             this.subject_abbrComboBox = new System.Windows.Forms.ComboBox();
-            this.test_dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.subjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.test_dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.subjectTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.SubjectTableAdapter();
             this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.TestTableAdapter();
@@ -47,11 +48,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // subject_abbrLabel
+            // 
+            subject_abbrLabel.AutoSize = true;
+            subject_abbrLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            subject_abbrLabel.Location = new System.Drawing.Point(129, 35);
+            subject_abbrLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            subject_abbrLabel.Name = "subject_abbrLabel";
+            subject_abbrLabel.Size = new System.Drawing.Size(161, 16);
+            subject_abbrLabel.TabIndex = 10;
+            subject_abbrLabel.Text = "Абревіатура предмету:";
+            // 
+            // test_dateLabel
+            // 
+            test_dateLabel.AutoSize = true;
+            test_dateLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            test_dateLabel.Location = new System.Drawing.Point(129, 97);
+            test_dateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            test_dateLabel.Name = "test_dateLabel";
+            test_dateLabel.Size = new System.Drawing.Size(126, 16);
+            test_dateLabel.TabIndex = 11;
+            test_dateLabel.Text = "Дата контрольної:";
+            // 
             // Cancel_Test
             // 
-            this.Cancel_Test.Location = new System.Drawing.Point(216, 166);
+            this.Cancel_Test.Location = new System.Drawing.Point(397, 157);
+            this.Cancel_Test.Margin = new System.Windows.Forms.Padding(4);
             this.Cancel_Test.Name = "Cancel_Test";
-            this.Cancel_Test.Size = new System.Drawing.Size(75, 23);
+            this.Cancel_Test.Size = new System.Drawing.Size(100, 28);
             this.Cancel_Test.TabIndex = 9;
             this.Cancel_Test.Text = "Відміна";
             this.Cancel_Test.UseVisualStyleBackColor = true;
@@ -59,9 +83,10 @@
             // 
             // OK_Test
             // 
-            this.OK_Test.Location = new System.Drawing.Point(73, 166);
+            this.OK_Test.Location = new System.Drawing.Point(206, 157);
+            this.OK_Test.Margin = new System.Windows.Forms.Padding(4);
             this.OK_Test.Name = "OK_Test";
-            this.OK_Test.Size = new System.Drawing.Size(75, 23);
+            this.OK_Test.Size = new System.Drawing.Size(100, 28);
             this.OK_Test.TabIndex = 8;
             this.OK_Test.Text = "ОК";
             this.OK_Test.UseVisualStyleBackColor = true;
@@ -72,45 +97,29 @@
             this.schoolCourseDataSet.DataSetName = "SchoolCourseDataSet";
             this.schoolCourseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // subject_abbrLabel
-            // 
-            subject_abbrLabel.AutoSize = true;
-            subject_abbrLabel.Location = new System.Drawing.Point(12, 58);
-            subject_abbrLabel.Name = "subject_abbrLabel";
-            subject_abbrLabel.Size = new System.Drawing.Size(122, 13);
-            subject_abbrLabel.TabIndex = 10;
-            subject_abbrLabel.Text = "Абревіатура предмету:";
-            // 
             // subject_abbrComboBox
             // 
             this.subject_abbrComboBox.DataSource = this.subjectBindingSource;
             this.subject_abbrComboBox.DisplayMember = "Subject_abbr";
             this.subject_abbrComboBox.FormattingEnabled = true;
-            this.subject_abbrComboBox.Location = new System.Drawing.Point(140, 55);
+            this.subject_abbrComboBox.Location = new System.Drawing.Point(300, 32);
+            this.subject_abbrComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.subject_abbrComboBox.Name = "subject_abbrComboBox";
-            this.subject_abbrComboBox.Size = new System.Drawing.Size(133, 21);
+            this.subject_abbrComboBox.Size = new System.Drawing.Size(265, 24);
             this.subject_abbrComboBox.TabIndex = 11;
-            // 
-            // test_dateLabel
-            // 
-            test_dateLabel.AutoSize = true;
-            test_dateLabel.Location = new System.Drawing.Point(12, 108);
-            test_dateLabel.Name = "test_dateLabel";
-            test_dateLabel.Size = new System.Drawing.Size(101, 13);
-            test_dateLabel.TabIndex = 11;
-            test_dateLabel.Text = "Дата контрольної:";
-            // 
-            // test_dateDateTimePicker
-            // 
-            this.test_dateDateTimePicker.Location = new System.Drawing.Point(140, 102);
-            this.test_dateDateTimePicker.Name = "test_dateDateTimePicker";
-            this.test_dateDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.test_dateDateTimePicker.TabIndex = 12;
             // 
             // subjectBindingSource
             // 
             this.subjectBindingSource.DataMember = "Subject";
             this.subjectBindingSource.DataSource = this.schoolCourseDataSet;
+            // 
+            // test_dateDateTimePicker
+            // 
+            this.test_dateDateTimePicker.Location = new System.Drawing.Point(300, 90);
+            this.test_dateDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.test_dateDateTimePicker.Name = "test_dateDateTimePicker";
+            this.test_dateDateTimePicker.Size = new System.Drawing.Size(265, 22);
+            this.test_dateDateTimePicker.TabIndex = 12;
             // 
             // subjectTableAdapter
             // 
@@ -127,16 +136,21 @@
             // 
             // Test
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 216);
+            this.BackgroundImage = global::Курсовая.Properties.Resources.back_subject1;
+            this.ClientSize = new System.Drawing.Size(620, 217);
             this.Controls.Add(test_dateLabel);
             this.Controls.Add(this.test_dateDateTimePicker);
             this.Controls.Add(subject_abbrLabel);
             this.Controls.Add(this.subject_abbrComboBox);
             this.Controls.Add(this.Cancel_Test);
             this.Controls.Add(this.OK_Test);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Test";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Контрольна робота";
             this.Load += new System.EventHandler(this.Test_Load);
             ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).EndInit();

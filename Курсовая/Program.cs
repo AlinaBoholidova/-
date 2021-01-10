@@ -23,11 +23,11 @@ namespace Курсовая
             //Application.Run(new Main());
             //Application.Run(new Pupils());
             //Application.Run(new PupilData());
-            Application.Run(new PersonnelFiles());
+            //Application.Run(new PersonnelFiles());
             //Application.Run(new Statistics());
             //Application.Run(new ViewReceipt());
             //Application.Run(new ViewScores());
-            //Application.Run(new Subjects());
+            Application.Run(new Subjects());
             //Application.Run(new Payments());
             //Application.Run(new Rating());
             //Application.Run(new AdditionalActivity());

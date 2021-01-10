@@ -28,13 +28,6 @@ namespace Курсовая
             this.subjectTableAdapter.Fill(this.schoolCourseDataSet.Subject);
         }
 
-        private void back_Subjects_Click(object sender, EventArgs e)
-        {
-            Main main = new Main();
-            main.Show();
-            this.Hide();
-        }
-
         private void Subjects_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -143,37 +136,6 @@ namespace Курсовая
             }
         }
 
-        private void add_Tests_Click(object sender, EventArgs e)
-        {
-            var add = new Test();
-            add.ShowDialog();
-            testTableAdapter.Fill(schoolCourseDataSet.Test);
-            schoolCourseDataSet.AcceptChanges();
-        }
-
-        private void change_Tests_Click(object sender, EventArgs e)
-        {
-            var ds = new SchoolCourseDataSet.TestDataTable();
-            testTableAdapter.FillBy(ds, Convert.ToInt32(testsDataGridView.SelectedRows[0].Cells[0].Value));
-            object[] row = ds.Rows[0].ItemArray;
-            var edt = new Test(Convert.ToInt32(row[0]),
-                row[1].ToString(),
-                Convert.ToDateTime(row[2]));
-            edt.ShowDialog();
-            testTableAdapter.Fill(schoolCourseDataSet.Test);
-            schoolCourseDataSet.AcceptChanges();
-        }
-
-        private void delete_Tests_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Ви дійсно хочете видалити обрану контрольну роботу?", "Видалення контрольної роботи",
-                MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                testTableAdapter.DeleteQuery(Convert.ToInt32(testsDataGridView.SelectedRows[0].Cells[0].Value));
-                testTableAdapter.Fill(schoolCourseDataSet.Test);
-                schoolCourseDataSet.AcceptChanges();
-            }
-        }
 
 
         // Subjects
@@ -288,6 +250,39 @@ namespace Курсовая
             }
         }
 
+
+        private void add_Tests_Click(object sender, EventArgs e)
+        {
+            var add = new Test();
+            add.ShowDialog();
+            testTableAdapter.Fill(schoolCourseDataSet.Test);
+            schoolCourseDataSet.AcceptChanges();
+        }
+
+        private void edit_Tests_Click(object sender, EventArgs e)
+        {
+            var ds = new SchoolCourseDataSet.TestDataTable();
+            testTableAdapter.FillBy(ds, Convert.ToInt32(testsDataGridView.SelectedRows[0].Cells[0].Value));
+            object[] row = ds.Rows[0].ItemArray;
+            var edt = new Test(Convert.ToInt32(row[0]),
+                row[1].ToString(),
+                Convert.ToDateTime(row[2]));
+            edt.ShowDialog();
+            testTableAdapter.Fill(schoolCourseDataSet.Test);
+            schoolCourseDataSet.AcceptChanges();
+        }
+
+        private void delete_Tests_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Ви дійсно хочете видалити обрану контрольну роботу?", "Видалення контрольної роботи",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                testTableAdapter.DeleteQuery(Convert.ToInt32(testsDataGridView.SelectedRows[0].Cells[0].Value));
+                testTableAdapter.Fill(schoolCourseDataSet.Test);
+                schoolCourseDataSet.AcceptChanges();
+            }
+        }
+
         private void add_Subjects_Click(object sender, EventArgs e)
         {
             var add = new Subject();
@@ -296,7 +291,7 @@ namespace Курсовая
             schoolCourseDataSet.AcceptChanges();
         }
 
-        private void change_Subjects_Click(object sender, EventArgs e)
+        private void edit_Subjects_Click(object sender, EventArgs e)
         {
             var ds = new SchoolCourseDataSet.SubjectDataTable();
             subjectTableAdapter.FillBy(ds, Convert.ToString(subjectsDataGridView.SelectedRows[0].Cells[0].Value));
@@ -320,5 +315,11 @@ namespace Курсовая
             }
         }
 
+        private void back_Subjects_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Hide();
+        }
     }
 }
