@@ -27,10 +27,10 @@ namespace Курсовая
             //Application.Run(new Statistics());
             //Application.Run(new ViewReceipt());
             //Application.Run(new ViewScores());
-            Application.Run(new Subjects());
+            //Application.Run(new Subjects());
             //Application.Run(new Payments());
             //Application.Run(new Rating());
-            //Application.Run(new AdditionalActivity());
+            Application.Run(new AdditionalActivity());
             //Application.Run(new Login());
 
             //DataContext db = new DataContext(СonnectionString);

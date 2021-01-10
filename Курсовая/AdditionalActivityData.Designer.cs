@@ -45,11 +45,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.additionalActivityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // activity_nameLabel
+            // 
+            activity_nameLabel.AutoSize = true;
+            activity_nameLabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            activity_nameLabel.Location = new System.Drawing.Point(120, 58);
+            activity_nameLabel.Name = "activity_nameLabel";
+            activity_nameLabel.Size = new System.Drawing.Size(127, 16);
+            activity_nameLabel.TabIndex = 16;
+            activity_nameLabel.Text = "Назва активності:";
+            // 
+            // activity_dateLabel
+            // 
+            activity_dateLabel.AutoSize = true;
+            activity_dateLabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            activity_dateLabel.Location = new System.Drawing.Point(120, 132);
+            activity_dateLabel.Name = "activity_dateLabel";
+            activity_dateLabel.Size = new System.Drawing.Size(125, 16);
+            activity_dateLabel.TabIndex = 17;
+            activity_dateLabel.Text = "Дата проведення:";
+            // 
             // Cancel_AddActivity
             // 
-            this.Cancel_AddActivity.Location = new System.Drawing.Point(256, 171);
+            this.Cancel_AddActivity.Location = new System.Drawing.Point(392, 187);
             this.Cancel_AddActivity.Name = "Cancel_AddActivity";
-            this.Cancel_AddActivity.Size = new System.Drawing.Size(75, 23);
+            this.Cancel_AddActivity.Size = new System.Drawing.Size(99, 29);
             this.Cancel_AddActivity.TabIndex = 15;
             this.Cancel_AddActivity.Text = "Відміна";
             this.Cancel_AddActivity.UseVisualStyleBackColor = true;
@@ -57,9 +77,9 @@
             // 
             // OK_AddActivity
             // 
-            this.OK_AddActivity.Location = new System.Drawing.Point(113, 171);
+            this.OK_AddActivity.Location = new System.Drawing.Point(201, 187);
             this.OK_AddActivity.Name = "OK_AddActivity";
-            this.OK_AddActivity.Size = new System.Drawing.Size(75, 23);
+            this.OK_AddActivity.Size = new System.Drawing.Size(99, 29);
             this.OK_AddActivity.TabIndex = 14;
             this.OK_AddActivity.Text = "ОК";
             this.OK_AddActivity.UseVisualStyleBackColor = true;
@@ -95,51 +115,35 @@
             this.tableAdapterManager.UpdateOrder = Курсовая.SchoolCourseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UserTableAdapter = null;
             // 
-            // activity_nameLabel
-            // 
-            activity_nameLabel.AutoSize = true;
-            activity_nameLabel.Location = new System.Drawing.Point(46, 45);
-            activity_nameLabel.Name = "activity_nameLabel";
-            activity_nameLabel.Size = new System.Drawing.Size(73, 13);
-            activity_nameLabel.TabIndex = 16;
-            activity_nameLabel.Text = "Activity name:";
-            // 
             // activity_nameTextBox
             // 
-            this.activity_nameTextBox.Location = new System.Drawing.Point(145, 45);
+            this.activity_nameTextBox.Location = new System.Drawing.Point(251, 56);
             this.activity_nameTextBox.Name = "activity_nameTextBox";
-            this.activity_nameTextBox.Size = new System.Drawing.Size(240, 20);
+            this.activity_nameTextBox.Size = new System.Drawing.Size(318, 22);
             this.activity_nameTextBox.TabIndex = 17;
-            // 
-            // activity_dateLabel
-            // 
-            activity_dateLabel.AutoSize = true;
-            activity_dateLabel.Location = new System.Drawing.Point(46, 105);
-            activity_dateLabel.Name = "activity_dateLabel";
-            activity_dateLabel.Size = new System.Drawing.Size(68, 13);
-            activity_dateLabel.TabIndex = 17;
-            activity_dateLabel.Text = "Activity date:";
             // 
             // activity_dateDateTimePicker
             // 
-            this.activity_dateDateTimePicker.Location = new System.Drawing.Point(145, 99);
+            this.activity_dateDateTimePicker.Location = new System.Drawing.Point(251, 130);
             this.activity_dateDateTimePicker.MaxDate = new System.DateTime(2021, 5, 28, 0, 0, 0, 0);
             this.activity_dateDateTimePicker.MinDate = new System.DateTime(2020, 9, 1, 0, 0, 0, 0);
             this.activity_dateDateTimePicker.Name = "activity_dateDateTimePicker";
-            this.activity_dateDateTimePicker.Size = new System.Drawing.Size(240, 20);
+            this.activity_dateDateTimePicker.Size = new System.Drawing.Size(318, 22);
             this.activity_dateDateTimePicker.TabIndex = 18;
             // 
             // AdditionalActivityData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 239);
+            this.BackgroundImage = global::Курсовая.Properties.Resources.back_subject;
+            this.ClientSize = new System.Drawing.Size(609, 270);
             this.Controls.Add(activity_dateLabel);
             this.Controls.Add(this.activity_dateDateTimePicker);
             this.Controls.Add(activity_nameLabel);
             this.Controls.Add(this.activity_nameTextBox);
             this.Controls.Add(this.Cancel_AddActivity);
             this.Controls.Add(this.OK_AddActivity);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "AdditionalActivityData";
             this.Text = "Додаткова активність";
             this.Load += new System.EventHandler(this.AdditionalActivityData_Load);

@@ -23,22 +23,52 @@ namespace Курсовая
             this.additionalActivityTableAdapter.Fill(this.schoolCourseDataSet.AdditionalActivity);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "schoolCourseDataSet.AdditionalParticipation". При необходимости она может быть перемещена или удалена.
             this.additionalParticipationTableAdapter.Fill(this.schoolCourseDataSet.AdditionalParticipation);
-
         }
 
-        private void back_AddActivity_Click(object sender, EventArgs e)
-        {
-            Main main = new Main();
-            this.Hide();
-            main.Show();
-        }
-
+        // Додаткова участь
         private void showAll_Participation_Click(object sender, EventArgs e)
         {
             this.additionalParticipationTableAdapter.Fill(this.schoolCourseDataSet.AdditionalParticipation);
             participationDataGridView.DataSource = participationBindingSource;
         }
 
+        private void add_Participation_Click(object sender, EventArgs e)
+        {
+            var add = new AdditionalParticipation();
+            add.ShowDialog();
+            additionalParticipationTableAdapter.Fill(schoolCourseDataSet.AdditionalParticipation);
+            schoolCourseDataSet.AcceptChanges();
+        }
+
+        private void edit_Participation_Click(object sender, EventArgs e)
+        {
+            var ds = new SchoolCourseDataSet.AdditionalParticipationDataTable();
+            additionalParticipationTableAdapter.FillBy2(ds,
+                Convert.ToInt32(participationDataGridView.SelectedRows[0].Cells[0].Value),
+                Convert.ToInt32(participationDataGridView.SelectedRows[0].Cells[1].Value));
+            object[] row = ds.Rows[0].ItemArray;
+            var edt = new AdditionalParticipation(Convert.ToInt32(row[0]),
+                Convert.ToInt32(row[1]),
+                Convert.ToInt32(row[2]));
+            edt.ShowDialog();
+            additionalParticipationTableAdapter.Fill(schoolCourseDataSet.AdditionalParticipation);
+            schoolCourseDataSet.AcceptChanges();
+        }
+
+        private void delete_Participation_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Ви дійсно хочете видалити обрану участь?", "Видалення участі",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                additionalParticipationTableAdapter.DeleteQuery(
+                    Convert.ToInt32(participationDataGridView.SelectedRows[0].Cells[0].Value),
+                    Convert.ToInt32(participationDataGridView.SelectedRows[0].Cells[1].Value));
+                additionalParticipationTableAdapter.Fill(schoolCourseDataSet.AdditionalParticipation);
+                schoolCourseDataSet.AcceptChanges();
+            }
+        }
+
+        // Додаткова активність
         private void showAll_Activity_Click(object sender, EventArgs e)
         {
             this.additionalActivityTableAdapter.Fill(this.schoolCourseDataSet.AdditionalActivity);
@@ -53,7 +83,7 @@ namespace Курсовая
             schoolCourseDataSet.AcceptChanges();
         }
 
-        private void change_Activity_Click(object sender, EventArgs e)
+        private void edit_Activity_Click(object sender, EventArgs e)
         {
             var ds = new SchoolCourseDataSet.AdditionalActivityDataTable();
             additionalActivityTableAdapter.FillBy(ds, Convert.ToInt32(activityDataGridView.SelectedRows[0].Cells[0].Value));
@@ -77,40 +107,18 @@ namespace Курсовая
             }
         }
 
-        private void add_Participation_Click(object sender, EventArgs e)
+        private void back_AddActivity_Click(object sender, EventArgs e)
         {
-            var add = new AdditionalParticipation();
-            add.ShowDialog();
-            additionalParticipationTableAdapter.Fill(schoolCourseDataSet.AdditionalParticipation);
-            schoolCourseDataSet.AcceptChanges();
+            Main main = new Main();
+            this.Hide();
+            main.Show();
         }
 
-        private void change_Participation_Click(object sender, EventArgs e)
+        private void AdditionalActivity_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var ds = new SchoolCourseDataSet.AdditionalParticipationDataTable();
-            additionalParticipationTableAdapter.FillBy2(ds, 
-                Convert.ToInt32(participationDataGridView.SelectedRows[0].Cells[0].Value),
-                Convert.ToInt32(participationDataGridView.SelectedRows[0].Cells[1].Value));
-            object[] row = ds.Rows[0].ItemArray;
-            var edt = new AdditionalParticipation(Convert.ToInt32(row[0]),
-                Convert.ToInt32(row[1]),
-                Convert.ToInt32(row[2]));
-            edt.ShowDialog();
-            additionalParticipationTableAdapter.Fill(schoolCourseDataSet.AdditionalParticipation);
-            schoolCourseDataSet.AcceptChanges();
-        }
-
-        private void delete_Participation_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Ви дійсно хочете видалити обрану участь?", "Видалення участі",
-                MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                additionalParticipationTableAdapter.DeleteQuery(
-                    Convert.ToInt32(participationDataGridView.SelectedRows[0].Cells[0].Value),
-                    Convert.ToInt32(participationDataGridView.SelectedRows[0].Cells[1].Value));
-                additionalParticipationTableAdapter.Fill(schoolCourseDataSet.AdditionalParticipation);
-                schoolCourseDataSet.AcceptChanges();
-            }
+            Main main = new Main();
+            this.Hide();
+            main.Show();
         }
     }
 }
