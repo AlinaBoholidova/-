@@ -156,6 +156,12 @@
     <Compile Include="Pupils.Designer.cs">
       <DependentUpon>Pupils.cs</DependentUpon>
     </Compile>
+    <Compile Include="QueryEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueryEdit.Designer.cs">
+      <DependentUpon>QueryEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rating.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     <EmbeddedResource Include="Pupils.resx">
       <DependentUpon>Pupils.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QueryEdit.resx">
+      <DependentUpon>QueryEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rating.resx">
       <DependentUpon>Rating.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,6 +328,8 @@
     <None Include="Resources\activity.png" />
     <None Include="Resources\file.png" />
     <None Include="Resources\folder.png" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\rating.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

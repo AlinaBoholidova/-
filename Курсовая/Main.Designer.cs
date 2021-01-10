@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.pupilsButton_Main = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.addActivityButton = new System.Windows.Forms.Button();
+            this.paymentsButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.testsSubjectsButton_Main = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.distributionButton = new System.Windows.Forms.Button();
+            this.paymentRatesButton = new System.Windows.Forms.Button();
             this.pfilesButton_Main = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.skipsButton = new System.Windows.Forms.Button();
@@ -46,28 +46,33 @@
             this.activititesButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.receiptsButton = new System.Windows.Forms.Button();
+            this.scoresButton = new System.Windows.Forms.Button();
+            this.rateButton = new System.Windows.Forms.Button();
             this.exitPictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button8 = new System.Windows.Forms.Button();
+            this.journalRecordsButton = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button9 = new System.Windows.Forms.Button();
+            this.queryButton = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // pupilsButton_Main
             // 
+            this.pupilsButton_Main.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pupilsButton_Main.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.pupilsButton_Main.Location = new System.Drawing.Point(433, 64);
             this.pupilsButton_Main.Name = "pupilsButton_Main";
@@ -77,27 +82,29 @@
             this.pupilsButton_Main.UseVisualStyleBackColor = true;
             this.pupilsButton_Main.Click += new System.EventHandler(this.pupilsButton_Main_Click);
             // 
-            // button2
+            // addActivityButton
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(433, 199);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Додаткова активність та участь";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.addActivityButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addActivityButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addActivityButton.Location = new System.Drawing.Point(433, 199);
+            this.addActivityButton.Name = "addActivityButton";
+            this.addActivityButton.Size = new System.Drawing.Size(137, 40);
+            this.addActivityButton.TabIndex = 1;
+            this.addActivityButton.Text = "Додаткова активність та участь";
+            this.addActivityButton.UseVisualStyleBackColor = true;
+            this.addActivityButton.Click += new System.EventHandler(this.addActivityButton_Click);
             // 
-            // button3
+            // paymentsButton
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(702, 199);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(137, 40);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Списки оплати";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.paymentsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.paymentsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.paymentsButton.Location = new System.Drawing.Point(702, 199);
+            this.paymentsButton.Name = "paymentsButton";
+            this.paymentsButton.Size = new System.Drawing.Size(137, 40);
+            this.paymentsButton.TabIndex = 2;
+            this.paymentsButton.Text = "Списки оплати";
+            this.paymentsButton.UseVisualStyleBackColor = true;
+            this.paymentsButton.Click += new System.EventHandler(this.paymentsButton_Click);
             // 
             // label1
             // 
@@ -137,38 +144,43 @@
             // 
             // testsSubjectsButton_Main
             // 
+            this.testsSubjectsButton_Main.Cursor = System.Windows.Forms.Cursors.Hand;
             this.testsSubjectsButton_Main.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.testsSubjectsButton_Main.Location = new System.Drawing.Point(153, 199);
             this.testsSubjectsButton_Main.Name = "testsSubjectsButton_Main";
             this.testsSubjectsButton_Main.Size = new System.Drawing.Size(137, 40);
             this.testsSubjectsButton_Main.TabIndex = 6;
-            this.testsSubjectsButton_Main.Text = "Контрольні роботи та предмети";
+            this.testsSubjectsButton_Main.Text = "Предмети та контрольні роботи";
             this.testsSubjectsButton_Main.UseVisualStyleBackColor = true;
             this.testsSubjectsButton_Main.Click += new System.EventHandler(this.testsSubjectsButton_Main_Click);
             // 
-            // button5
+            // distributionButton
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(433, 254);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(137, 40);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Розподіл балів";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.distributionButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.distributionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.distributionButton.Location = new System.Drawing.Point(433, 254);
+            this.distributionButton.Name = "distributionButton";
+            this.distributionButton.Size = new System.Drawing.Size(137, 40);
+            this.distributionButton.TabIndex = 7;
+            this.distributionButton.Text = "Розподіл балів";
+            this.distributionButton.UseVisualStyleBackColor = true;
+            this.distributionButton.Click += new System.EventHandler(this.distributionButton_Click);
             // 
-            // button6
+            // paymentRatesButton
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(702, 254);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(137, 40);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Тарифи оплати";
-            this.button6.UseVisualStyleBackColor = true;
+            this.paymentRatesButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.paymentRatesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.paymentRatesButton.Location = new System.Drawing.Point(702, 254);
+            this.paymentRatesButton.Name = "paymentRatesButton";
+            this.paymentRatesButton.Size = new System.Drawing.Size(137, 40);
+            this.paymentRatesButton.TabIndex = 8;
+            this.paymentRatesButton.Text = "Тарифи оплати";
+            this.paymentRatesButton.UseVisualStyleBackColor = true;
+            this.paymentRatesButton.Click += new System.EventHandler(this.paymentRatesButton_Click);
             // 
             // pfilesButton_Main
             // 
+            this.pfilesButton_Main.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pfilesButton_Main.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.pfilesButton_Main.Location = new System.Drawing.Point(573, 64);
             this.pfilesButton_Main.Name = "pfilesButton_Main";
@@ -190,7 +202,9 @@
             // 
             // skipsButton
             // 
-            this.skipsButton.Location = new System.Drawing.Point(260, 379);
+            this.skipsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.skipsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.skipsButton.Location = new System.Drawing.Point(271, 376);
             this.skipsButton.Name = "skipsButton";
             this.skipsButton.Size = new System.Drawing.Size(106, 39);
             this.skipsButton.TabIndex = 11;
@@ -200,7 +214,9 @@
             // 
             // birthdaysButton
             // 
-            this.birthdaysButton.Location = new System.Drawing.Point(137, 378);
+            this.birthdaysButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.birthdaysButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.birthdaysButton.Location = new System.Drawing.Point(153, 376);
             this.birthdaysButton.Name = "birthdaysButton";
             this.birthdaysButton.Size = new System.Drawing.Size(106, 39);
             this.birthdaysButton.TabIndex = 12;
@@ -210,7 +226,9 @@
             // 
             // debtersButton
             // 
-            this.debtersButton.Location = new System.Drawing.Point(507, 379);
+            this.debtersButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.debtersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.debtersButton.Location = new System.Drawing.Point(505, 375);
             this.debtersButton.Name = "debtersButton";
             this.debtersButton.Size = new System.Drawing.Size(119, 40);
             this.debtersButton.TabIndex = 13;
@@ -220,7 +238,9 @@
             // 
             // activititesButton
             // 
-            this.activititesButton.Location = new System.Drawing.Point(394, 379);
+            this.activititesButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.activititesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.activititesButton.Location = new System.Drawing.Point(388, 375);
             this.activititesButton.Name = "activititesButton";
             this.activititesButton.Size = new System.Drawing.Size(107, 40);
             this.activititesButton.TabIndex = 14;
@@ -232,7 +252,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(279, 470);
+            this.label5.Location = new System.Drawing.Point(140, 461);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 20);
             this.label5.TabIndex = 15;
@@ -242,48 +262,54 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(69, 467);
+            this.label6.Location = new System.Drawing.Point(575, 461);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 20);
             this.label6.TabIndex = 16;
             this.label6.Text = "Рейтинг";
             // 
-            // button1
+            // receiptsButton
             // 
-            this.button1.Location = new System.Drawing.Point(332, 498);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 33);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Квитанції";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.receiptsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.receiptsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.receiptsButton.Location = new System.Drawing.Point(153, 493);
+            this.receiptsButton.Name = "receiptsButton";
+            this.receiptsButton.Size = new System.Drawing.Size(106, 39);
+            this.receiptsButton.TabIndex = 17;
+            this.receiptsButton.Text = "Квитанції";
+            this.receiptsButton.UseVisualStyleBackColor = true;
+            this.receiptsButton.Click += new System.EventHandler(this.receiptsButton_Click);
             // 
-            // button4
+            // scoresButton
             // 
-            this.button4.Location = new System.Drawing.Point(450, 498);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 34);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Оцінки";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.scoresButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.scoresButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.scoresButton.Location = new System.Drawing.Point(271, 493);
+            this.scoresButton.Name = "scoresButton";
+            this.scoresButton.Size = new System.Drawing.Size(106, 39);
+            this.scoresButton.TabIndex = 18;
+            this.scoresButton.Text = "Оцінки";
+            this.scoresButton.UseVisualStyleBackColor = true;
+            this.scoresButton.Click += new System.EventHandler(this.scoresButton_Click);
             // 
-            // button7
+            // rateButton
             // 
-            this.button7.Location = new System.Drawing.Point(125, 498);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(109, 34);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "Рейтинг";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.rateButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rateButton.Location = new System.Drawing.Point(590, 493);
+            this.rateButton.Name = "rateButton";
+            this.rateButton.Size = new System.Drawing.Size(106, 39);
+            this.rateButton.TabIndex = 19;
+            this.rateButton.Text = "Рейтинг";
+            this.rateButton.UseVisualStyleBackColor = true;
+            this.rateButton.Click += new System.EventHandler(this.rateButton_Click);
             // 
             // exitPictureBox
             // 
             this.exitPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.exitPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitPictureBox.Image = global::Курсовая.Properties.Resources.exit;
-            this.exitPictureBox.Location = new System.Drawing.Point(791, 477);
+            this.exitPictureBox.Location = new System.Drawing.Point(794, 591);
             this.exitPictureBox.Name = "exitPictureBox";
             this.exitPictureBox.Size = new System.Drawing.Size(45, 50);
             this.exitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -324,15 +350,17 @@
             this.pictureBox3.TabIndex = 23;
             this.pictureBox3.TabStop = false;
             // 
-            // button8
+            // journalRecordsButton
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.Location = new System.Drawing.Point(153, 254);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(137, 40);
-            this.button8.TabIndex = 24;
-            this.button8.Text = "Записи журналу";
-            this.button8.UseVisualStyleBackColor = true;
+            this.journalRecordsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.journalRecordsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.journalRecordsButton.Location = new System.Drawing.Point(153, 254);
+            this.journalRecordsButton.Name = "journalRecordsButton";
+            this.journalRecordsButton.Size = new System.Drawing.Size(137, 40);
+            this.journalRecordsButton.TabIndex = 24;
+            this.journalRecordsButton.Text = "Записи журналу";
+            this.journalRecordsButton.UseVisualStyleBackColor = true;
+            this.journalRecordsButton.Click += new System.EventHandler(this.journalRecordsButton_Click);
             // 
             // pictureBox4
             // 
@@ -368,14 +396,39 @@
             this.pictureBox5.TabIndex = 27;
             this.pictureBox5.TabStop = false;
             // 
-            // button9
+            // queryButton
             // 
-            this.button9.Location = new System.Drawing.Point(632, 379);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(119, 40);
-            this.button9.TabIndex = 28;
-            this.button9.Text = "Свій запит";
-            this.button9.UseVisualStyleBackColor = true;
+            this.queryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.queryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.queryButton.Location = new System.Drawing.Point(634, 376);
+            this.queryButton.Name = "queryButton";
+            this.queryButton.Size = new System.Drawing.Size(119, 40);
+            this.queryButton.TabIndex = 28;
+            this.queryButton.Text = "Свій запит";
+            this.queryButton.UseVisualStyleBackColor = true;
+            this.queryButton.Click += new System.EventHandler(this.queryButton_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = global::Курсовая.Properties.Resources.report;
+            this.pictureBox6.Location = new System.Drawing.Point(40, 446);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(94, 90);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 29;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.Image = global::Курсовая.Properties.Resources.rating;
+            this.pictureBox7.Location = new System.Drawing.Point(490, 453);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(68, 73);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 30;
+            this.pictureBox7.TabStop = false;
             // 
             // Main
             // 
@@ -383,19 +436,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Курсовая.Properties.Resources.back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(887, 560);
-            this.Controls.Add(this.button9);
+            this.ClientSize = new System.Drawing.Size(887, 678);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.queryButton);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.journalRecordsButton);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.exitPictureBox);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.rateButton);
+            this.Controls.Add(this.scoresButton);
+            this.Controls.Add(this.receiptsButton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.activititesButton);
@@ -404,14 +459,14 @@
             this.Controls.Add(this.skipsButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pfilesButton_Main);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.paymentRatesButton);
+            this.Controls.Add(this.distributionButton);
             this.Controls.Add(this.testsSubjectsButton_Main);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.paymentsButton);
+            this.Controls.Add(this.addActivityButton);
             this.Controls.Add(this.pupilsButton_Main);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
@@ -424,6 +479,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,14 +489,14 @@
         #endregion
 
         private System.Windows.Forms.Button pupilsButton_Main;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button addActivityButton;
+        private System.Windows.Forms.Button paymentsButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button testsSubjectsButton_Main;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button distributionButton;
+        private System.Windows.Forms.Button paymentRatesButton;
         private System.Windows.Forms.Button pfilesButton_Main;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button skipsButton;
@@ -448,18 +505,20 @@
         private System.Windows.Forms.Button activititesButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button receiptsButton;
+        private System.Windows.Forms.Button scoresButton;
+        private System.Windows.Forms.Button rateButton;
         private System.Windows.Forms.PictureBox exitPictureBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button journalRecordsButton;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button queryButton;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }
 

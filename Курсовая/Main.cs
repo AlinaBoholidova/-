@@ -19,16 +19,56 @@ namespace Курсовая
 
         private void pupilsButton_Main_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Pupils pupils = new Pupils();
+            this.Hide();
             pupils.Show();
         }
 
         private void pfilesButton_Main_Click(object sender, EventArgs e)
         {
-            this.Hide();
             PersonnelFiles pfiles = new PersonnelFiles();
+            this.Hide();
             pfiles.Show();
+        }
+
+        private void testsSubjectsButton_Main_Click(object sender, EventArgs e)
+        {
+            Subjects subjects = new Subjects();
+            this.Hide();
+            subjects.Show();
+        }
+
+        private void journalRecordsButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addActivityButton_Click(object sender, EventArgs e)
+        {
+            AdditionalActivity activity = new AdditionalActivity();
+            this.Hide();
+            activity.Show();
+        }
+
+        private void distributionButton_Click(object sender, EventArgs e)
+        {
+            Points points = new Points();
+            this.Hide();
+            points.Show();
+        }
+
+        private void paymentsButton_Click(object sender, EventArgs e)
+        {
+            Payments payments = new Payments();
+            this.Hide();
+            payments.Show();
+        }
+
+        private void paymentRatesButton_Click(object sender, EventArgs e)
+        {
+            Payments payments = new Payments();
+            this.Hide();
+            payments.Show();
         }
 
         private void birthdaysButton_Click(object sender, EventArgs e)
@@ -59,60 +99,32 @@ namespace Курсовая
             statistics.Show();
         }
 
-        private void testsSubjectsButton_Main_Click(object sender, EventArgs e)
+        private void queryButton_Click(object sender, EventArgs e)
         {
-            Subjects subjects = new Subjects();
+            QueryEdit queryEdit = new QueryEdit();
             this.Hide();
-            subjects.Show();
+            queryEdit.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void receiptsButton_Click(object sender, EventArgs e)
         {
             ViewReceipt subjects = new ViewReceipt();
             this.Hide();
             subjects.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void scoresButton_Click(object sender, EventArgs e)
         {
             ViewScores subjects = new ViewScores();
             this.Hide();
             subjects.Show();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void rateButton_Click(object sender, EventArgs e)
         {
             Rating subjects = new Rating();
             this.Hide();
             subjects.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Payments payments = new Payments();
-            this.Hide();
-            payments.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            AdditionalActivity activity = new AdditionalActivity();
-            this.Hide();
-            activity.Show();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Points points = new Points();
-            this.Hide();
-            points.Show();
-        }
-
-        private void Main_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
         }
 
         private void exitPictureBox_Click(object sender, EventArgs e)
@@ -123,5 +135,13 @@ namespace Курсовая
                 Application.Exit();
             }
         }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.Show();
+        }
+
     }
 }
