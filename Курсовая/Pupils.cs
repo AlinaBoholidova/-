@@ -28,42 +28,7 @@ namespace Курсовая
             this.pupilTableAdapter.Fill(this.schoolCourseDataSet.Pupil);
         }
 
-        private void add_Pupils_Click(object sender, EventArgs e)
-        {
-            var add = new PupilData();
-            add.ShowDialog();
-            pupilTableAdapter.Fill(schoolCourseDataSet.Pupil);
-            schoolCourseDataSet.AcceptChanges();
-            if (add.DialogResult == DialogResult.OK)
-            {
-                MessageBox.Show("Не забудьте заповнити особову справу учня!", "Повідомлення");
-            }
-        }
-
-        private void change_Pupils_Click(object sender, EventArgs e)
-        {
-            var ds = new SchoolCourseDataSet.PupilDataTable();
-            pupilTableAdapter.FillBy(ds, Convert.ToInt32(pupilDataGridView.SelectedRows[0].Cells[0].Value));
-            object[] row = ds.Rows[0].ItemArray;
-            var edt = new PupilData(Convert.ToInt32(row[0]),
-                row[1].ToString(),
-                row[2].ToString(),
-                Convert.ToDateTime(row[3]));
-            edt.ShowDialog();
-            pupilTableAdapter.Fill(schoolCourseDataSet.Pupil);
-            schoolCourseDataSet.AcceptChanges();
-        }
-
-        private void delete_Pupils_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Ви дійсно хочете видалити учня та всі пов'язані з ним дані?", "Видалення учня",
-                MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                pupilTableAdapter.DeleteQuery(Convert.ToInt32(pupilDataGridView.SelectedRows[0].Cells[0].Value));
-                pupilTableAdapter.Fill(schoolCourseDataSet.Pupil);
-                schoolCourseDataSet.AcceptChanges();
-            }
-        }
+        
 
         private void back_Pupils_Click(object sender, EventArgs e)
         {
@@ -269,5 +234,43 @@ namespace Курсовая
             personnelFileTableAdapter.Fill(schoolCourseDataSet.PersonnelFile);
             schoolCourseDataSet.AcceptChanges();
         }
+
+        private void add_Pupils_Click(object sender, EventArgs e)
+        {
+            var add = new PupilData();
+            add.ShowDialog();
+            pupilTableAdapter.Fill(schoolCourseDataSet.Pupil);
+            schoolCourseDataSet.AcceptChanges();
+            if (add.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show("Не забудьте заповнити особову справу учня!", "Повідомлення");
+            }
+        }
+
+        private void edit_Pupils_Click(object sender, EventArgs e)
+        {
+            var ds = new SchoolCourseDataSet.PupilDataTable();
+            pupilTableAdapter.FillBy(ds, Convert.ToInt32(pupilDataGridView.SelectedRows[0].Cells[0].Value));
+            object[] row = ds.Rows[0].ItemArray;
+            var edt = new PupilData(Convert.ToInt32(row[0]),
+                row[1].ToString(),
+                row[2].ToString(),
+                Convert.ToDateTime(row[3]));
+            edt.ShowDialog();
+            pupilTableAdapter.Fill(schoolCourseDataSet.Pupil);
+            schoolCourseDataSet.AcceptChanges();
+        }
+
+        private void delete_Pupils_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Ви дійсно хочете видалити учня та всі пов'язані з ним дані?", "Видалення учня",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                pupilTableAdapter.DeleteQuery(Convert.ToInt32(pupilDataGridView.SelectedRows[0].Cells[0].Value));
+                pupilTableAdapter.Fill(schoolCourseDataSet.Pupil);
+                schoolCourseDataSet.AcceptChanges();
+            }
+        }
+
     }
 }
