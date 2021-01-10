@@ -32,7 +32,8 @@ namespace Курсовая
             //Application.Run(new Rating());
             //Application.Run(new AdditionalActivity());
             //Application.Run(new Login());
-            Application.Run(new Points());
+            //Application.Run(new Points());
+            Application.Run(new Payments());
 
             //DataContext db = new DataContext(СonnectionString);
 

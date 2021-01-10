@@ -33,6 +33,7 @@
             System.Windows.Forms.Label paymentRate_IDLabel;
             System.Windows.Forms.Label monthLabel;
             System.Windows.Forms.Label paidLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentData));
             this.Cancel_Payment = new System.Windows.Forms.Button();
             this.OK_Payment = new System.Windows.Forms.Button();
             this.schoolCourseDataSet = new Курсовая.SchoolCourseDataSet();
@@ -61,44 +62,48 @@
             // pupil_IDLabel
             // 
             pupil_IDLabel.AutoSize = true;
-            pupil_IDLabel.Location = new System.Drawing.Point(26, 32);
+            pupil_IDLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            pupil_IDLabel.Location = new System.Drawing.Point(113, 42);
             pupil_IDLabel.Name = "pupil_IDLabel";
-            pupil_IDLabel.Size = new System.Drawing.Size(46, 13);
+            pupil_IDLabel.Size = new System.Drawing.Size(50, 15);
             pupil_IDLabel.TabIndex = 14;
             pupil_IDLabel.Text = "ID учня:";
             // 
             // paymentRate_IDLabel
             // 
             paymentRate_IDLabel.AutoSize = true;
-            paymentRate_IDLabel.Location = new System.Drawing.Point(26, 72);
+            paymentRate_IDLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            paymentRate_IDLabel.Location = new System.Drawing.Point(112, 88);
             paymentRate_IDLabel.Name = "paymentRate_IDLabel";
-            paymentRate_IDLabel.Size = new System.Drawing.Size(60, 13);
+            paymentRate_IDLabel.Size = new System.Drawing.Size(69, 15);
             paymentRate_IDLabel.TabIndex = 15;
             paymentRate_IDLabel.Text = "ID тарифу:";
             // 
             // monthLabel
             // 
             monthLabel.AutoSize = true;
-            monthLabel.Location = new System.Drawing.Point(26, 119);
+            monthLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            monthLabel.Location = new System.Drawing.Point(113, 140);
             monthLabel.Name = "monthLabel";
-            monthLabel.Size = new System.Drawing.Size(45, 13);
+            monthLabel.Size = new System.Drawing.Size(51, 15);
             monthLabel.TabIndex = 16;
             monthLabel.Text = "Місяць:";
             // 
             // paidLabel
             // 
             paidLabel.AutoSize = true;
-            paidLabel.Location = new System.Drawing.Point(26, 170);
+            paidLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            paidLabel.Location = new System.Drawing.Point(112, 188);
             paidLabel.Name = "paidLabel";
-            paidLabel.Size = new System.Drawing.Size(72, 13);
+            paidLabel.Size = new System.Drawing.Size(83, 15);
             paidLabel.TabIndex = 17;
             paidLabel.Text = "Стан сплати:";
             // 
             // Cancel_Payment
             // 
-            this.Cancel_Payment.Location = new System.Drawing.Point(302, 241);
+            this.Cancel_Payment.Location = new System.Drawing.Point(437, 233);
             this.Cancel_Payment.Name = "Cancel_Payment";
-            this.Cancel_Payment.Size = new System.Drawing.Size(75, 23);
+            this.Cancel_Payment.Size = new System.Drawing.Size(87, 27);
             this.Cancel_Payment.TabIndex = 13;
             this.Cancel_Payment.Text = "Відміна";
             this.Cancel_Payment.UseVisualStyleBackColor = true;
@@ -106,9 +111,9 @@
             // 
             // OK_Payment
             // 
-            this.OK_Payment.Location = new System.Drawing.Point(159, 241);
+            this.OK_Payment.Location = new System.Drawing.Point(270, 233);
             this.OK_Payment.Name = "OK_Payment";
-            this.OK_Payment.Size = new System.Drawing.Size(75, 23);
+            this.OK_Payment.Size = new System.Drawing.Size(87, 27);
             this.OK_Payment.TabIndex = 12;
             this.OK_Payment.Text = "ОК";
             this.OK_Payment.UseVisualStyleBackColor = true;
@@ -124,9 +129,9 @@
             this.pupil_IDComboBox.DataSource = this.pupilBbindingSource;
             this.pupil_IDComboBox.DisplayMember = "Pupil_ID";
             this.pupil_IDComboBox.FormattingEnabled = true;
-            this.pupil_IDComboBox.Location = new System.Drawing.Point(131, 29);
+            this.pupil_IDComboBox.Location = new System.Drawing.Point(235, 38);
             this.pupil_IDComboBox.Name = "pupil_IDComboBox";
-            this.pupil_IDComboBox.Size = new System.Drawing.Size(121, 21);
+            this.pupil_IDComboBox.Size = new System.Drawing.Size(140, 23);
             this.pupil_IDComboBox.TabIndex = 15;
             this.pupil_IDComboBox.SelectedIndexChanged += new System.EventHandler(this.pupil_IDComboBox_SelectedIndexChanged);
             // 
@@ -140,9 +145,9 @@
             this.paymentRate_IDComboBox.DataSource = this.rateBindingSource;
             this.paymentRate_IDComboBox.DisplayMember = "PaymentRate_ID";
             this.paymentRate_IDComboBox.FormattingEnabled = true;
-            this.paymentRate_IDComboBox.Location = new System.Drawing.Point(131, 69);
+            this.paymentRate_IDComboBox.Location = new System.Drawing.Point(235, 85);
             this.paymentRate_IDComboBox.Name = "paymentRate_IDComboBox";
-            this.paymentRate_IDComboBox.Size = new System.Drawing.Size(121, 21);
+            this.paymentRate_IDComboBox.Size = new System.Drawing.Size(140, 23);
             this.paymentRate_IDComboBox.TabIndex = 16;
             this.paymentRate_IDComboBox.SelectedIndexChanged += new System.EventHandler(this.paymentRate_IDComboBox_SelectedIndexChanged);
             // 
@@ -167,16 +172,16 @@
             "жовтень",
             "листопад",
             "грудень"});
-            this.monthComboBox.Location = new System.Drawing.Point(131, 116);
+            this.monthComboBox.Location = new System.Drawing.Point(235, 137);
             this.monthComboBox.Name = "monthComboBox";
-            this.monthComboBox.Size = new System.Drawing.Size(121, 21);
+            this.monthComboBox.Size = new System.Drawing.Size(140, 23);
             this.monthComboBox.TabIndex = 17;
             // 
             // paidCheckBox
             // 
-            this.paidCheckBox.Location = new System.Drawing.Point(131, 165);
+            this.paidCheckBox.Location = new System.Drawing.Point(235, 182);
             this.paidCheckBox.Name = "paidCheckBox";
-            this.paidCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.paidCheckBox.Size = new System.Drawing.Size(121, 28);
             this.paidCheckBox.TabIndex = 18;
             this.paidCheckBox.Text = "Сплачено";
             this.paidCheckBox.UseVisualStyleBackColor = true;
@@ -184,9 +189,9 @@
             // pupil
             // 
             this.pupil.AutoSize = true;
-            this.pupil.Location = new System.Drawing.Point(289, 32);
+            this.pupil.Location = new System.Drawing.Point(394, 42);
             this.pupil.Name = "pupil";
-            this.pupil.Size = new System.Drawing.Size(72, 13);
+            this.pupil.Size = new System.Drawing.Size(84, 15);
             this.pupil.TabIndex = 19;
             this.pupil.Text = "pupil_IDLabel";
             // 
@@ -210,17 +215,18 @@
             // paymentRate_ID
             // 
             this.paymentRate_ID.AutoSize = true;
-            this.paymentRate_ID.Location = new System.Drawing.Point(289, 72);
+            this.paymentRate_ID.Location = new System.Drawing.Point(394, 88);
             this.paymentRate_ID.Name = "paymentRate_ID";
-            this.paymentRate_ID.Size = new System.Drawing.Size(113, 13);
+            this.paymentRate_ID.Size = new System.Drawing.Size(130, 15);
             this.paymentRate_ID.TabIndex = 20;
             this.paymentRate_ID.Text = "paymentRate_IDLabel";
             // 
-            // Payment
+            // PaymentData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 301);
+            this.BackgroundImage = global::Курсовая.Properties.Resources.back_subject;
+            this.ClientSize = new System.Drawing.Size(713, 304);
             this.Controls.Add(this.paymentRate_ID);
             this.Controls.Add(this.pupil);
             this.Controls.Add(paidLabel);
@@ -233,7 +239,10 @@
             this.Controls.Add(this.pupil_IDComboBox);
             this.Controls.Add(this.Cancel_Payment);
             this.Controls.Add(this.OK_Payment);
-            this.Name = "Payment";
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "PaymentData";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Дані про оплату";
             this.Load += new System.EventHandler(this.Payment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).EndInit();

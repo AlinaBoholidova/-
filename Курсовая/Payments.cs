@@ -17,13 +17,6 @@ namespace Курсовая
             InitializeComponent();
         }
 
-        private void back_Payments_Click(object sender, EventArgs e)
-        {
-            Main main = new Main();
-            main.Show();
-            this.Hide();
-        }
-
         private void Payments_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -37,6 +30,25 @@ namespace Курсовая
             this.paymentTableAdapter.Fill(this.schoolCourseDataSet.Payment);
         }
 
+        private void showAll_Payment_Click(object sender, EventArgs e)
+        {
+            this.paymentTableAdapter.Fill(this.schoolCourseDataSet.Payment);
+            paymentDataGridView.DataSource = paymentBindingSource;
+        }
+
+        private void showAll_Rate_Click(object sender, EventArgs e)
+        {
+            this.paymentRateTableAdapter.Fill(this.schoolCourseDataSet.PaymentRate);
+            rateDataGridView.DataSource = rateBindingSource;
+        }
+
+        private void back_Payments_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Hide();
+        }
+
         private void add_Payment_Click(object sender, EventArgs e)
         {
             var add = new PaymentData();
@@ -45,7 +57,7 @@ namespace Курсовая
             schoolCourseDataSet.AcceptChanges();
         }
 
-        private void change_Payment_Click(object sender, EventArgs e)
+        private void edit_Payment_Click(object sender, EventArgs e)
         {
             var ds = new SchoolCourseDataSet.PaymentDataTable();
             paymentTableAdapter.FillBy1(ds, Convert.ToInt32(paymentDataGridView.SelectedRows[0].Cells[0].Value));
@@ -79,7 +91,7 @@ namespace Курсовая
             schoolCourseDataSet.AcceptChanges();
         }
 
-        private void change_Rate_Click(object sender, EventArgs e)
+        private void edit_Rate_Click(object sender, EventArgs e)
         {
             var ds = new SchoolCourseDataSet.PaymentRateDataTable();
             paymentRateTableAdapter.FillBy(ds, Convert.ToInt32(rateDataGridView.SelectedRows[0].Cells[0].Value));
@@ -101,18 +113,6 @@ namespace Курсовая
                 paymentRateTableAdapter.Fill(schoolCourseDataSet.PaymentRate);
                 schoolCourseDataSet.AcceptChanges();
             }
-        }
-
-        private void showAll_Payment_Click(object sender, EventArgs e)
-        {
-            this.paymentTableAdapter.Fill(this.schoolCourseDataSet.Payment);
-            paymentDataGridView.DataSource = paymentBindingSource;
-        }
-
-        private void showAll_Rate_Click(object sender, EventArgs e)
-        {
-            this.paymentRateTableAdapter.Fill(this.schoolCourseDataSet.PaymentRate);
-            rateDataGridView.DataSource = rateBindingSource;
         }
     }
 }
