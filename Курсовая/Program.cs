@@ -21,7 +21,9 @@ namespace Курсовая
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Main());
-            Application.Run(new Pupils());
+            //Application.Run(new Pupils());
+            //Application.Run(new PupilData());
+            Application.Run(new PersonnelFiles());
             //Application.Run(new Statistics());
             //Application.Run(new ViewReceipt());
             //Application.Run(new ViewScores());

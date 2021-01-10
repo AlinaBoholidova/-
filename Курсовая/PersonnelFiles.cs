@@ -24,19 +24,42 @@ namespace Курсовая
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "schoolCourseDataSet.PersonnelFile". При необходимости она может быть перемещена или удалена.
             this.personnelFileTableAdapter.Fill(this.schoolCourseDataSet.PersonnelFile);
-
         }
 
-        private void PersonnelFiles_FormClosing(object sender, FormClosingEventArgs e)
+        private void add_PersonnelFiles_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var add = new PersonnelFile();
+            add.pupil_IDTextBox.ReadOnly = false;
+            add.ShowDialog();
+            personnelFileTableAdapter.Fill(schoolCourseDataSet.PersonnelFile);
+            schoolCourseDataSet.AcceptChanges();
         }
 
-        private void back_PersonelFiles_Click(object sender, EventArgs e)
+        private void edit_PersonnelFiles_Click(object sender, EventArgs e)
         {
-            Main main = new Main();
-            main.Show();
-            this.Hide();
+            var ds = new SchoolCourseDataSet.PersonnelFileDataTable();
+            personnelFileTableAdapter.FillBy(ds, Convert.ToInt32(pfilesDataGridView.SelectedRows[0].Cells[0].Value));
+            object[] row = ds.Rows[0].ItemArray;
+            var edt = new PersonnelFile(Convert.ToInt32(row[0]),
+                row[1].ToString(),
+                row[2].ToString(),
+                row[3].ToString(),
+                row[4].ToString(),
+                row[5].ToString());
+            edt.ShowDialog();
+            personnelFileTableAdapter.Fill(schoolCourseDataSet.PersonnelFile);
+            schoolCourseDataSet.AcceptChanges();
+        }
+
+        private void delete_PersonnelFiles_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Ви дійсно хочете видалити особову справу учня?", "Видалення особової справи",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                personnelFileTableAdapter.DeleteQuery(Convert.ToInt32(pfilesDataGridView.SelectedRows[0].Cells[0].Value));
+                personnelFileTableAdapter.Fill(schoolCourseDataSet.PersonnelFile);
+                schoolCourseDataSet.AcceptChanges();
+            }
         }
 
         private void showAll_PersonnelFiles_Click(object sender, EventArgs e)
@@ -44,7 +67,6 @@ namespace Курсовая
             // TODO: данная строка кода позволяет загрузить данные в таблицу "schoolCourseDataSet.PersonnelFile". При необходимости она может быть перемещена или удалена.
             this.personnelFileTableAdapter.Fill(this.schoolCourseDataSet.PersonnelFile);
             pfilesDataGridView.DataSource = pfileBindingSource;
-
         }
 
         private void toSort_PersonnelFiles_Click(object sender, EventArgs e)
@@ -163,40 +185,18 @@ namespace Курсовая
             }
         }
 
-        private void add_PersonnelFiles_Click(object sender, EventArgs e)
+        private void back_PersonnelFiles_Click(object sender, EventArgs e)
         {
-            var add = new PersonnelFile();
-            add.pupil_IDTextBox.ReadOnly = false;
-            add.ShowDialog();
-            personnelFileTableAdapter.Fill(schoolCourseDataSet.PersonnelFile);
-            schoolCourseDataSet.AcceptChanges();
+            Main main = new Main();
+            main.Show();
+            this.Hide();
         }
 
-        private void change_PersonnelFiles_Click(object sender, EventArgs e)
+        private void PersonnelFiles_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var ds = new SchoolCourseDataSet.PersonnelFileDataTable();
-            personnelFileTableAdapter.FillBy(ds, Convert.ToInt32(pfilesDataGridView.SelectedRows[0].Cells[0].Value));
-            object[] row = ds.Rows[0].ItemArray;
-            var edt = new PersonnelFile(Convert.ToInt32(row[0]),
-                row[1].ToString(),
-                row[2].ToString(),
-                row[3].ToString(),
-                row[4].ToString(),
-                row[5].ToString());
-            edt.ShowDialog();
-            personnelFileTableAdapter.Fill(schoolCourseDataSet.PersonnelFile);
-            schoolCourseDataSet.AcceptChanges();
-        }
-
-        private void delete_PersonnelFiles_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Ви дійсно хочете видалити особову справу учня?", "Видалення особової справи",
-                MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                personnelFileTableAdapter.DeleteQuery(Convert.ToInt32(pfilesDataGridView.SelectedRows[0].Cells[0].Value));
-                personnelFileTableAdapter.Fill(schoolCourseDataSet.PersonnelFile);
-                schoolCourseDataSet.AcceptChanges();
-            }
+            Main main = new Main();
+            main.Show();
+            this.Hide();
         }
     }
 }

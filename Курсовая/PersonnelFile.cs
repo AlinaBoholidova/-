@@ -14,9 +14,9 @@ namespace Курсовая
     public partial class PersonnelFile : Form
     {
         const string ConnectionString = @"Data Source=DESKTOP-ELHNV9J\SQLEXPRESS;Initial Catalog=SchoolCourse;Integrated Security=True";
-
         readonly bool edit;
         private readonly int id;
+
         public PersonnelFile()
         {
             InitializeComponent();
@@ -53,7 +53,7 @@ namespace Курсовая
             string snp_custodian = "";
             if (SNP_custodianTextBox.Text == "")
             {
-                snp_custodian = "–";
+                snp_custodian = "—";
             }
             else if (SNP_custodianTextBox.Text != "")
             {
@@ -77,15 +77,15 @@ namespace Курсовая
                     }
                 }
 
-                User user1 = db.GetTable<User>().Where(t => t.User_ID == edit[0]).Single();
-                User user2 = db.GetTable<User>().Where(t => t.User_ID == edit[1]).Single();
-                user1.Login = SNP_fatherTextBox.Text;
-                user2.Login = SNP_motherTextBox.Text;
+                User userF = db.GetTable<User>().Where(t => t.User_ID == edit[0]).Single();
+                User userM = db.GetTable<User>().Where(t => t.User_ID == edit[1]).Single();
+                userF.Login = SNP_fatherTextBox.Text;
+                userM.Login = SNP_motherTextBox.Text;
 
                 if (edit.Count == 3)
                 {
-                    User user3 = db.GetTable<User>().Where(t => t.User_ID == edit[2]).Single();
-                    user3.Login = SNP_custodianTextBox.Text;
+                    User userC = db.GetTable<User>().Where(t => t.User_ID == edit[2]).Single();
+                    userC.Login = SNP_custodianTextBox.Text;
                 }
 
                 db.SubmitChanges();
@@ -99,22 +99,21 @@ namespace Курсовая
                     SNP_fatherTextBox.Text, SNP_motherTextBox.Text, snp_custodian,
                     addressTextBox.Text, phoneTextBox.Text);
 
-
-                    // Створюємо нових користувачів
-                    User user1 = new User { Login = $"{SNP_fatherTextBox.Text}", Password = $"{pupil_IDTextBox.Text}" };
-                    User user2 = new User { Login = $"{SNP_motherTextBox.Text}", Password = $"{pupil_IDTextBox.Text}" };
+                    // Створення нових користувачів
+                    User userF = new User { Login = $"{SNP_fatherTextBox.Text}", Password = $"{pupil_IDTextBox.Text}" };
+                    User userM = new User { Login = $"{SNP_motherTextBox.Text}", Password = $"{pupil_IDTextBox.Text}" };
                     if (SNP_custodianTextBox.Text != "")
                     {
-                        User user3 = new User
+                        User userC = new User
                         {
                             Login = $"{SNP_custodianTextBox.Text}",
                             Password = $"{pupil_IDTextBox.Text}"
                         };
-                        db.GetTable<User>().InsertOnSubmit(user3);
+                        db.GetTable<User>().InsertOnSubmit(userC);
                     }
-                    // Додаємо їх до таблиці User
-                    db.GetTable<User>().InsertOnSubmit(user1);
-                    db.GetTable<User>().InsertOnSubmit(user2);
+                    // Додавання їх до таблиці User
+                    db.GetTable<User>().InsertOnSubmit(userF);
+                    db.GetTable<User>().InsertOnSubmit(userM);
                     db.SubmitChanges();
                 }
                 catch

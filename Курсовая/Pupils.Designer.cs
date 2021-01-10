@@ -222,7 +222,7 @@
             this.showAll_Pupils.Location = new System.Drawing.Point(118, 112);
             this.showAll_Pupils.Name = "showAll_Pupils";
             this.showAll_Pupils.Size = new System.Drawing.Size(112, 31);
-            this.showAll_Pupils.TabIndex = 10;
+            this.showAll_Pupils.TabIndex = 4;
             this.showAll_Pupils.Text = "Показати всіх";
             this.showAll_Pupils.UseVisualStyleBackColor = true;
             this.showAll_Pupils.Click += new System.EventHandler(this.showAll_Pupils_Click);
@@ -233,7 +233,7 @@
             this.searchTextBox_Pupils.Name = "searchTextBox_Pupils";
             this.searchTextBox_Pupils.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.searchTextBox_Pupils.Size = new System.Drawing.Size(208, 21);
-            this.searchTextBox_Pupils.TabIndex = 11;
+            this.searchTextBox_Pupils.TabIndex = 10;
             // 
             // toSort_Pupils
             // 
@@ -241,7 +241,7 @@
             this.toSort_Pupils.Location = new System.Drawing.Point(139, 519);
             this.toSort_Pupils.Name = "toSort_Pupils";
             this.toSort_Pupils.Size = new System.Drawing.Size(97, 27);
-            this.toSort_Pupils.TabIndex = 12;
+            this.toSort_Pupils.TabIndex = 13;
             this.toSort_Pupils.Text = "Сортувати";
             this.toSort_Pupils.UseVisualStyleBackColor = true;
             this.toSort_Pupils.Click += new System.EventHandler(this.toSort_Pupils_Click);
@@ -252,7 +252,7 @@
             this.toFilter_Pupils.Location = new System.Drawing.Point(408, 519);
             this.toFilter_Pupils.Name = "toFilter_Pupils";
             this.toFilter_Pupils.Size = new System.Drawing.Size(97, 27);
-            this.toFilter_Pupils.TabIndex = 13;
+            this.toFilter_Pupils.TabIndex = 18;
             this.toFilter_Pupils.Text = "Фільтрувати";
             this.toFilter_Pupils.UseVisualStyleBackColor = true;
             this.toFilter_Pupils.Click += new System.EventHandler(this.toFilter_Pupils_Click);
@@ -300,14 +300,14 @@
             // 
             this.sortComboBox_Pupils.FormattingEnabled = true;
             this.sortComboBox_Pupils.Items.AddRange(new object[] {
-            "ID",
+            "ID учня",
             "ПІБ",
             "Стать",
             "Дата народження"});
             this.sortComboBox_Pupils.Location = new System.Drawing.Point(121, 451);
             this.sortComboBox_Pupils.Name = "sortComboBox_Pupils";
             this.sortComboBox_Pupils.Size = new System.Drawing.Size(127, 23);
-            this.sortComboBox_Pupils.TabIndex = 19;
+            this.sortComboBox_Pupils.TabIndex = 12;
             // 
             // snpCheckBox_Pupils
             // 
@@ -315,7 +315,7 @@
             this.snpCheckBox_Pupils.Location = new System.Drawing.Point(654, 251);
             this.snpCheckBox_Pupils.Name = "snpCheckBox_Pupils";
             this.snpCheckBox_Pupils.Size = new System.Drawing.Size(46, 19);
-            this.snpCheckBox_Pupils.TabIndex = 20;
+            this.snpCheckBox_Pupils.TabIndex = 8;
             this.snpCheckBox_Pupils.Text = "ПІБ";
             this.snpCheckBox_Pupils.UseVisualStyleBackColor = true;
             // 
@@ -325,7 +325,7 @@
             this.birthCheckBox_Pupils.Location = new System.Drawing.Point(654, 278);
             this.birthCheckBox_Pupils.Name = "birthCheckBox_Pupils";
             this.birthCheckBox_Pupils.Size = new System.Drawing.Size(131, 19);
-            this.birthCheckBox_Pupils.TabIndex = 21;
+            this.birthCheckBox_Pupils.TabIndex = 9;
             this.birthCheckBox_Pupils.Text = "Дата народження";
             this.birthCheckBox_Pupils.UseVisualStyleBackColor = true;
             // 
@@ -335,7 +335,7 @@
             this.toSearch_Pupils.Location = new System.Drawing.Point(712, 340);
             this.toSearch_Pupils.Name = "toSearch_Pupils";
             this.toSearch_Pupils.Size = new System.Drawing.Size(97, 27);
-            this.toSearch_Pupils.TabIndex = 22;
+            this.toSearch_Pupils.TabIndex = 11;
             this.toSearch_Pupils.Text = "Знайти";
             this.toSearch_Pupils.UseVisualStyleBackColor = true;
             this.toSearch_Pupils.Click += new System.EventHandler(this.toSearch_Pupils_Click);
@@ -346,7 +346,7 @@
             this.maleRadioButton_Pupils.Location = new System.Drawing.Point(455, 422);
             this.maleRadioButton_Pupils.Name = "maleRadioButton_Pupils";
             this.maleRadioButton_Pupils.Size = new System.Drawing.Size(33, 19);
-            this.maleRadioButton_Pupils.TabIndex = 23;
+            this.maleRadioButton_Pupils.TabIndex = 14;
             this.maleRadioButton_Pupils.TabStop = true;
             this.maleRadioButton_Pupils.Text = "Ч";
             this.maleRadioButton_Pupils.UseVisualStyleBackColor = true;
@@ -357,7 +357,7 @@
             this.femaleRadioButton_Pupils.Location = new System.Drawing.Point(507, 422);
             this.femaleRadioButton_Pupils.Name = "femaleRadioButton_Pupils";
             this.femaleRadioButton_Pupils.Size = new System.Drawing.Size(36, 19);
-            this.femaleRadioButton_Pupils.TabIndex = 24;
+            this.femaleRadioButton_Pupils.TabIndex = 15;
             this.femaleRadioButton_Pupils.TabStop = true;
             this.femaleRadioButton_Pupils.Text = "Ж";
             this.femaleRadioButton_Pupils.UseVisualStyleBackColor = true;
@@ -368,7 +368,7 @@
             this.idCheckBox_Pupils.Location = new System.Drawing.Point(654, 226);
             this.idCheckBox_Pupils.Name = "idCheckBox_Pupils";
             this.idCheckBox_Pupils.Size = new System.Drawing.Size(38, 19);
-            this.idCheckBox_Pupils.TabIndex = 25;
+            this.idCheckBox_Pupils.TabIndex = 7;
             this.idCheckBox_Pupils.Text = "ID";
             this.idCheckBox_Pupils.UseVisualStyleBackColor = true;
             // 
@@ -378,7 +378,7 @@
             this.allCheckBox_Pupils.Location = new System.Drawing.Point(654, 199);
             this.allCheckBox_Pupils.Name = "allCheckBox_Pupils";
             this.allCheckBox_Pupils.Size = new System.Drawing.Size(74, 19);
-            this.allCheckBox_Pupils.TabIndex = 26;
+            this.allCheckBox_Pupils.TabIndex = 6;
             this.allCheckBox_Pupils.Text = "Усі поля";
             this.allCheckBox_Pupils.UseVisualStyleBackColor = true;
             // 
@@ -387,10 +387,10 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(556, 422);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(29, 19);
-            this.radioButton1.TabIndex = 27;
+            this.radioButton1.Size = new System.Drawing.Size(32, 19);
+            this.radioButton1.TabIndex = 16;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "–";
+            this.radioButton1.Text = "—";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // personnelFileButton_Pupils
@@ -399,7 +399,7 @@
             this.personnelFileButton_Pupils.Location = new System.Drawing.Point(484, 112);
             this.personnelFileButton_Pupils.Name = "personnelFileButton_Pupils";
             this.personnelFileButton_Pupils.Size = new System.Drawing.Size(112, 31);
-            this.personnelFileButton_Pupils.TabIndex = 28;
+            this.personnelFileButton_Pupils.TabIndex = 5;
             this.personnelFileButton_Pupils.Text = "Особова справа";
             this.personnelFileButton_Pupils.UseVisualStyleBackColor = true;
             this.personnelFileButton_Pupils.Click += new System.EventHandler(this.personnelFileButton_Pupils_Click);
@@ -452,7 +452,7 @@
             this.add_Pupils.Location = new System.Drawing.Point(31, 176);
             this.add_Pupils.Name = "add_Pupils";
             this.add_Pupils.Size = new System.Drawing.Size(45, 43);
-            this.add_Pupils.TabIndex = 35;
+            this.add_Pupils.TabIndex = 1;
             this.add_Pupils.UseVisualStyleBackColor = false;
             this.add_Pupils.Click += new System.EventHandler(this.add_Pupils_Click);
             // 
@@ -467,7 +467,7 @@
             this.edit_Pupils.Location = new System.Drawing.Point(31, 234);
             this.edit_Pupils.Name = "edit_Pupils";
             this.edit_Pupils.Size = new System.Drawing.Size(45, 43);
-            this.edit_Pupils.TabIndex = 36;
+            this.edit_Pupils.TabIndex = 2;
             this.edit_Pupils.UseVisualStyleBackColor = false;
             this.edit_Pupils.Click += new System.EventHandler(this.edit_Pupils_Click);
             // 
@@ -482,7 +482,7 @@
             this.delete_Pupils.Location = new System.Drawing.Point(31, 292);
             this.delete_Pupils.Name = "delete_Pupils";
             this.delete_Pupils.Size = new System.Drawing.Size(45, 43);
-            this.delete_Pupils.TabIndex = 37;
+            this.delete_Pupils.TabIndex = 3;
             this.delete_Pupils.UseVisualStyleBackColor = false;
             this.delete_Pupils.Click += new System.EventHandler(this.delete_Pupils_Click);
             // 
