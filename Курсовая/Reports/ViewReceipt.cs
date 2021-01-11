@@ -72,7 +72,7 @@ namespace Курсовая
             receiptReportViewer.RefreshReport();
         }
 
-        private void back_Subjects_Click(object sender, EventArgs e)
+        private void back_Receipt_Click(object sender, EventArgs e)
         {
             Main main = new Main();
             main.Show();

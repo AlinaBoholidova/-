@@ -153,7 +153,7 @@ namespace Курсовая
             Application.Exit();
         }
 
-        private void back_Subjects_Click(object sender, EventArgs e)
+        private void back_Scores_Click(object sender, EventArgs e)
         {
             Main main = new Main();
             main.Show();

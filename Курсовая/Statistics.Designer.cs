@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Statistics));
             this.statsTabControl = new System.Windows.Forms.TabControl();
             this.skipsTabPage = new System.Windows.Forms.TabPage();
             this.skipsDataGridView = new System.Windows.Forms.DataGridView();
@@ -48,6 +49,7 @@
             this.chartPaymentMonth = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.debtorsDataGridView = new System.Windows.Forms.DataGridView();
             this.activitiesTabPage = new System.Windows.Forms.TabPage();
+            this.chartActivity = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.activitiesDataGridView = new System.Windows.Forms.DataGridView();
             this.journalRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.schoolCourseDataSet = new Курсовая.SchoolCourseDataSet();
@@ -60,7 +62,20 @@
             this.paymentRateTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.PaymentRateTableAdapter();
             this.paymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.paymentTableAdapter = new Курсовая.SchoolCourseDataSetTableAdapters.PaymentTableAdapter();
-            this.chartActivity = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.skipsButton = new System.Windows.Forms.Button();
+            this.toDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.fromDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.statsTabControl.SuspendLayout();
             this.skipsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skipsDataGridView)).BeginInit();
@@ -71,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartPaymentMonth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.debtorsDataGridView)).BeginInit();
             this.activitiesTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartActivity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.journalRecordBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).BeginInit();
@@ -78,7 +94,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentRateBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartActivity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // statsTabControl
@@ -87,19 +106,28 @@
             this.statsTabControl.Controls.Add(this.birthdaysTabPage);
             this.statsTabControl.Controls.Add(this.debtersTabPage);
             this.statsTabControl.Controls.Add(this.activitiesTabPage);
+            this.statsTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.statsTabControl.Location = new System.Drawing.Point(12, 12);
             this.statsTabControl.Name = "statsTabControl";
             this.statsTabControl.SelectedIndex = 0;
-            this.statsTabControl.Size = new System.Drawing.Size(849, 426);
+            this.statsTabControl.Size = new System.Drawing.Size(1015, 509);
             this.statsTabControl.TabIndex = 0;
             // 
             // skipsTabPage
             // 
+            this.skipsTabPage.Controls.Add(this.radioButton2);
+            this.skipsTabPage.Controls.Add(this.radioButton1);
+            this.skipsTabPage.Controls.Add(this.toDateTimePicker);
+            this.skipsTabPage.Controls.Add(this.fromDateTimePicker);
+            this.skipsTabPage.Controls.Add(this.label10);
+            this.skipsTabPage.Controls.Add(this.skipsButton);
+            this.skipsTabPage.Controls.Add(this.label1);
+            this.skipsTabPage.Controls.Add(this.pictureBox5);
             this.skipsTabPage.Controls.Add(this.skipsDataGridView);
-            this.skipsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.skipsTabPage.Location = new System.Drawing.Point(4, 24);
             this.skipsTabPage.Name = "skipsTabPage";
             this.skipsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.skipsTabPage.Size = new System.Drawing.Size(841, 400);
+            this.skipsTabPage.Size = new System.Drawing.Size(1007, 481);
             this.skipsTabPage.TabIndex = 0;
             this.skipsTabPage.Text = "Пропуски контрольних";
             this.skipsTabPage.UseVisualStyleBackColor = true;
@@ -108,78 +136,84 @@
             // 
             this.skipsDataGridView.AllowUserToAddRows = false;
             this.skipsDataGridView.AllowUserToDeleteRows = false;
+            this.skipsDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.skipsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.skipsDataGridView.Location = new System.Drawing.Point(17, 34);
+            this.skipsDataGridView.Location = new System.Drawing.Point(158, 204);
             this.skipsDataGridView.Name = "skipsDataGridView";
             this.skipsDataGridView.ReadOnly = true;
-            this.skipsDataGridView.Size = new System.Drawing.Size(391, 200);
+            this.skipsDataGridView.Size = new System.Drawing.Size(488, 200);
             this.skipsDataGridView.TabIndex = 0;
             // 
             // birthdaysTabPage
             // 
+            this.birthdaysTabPage.Controls.Add(this.label2);
+            this.birthdaysTabPage.Controls.Add(this.pictureBox1);
             this.birthdaysTabPage.Controls.Add(this.chartBirthMonth);
             this.birthdaysTabPage.Controls.Add(this.birthdaysDataGridView);
-            this.birthdaysTabPage.Location = new System.Drawing.Point(4, 22);
+            this.birthdaysTabPage.Location = new System.Drawing.Point(4, 24);
             this.birthdaysTabPage.Name = "birthdaysTabPage";
             this.birthdaysTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.birthdaysTabPage.Size = new System.Drawing.Size(841, 400);
+            this.birthdaysTabPage.Size = new System.Drawing.Size(1007, 481);
             this.birthdaysTabPage.TabIndex = 1;
             this.birthdaysTabPage.Text = "Дні народження";
             this.birthdaysTabPage.UseVisualStyleBackColor = true;
             // 
             // chartBirthMonth
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartBirthMonth.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartBirthMonth.Legends.Add(legend5);
-            this.chartBirthMonth.Location = new System.Drawing.Point(412, 30);
+            chartArea1.Name = "ChartArea1";
+            this.chartBirthMonth.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartBirthMonth.Legends.Add(legend1);
+            this.chartBirthMonth.Location = new System.Drawing.Point(526, 125);
             this.chartBirthMonth.Name = "chartBirthMonth";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.IsValueShownAsLabel = true;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartBirthMonth.Series.Add(series5);
-            this.chartBirthMonth.Size = new System.Drawing.Size(332, 300);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartBirthMonth.Series.Add(series1);
+            this.chartBirthMonth.Size = new System.Drawing.Size(373, 300);
             this.chartBirthMonth.TabIndex = 1;
             this.chartBirthMonth.Text = "chart1";
             // 
             // birthdaysDataGridView
             // 
+            this.birthdaysDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.birthdaysDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.birthdaysDataGridView.Location = new System.Drawing.Point(15, 20);
+            this.birthdaysDataGridView.Location = new System.Drawing.Point(36, 143);
             this.birthdaysDataGridView.Name = "birthdaysDataGridView";
-            this.birthdaysDataGridView.Size = new System.Drawing.Size(352, 239);
+            this.birthdaysDataGridView.Size = new System.Drawing.Size(424, 239);
             this.birthdaysDataGridView.TabIndex = 0;
             // 
             // debtersTabPage
             // 
+            this.debtersTabPage.Controls.Add(this.label3);
+            this.debtersTabPage.Controls.Add(this.pictureBox2);
             this.debtersTabPage.Controls.Add(this.chartPaymentMonth);
             this.debtersTabPage.Controls.Add(this.debtorsDataGridView);
-            this.debtersTabPage.Location = new System.Drawing.Point(4, 22);
+            this.debtersTabPage.Location = new System.Drawing.Point(4, 24);
             this.debtersTabPage.Name = "debtersTabPage";
             this.debtersTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.debtersTabPage.Size = new System.Drawing.Size(841, 400);
+            this.debtersTabPage.Size = new System.Drawing.Size(1007, 481);
             this.debtersTabPage.TabIndex = 2;
             this.debtersTabPage.Text = "Боржники по оплаті";
             this.debtersTabPage.UseVisualStyleBackColor = true;
             // 
             // chartPaymentMonth
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartPaymentMonth.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartPaymentMonth.Legends.Add(legend6);
-            this.chartPaymentMonth.Location = new System.Drawing.Point(437, 25);
+            chartArea2.Name = "ChartArea1";
+            this.chartPaymentMonth.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartPaymentMonth.Legends.Add(legend2);
+            this.chartPaymentMonth.Location = new System.Drawing.Point(637, 118);
             this.chartPaymentMonth.Name = "chartPaymentMonth";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series6.IsValueShownAsLabel = true;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartPaymentMonth.Series.Add(series6);
-            this.chartPaymentMonth.Size = new System.Drawing.Size(300, 300);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.IsValueShownAsLabel = true;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartPaymentMonth.Series.Add(series2);
+            this.chartPaymentMonth.Size = new System.Drawing.Size(319, 311);
             this.chartPaymentMonth.TabIndex = 1;
             this.chartPaymentMonth.Text = "chart1";
             // 
@@ -187,29 +221,55 @@
             // 
             this.debtorsDataGridView.AllowUserToAddRows = false;
             this.debtorsDataGridView.AllowUserToDeleteRows = false;
+            this.debtorsDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.debtorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.debtorsDataGridView.Location = new System.Drawing.Point(21, 25);
+            this.debtorsDataGridView.Location = new System.Drawing.Point(36, 143);
             this.debtorsDataGridView.Name = "debtorsDataGridView";
             this.debtorsDataGridView.ReadOnly = true;
-            this.debtorsDataGridView.Size = new System.Drawing.Size(410, 228);
+            this.debtorsDataGridView.Size = new System.Drawing.Size(536, 228);
             this.debtorsDataGridView.TabIndex = 0;
             // 
             // activitiesTabPage
             // 
+            this.activitiesTabPage.Controls.Add(this.label4);
+            this.activitiesTabPage.Controls.Add(this.pictureBox3);
             this.activitiesTabPage.Controls.Add(this.chartActivity);
             this.activitiesTabPage.Controls.Add(this.activitiesDataGridView);
-            this.activitiesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.activitiesTabPage.Location = new System.Drawing.Point(4, 24);
             this.activitiesTabPage.Name = "activitiesTabPage";
             this.activitiesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.activitiesTabPage.Size = new System.Drawing.Size(841, 400);
+            this.activitiesTabPage.Size = new System.Drawing.Size(1007, 481);
             this.activitiesTabPage.TabIndex = 3;
             this.activitiesTabPage.Text = "Участь в активності";
             this.activitiesTabPage.UseVisualStyleBackColor = true;
             // 
+            // chartActivity
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chartActivity.ChartAreas.Add(chartArea3);
+            legend3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            legend3.IsTextAutoFit = false;
+            legend3.Name = "Legend1";
+            legend3.TextWrapThreshold = 10;
+            this.chartActivity.Legends.Add(legend3);
+            this.chartActivity.Location = new System.Drawing.Point(538, 105);
+            this.chartActivity.Name = "chartActivity";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartActivity.Series.Add(series3);
+            this.chartActivity.Size = new System.Drawing.Size(452, 300);
+            this.chartActivity.TabIndex = 1;
+            this.chartActivity.Text = "chart1";
+            // 
             // activitiesDataGridView
             // 
+            this.activitiesDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.activitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.activitiesDataGridView.Location = new System.Drawing.Point(16, 18);
+            this.activitiesDataGridView.Location = new System.Drawing.Point(36, 143);
             this.activitiesDataGridView.Name = "activitiesDataGridView";
             this.activitiesDataGridView.Size = new System.Drawing.Size(484, 202);
             this.activitiesDataGridView.TabIndex = 0;
@@ -264,43 +324,184 @@
             // 
             this.paymentTableAdapter.ClearBeforeFill = true;
             // 
-            // chartActivity
+            // pictureBox5
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartActivity.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartActivity.Legends.Add(legend4);
-            this.chartActivity.Location = new System.Drawing.Point(517, 18);
-            this.chartActivity.Name = "chartActivity";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.IsValueShownAsLabel = true;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartActivity.Series.Add(series4);
-            this.chartActivity.Size = new System.Drawing.Size(318, 300);
-            this.chartActivity.TabIndex = 1;
-            this.chartActivity.Text = "chart1";
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::Курсовая.Properties.Resources.file;
+            this.pictureBox5.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(121, 117);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 82;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Курсовая.Properties.Resources.file;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 117);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 83;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Курсовая.Properties.Resources.file;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(121, 117);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 83;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::Курсовая.Properties.Resources.file;
+            this.pictureBox3.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(121, 117);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 83;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Wheat;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(167, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(370, 20);
+            this.label1.TabIndex = 83;
+            this.label1.Text = "Кількість пропущених контрольних учнями";
+            // 
+            // skipsButton
+            // 
+            this.skipsButton.Location = new System.Drawing.Point(549, 107);
+            this.skipsButton.Name = "skipsButton";
+            this.skipsButton.Size = new System.Drawing.Size(97, 40);
+            this.skipsButton.TabIndex = 84;
+            this.skipsButton.Text = "Отримати статистику";
+            this.skipsButton.UseVisualStyleBackColor = true;
+            // 
+            // toDateTimePicker
+            // 
+            this.toDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toDateTimePicker.Location = new System.Drawing.Point(222, 158);
+            this.toDateTimePicker.MaxDate = new System.DateTime(2021, 5, 28, 0, 0, 0, 0);
+            this.toDateTimePicker.MinDate = new System.DateTime(2020, 9, 1, 0, 0, 0, 0);
+            this.toDateTimePicker.Name = "toDateTimePicker";
+            this.toDateTimePicker.Size = new System.Drawing.Size(271, 21);
+            this.toDateTimePicker.TabIndex = 108;
+            this.toDateTimePicker.Value = new System.DateTime(2021, 1, 11, 0, 0, 0, 0);
+            // 
+            // fromDateTimePicker
+            // 
+            this.fromDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fromDateTimePicker.Location = new System.Drawing.Point(222, 118);
+            this.fromDateTimePicker.MaxDate = new System.DateTime(2021, 5, 28, 0, 0, 0, 0);
+            this.fromDateTimePicker.MinDate = new System.DateTime(2020, 9, 1, 0, 0, 0, 0);
+            this.fromDateTimePicker.Name = "fromDateTimePicker";
+            this.fromDateTimePicker.Size = new System.Drawing.Size(271, 21);
+            this.fromDateTimePicker.TabIndex = 107;
+            this.fromDateTimePicker.Value = new System.DateTime(2021, 1, 11, 0, 0, 0, 0);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(185, 158);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(21, 15);
+            this.label10.TabIndex = 106;
+            this.label10.Text = "та";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(158, 76);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(92, 19);
+            this.radioButton1.TabIndex = 109;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "За весь час";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(158, 118);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(48, 19);
+            this.radioButton2.TabIndex = 110;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Між";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Wheat;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(167, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(349, 20);
+            this.label2.TabIndex = 84;
+            this.label2.Text = "Кількість учнів за місяцами народження";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Wheat;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(167, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(477, 20);
+            this.label3.TabIndex = 85;
+            this.label3.Text = "Список боржників по оплаті та статистика за місяцами";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Wheat;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(167, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(369, 20);
+            this.label4.TabIndex = 85;
+            this.label4.Text = "Частота участі в додаткових активностях";
             // 
             // Statistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 450);
+            this.BackColor = System.Drawing.Color.Wheat;
+            this.ClientSize = new System.Drawing.Size(1039, 533);
             this.Controls.Add(this.statsTabControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Statistics";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Статистика";
             this.Load += new System.EventHandler(this.Statistics_Load);
             this.statsTabControl.ResumeLayout(false);
             this.skipsTabPage.ResumeLayout(false);
+            this.skipsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skipsDataGridView)).EndInit();
             this.birthdaysTabPage.ResumeLayout(false);
+            this.birthdaysTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartBirthMonth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.birthdaysDataGridView)).EndInit();
             this.debtersTabPage.ResumeLayout(false);
+            this.debtersTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartPaymentMonth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.debtorsDataGridView)).EndInit();
             this.activitiesTabPage.ResumeLayout(false);
+            this.activitiesTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartActivity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.journalRecordBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolCourseDataSet)).EndInit();
@@ -308,7 +509,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentRateBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartActivity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -337,5 +541,19 @@
         public System.Windows.Forms.TabPage birthdaysTabPage;
         public System.Windows.Forms.TabPage debtersTabPage;
         public System.Windows.Forms.TabPage activitiesTabPage;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button skipsButton;
+        private System.Windows.Forms.DateTimePicker toDateTimePicker;
+        private System.Windows.Forms.DateTimePicker fromDateTimePicker;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

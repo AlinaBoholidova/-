@@ -26,14 +26,14 @@ namespace Курсовая
             //Application.Run(new PersonnelFiles());
             //Application.Run(new Statistics());
             //Application.Run(new ViewReceipt());
-            //Application.Run(new ViewScores());
+            Application.Run(new ViewScores());
             //Application.Run(new Subjects());
             //Application.Run(new Payments());
             //Application.Run(new Rating());
             //Application.Run(new AdditionalActivity());
             //Application.Run(new Login());
             //Application.Run(new Points());
-            Application.Run(new Payments());
+            //Application.Run(new Payments());
 
             //DataContext db = new DataContext(СonnectionString);
 
