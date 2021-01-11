@@ -87,6 +87,18 @@
     <Compile Include="AdditionalParticipation.Designer.cs">
       <DependentUpon>AdditionalParticipation.cs</DependentUpon>
     </Compile>
+    <Compile Include="JournalRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JournalRecord.Designer.cs">
+      <DependentUpon>JournalRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JournalRecordData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JournalRecordData.Designer.cs">
+      <DependentUpon>JournalRecordData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +231,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdditionalParticipation.resx">
       <DependentUpon>AdditionalParticipation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JournalRecord.resx">
+      <DependentUpon>JournalRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JournalRecordData.resx">
+      <DependentUpon>JournalRecordData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

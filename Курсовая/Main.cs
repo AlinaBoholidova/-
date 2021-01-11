@@ -40,7 +40,9 @@ namespace Курсовая
 
         private void journalRecordsButton_Click(object sender, EventArgs e)
         {
-
+            JournalRecord journal = new JournalRecord();
+            this.Hide();
+            journal.Show();
         }
 
         private void addActivityButton_Click(object sender, EventArgs e)
